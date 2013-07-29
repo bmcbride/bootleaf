@@ -1,0 +1,266 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "NAME": "Alexander Hamilton U.S. Custom House", "TEL": "(212) 514-3700", "URL": "http:\/\/www.oldnycustomhouse.gov\/", "ADRESS1": "1 Bowling Grn", "ADDRESS2": null, "CITY": "New York", "ZIP": 10004.0 }, "geometry": { "type": "Point", "coordinates": [ -74.013756, 40.703817 ] } }
+,
+{ "type": "Feature", "id": 1, "properties": { "NAME": "Alice Austen House Museum", "TEL": "(718) 816-4506", "URL": "http:\/\/www.aliceausten.org\/", "ADRESS1": "2 Hylan Blvd", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10305.0 }, "geometry": { "type": "Point", "coordinates": [ -74.063032, 40.615121 ] } }
+,
+{ "type": "Feature", "id": 2, "properties": { "NAME": "American Academy of Arts and Letters", "TEL": "(212) 368-5900", "URL": "http:\/\/www.artsandletters.org\/", "ADRESS1": "633 W. 155th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10032.0 }, "geometry": { "type": "Point", "coordinates": [ -73.947298, 40.833854 ] } }
+,
+{ "type": "Feature", "id": 3, "properties": { "NAME": "American Folk Art Museum", "TEL": "(212) 265-1040", "URL": "http:\/\/www.folkartmuseum.org\/", "ADRESS1": "45 West 53rd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.978103, 40.761625 ] } }
+,
+{ "type": "Feature", "id": 4, "properties": { "NAME": "American Immigration History Center", "TEL": "(212) 363-3200", "URL": "http:\/\/www.ellisisland.org\/", "ADRESS1": "Ellis Island", "ADDRESS2": null, "CITY": "New York", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -74.039685, 40.699057 ] } }
+,
+{ "type": "Feature", "id": 5, "properties": { "NAME": "American Museum of Natural History", "TEL": "(212) 769-5100", "URL": "http:\/\/www.amnh.org\/", "ADRESS1": "Central Park West at 79th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10024.0 }, "geometry": { "type": "Point", "coordinates": [ -73.973648, 40.780827 ] } }
+,
+{ "type": "Feature", "id": 6, "properties": { "NAME": "American Numismatic Society", "TEL": "(212) 571-4470", "URL": "http:\/\/www.numismatics.org\/", "ADRESS1": "75 Varick St", "ADDRESS2": "11th Floor", "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.007012, 40.723527 ] } }
+,
+{ "type": "Feature", "id": 7, "properties": { "NAME": "Americas Society", "TEL": "(212) 249-8950", "URL": "http:\/\/as.americas-society.org\/", "ADRESS1": "680 Park Ave.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.96597, 40.768825 ] } }
+,
+{ "type": "Feature", "id": 8, "properties": { "NAME": "Anne Frank Center USA", "TEL": "(212) 431-7993", "URL": "http:\/\/www.annefrank.com\/", "ADRESS1": "38 Crosby Street", "ADDRESS2": "5th Floor", "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.99963, 40.721128 ] } }
+,
+{ "type": "Feature", "id": 9, "properties": { "NAME": "Asia Society", "TEL": "(212) 288-6400", "URL": "http:\/\/www.asiasociety.org\/", "ADRESS1": "725 Park Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.964284, 40.769834 ] } }
+,
+{ "type": "Feature", "id": 10, "properties": { "NAME": "Audubon Terrace", "TEL": null, "URL": "http:\/\/www.washington-heights.us\/history\/archives\/audubon_terrace_museum_group_102.html", "ADRESS1": "Broadway at 155 Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10032.0 }, "geometry": { "type": "Point", "coordinates": [ -73.946546, 40.833583 ] } }
+,
+{ "type": "Feature", "id": 11, "properties": { "NAME": "Bartow-Pell Mansion", "TEL": "(718) 885-1461", "URL": "http:\/\/bartowpellmansionmuseum.org\/index.php", "ADRESS1": "895 Shore Road", "ADDRESS2": "Pelham Bay Park", "CITY": "Bronx", "ZIP": 10464.0 }, "geometry": { "type": "Point", "coordinates": [ -73.805579, 40.871779 ] } }
+,
+{ "type": "Feature", "id": 12, "properties": { "NAME": "Bowne House", "TEL": "(718) 359-0528", "URL": "http:\/\/www.bownehouse.org\/", "ADRESS1": "37-01 Bowne Street", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11354.0 }, "geometry": { "type": "Point", "coordinates": [ -73.82489, 40.762887 ] } }
+,
+{ "type": "Feature", "id": 13, "properties": { "NAME": "Bronx Historical Society & Musem", "TEL": "(718) 881-8900", "URL": "http:\/\/www.bronxhistoricalsociety.org\/", "ADRESS1": "3309 Bainbridge Ave", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10467.0 }, "geometry": { "type": "Point", "coordinates": [ -73.879749, 40.878237 ] } }
+,
+{ "type": "Feature", "id": 14, "properties": { "NAME": "Bronx Museum of the Arts (BXMA)", "TEL": "(718) 681-6000", "URL": "http:\/\/www.bronxmuseum.org\/", "ADRESS1": "1040 Grand Concourse", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10456.0 }, "geometry": { "type": "Point", "coordinates": [ -73.91975, 40.83103 ] } }
+,
+{ "type": "Feature", "id": 15, "properties": { "NAME": "Brooklyn Children's Museum", "TEL": "(718) 735-4400", "URL": "http:\/\/www.brooklynkids.org\/", "ADRESS1": "145 Brooklyn Avenue", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11213.0 }, "geometry": { "type": "Point", "coordinates": [ -73.944016, 40.674507 ] } }
+,
+{ "type": "Feature", "id": 16, "properties": { "NAME": "Brooklyn Historical Society", "TEL": "(718) 222-4111", "URL": "http:\/\/www.brooklynhistory.org\/default\/index.html", "ADRESS1": "128 Pierrepont Street", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11201.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992405, 40.694803 ] } }
+,
+{ "type": "Feature", "id": 17, "properties": { "NAME": "Brooklyn Museum", "TEL": "(718) 638-5000", "URL": "http:\/\/www.brooklynmuseum.org\/", "ADRESS1": "200 Eastern Parkway", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11238.0 }, "geometry": { "type": "Point", "coordinates": [ -73.963585, 40.671084 ] } }
+,
+{ "type": "Feature", "id": 18, "properties": { "NAME": "Chelsea Art Museum", "TEL": "(212) 255-0719", "URL": "http:\/\/www.chelseaartmuseum.org\/", "ADRESS1": "556 West 22nd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -74.007316, 40.747898 ] } }
+,
+{ "type": "Feature", "id": 19, "properties": { "NAME": "Children's Museum of Manhattan", "TEL": "(212) 721-1234", "URL": "http:\/\/www.cmom.org\/", "ADRESS1": "212 West 83rd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10024.0 }, "geometry": { "type": "Point", "coordinates": [ -73.977274, 40.785871 ] } }
+,
+{ "type": "Feature", "id": 20, "properties": { "NAME": "Children's Museum of the Arts", "TEL": "(212) 274-0986", "URL": "http:\/\/cmany.org\/intro.php?pn=home", "ADRESS1": "182 Lafayette Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.998838, 40.72075 ] } }
+,
+{ "type": "Feature", "id": 21, "properties": { "NAME": "Cloisters", "TEL": "(212) 923-3700", "URL": "http:\/\/www.metmuseum.org\/cloisters\/", "ADRESS1": "99 Margaret Corbin Drive", "ADDRESS2": null, "CITY": "New York", "ZIP": 10040.0 }, "geometry": { "type": "Point", "coordinates": [ -73.931734, 40.864924 ] } }
+,
+{ "type": "Feature", "id": 22, "properties": { "NAME": "Coney Island Museum", "TEL": "(718) 372-5159", "URL": "http:\/\/www.coneyisland.com\/", "ADRESS1": "1208 Surf Ave", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11224.0 }, "geometry": { "type": "Point", "coordinates": [ -73.979856, 40.575264 ] } }
+,
+{ "type": "Feature", "id": 23, "properties": { "NAME": "Cooper-Hewitt, National Design Museum", "TEL": "(212) 849-8400", "URL": "http:\/\/www.cooperhewitt.org\/", "ADRESS1": "2 East 91st Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10128.0 }, "geometry": { "type": "Point", "coordinates": [ -73.957782, 40.784326 ] } }
+,
+{ "type": "Feature", "id": 24, "properties": { "NAME": "Dahesh Museum", "TEL": "(212) 759-0606", "URL": "http:\/\/www.daheshmuseum.org", "ADRESS1": "580 Madison Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10022.0 }, "geometry": { "type": "Point", "coordinates": [ -73.973042, 40.762107 ] } }
+,
+{ "type": "Feature", "id": 25, "properties": { "NAME": "Dia at the Hispanic Society", "TEL": "(845) 440-0100", "URL": "http:\/\/www.diabeacon.org\/", "ADRESS1": "613 West 155th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10032.0 }, "geometry": { "type": "Point", "coordinates": [ -73.946493, 40.833302 ] } }
+,
+{ "type": "Feature", "id": 26, "properties": { "NAME": "Dia Art Foundation", "TEL": "(212) 989 5566", "URL": "http:\/\/www.diacenter.org\/", "ADRESS1": "535 W 22nd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -74.006135, 40.747895 ] } }
+,
+{ "type": "Feature", "id": 27, "properties": { "NAME": "Discovery Times Square Exposition", "TEL": "(866) 987-9692", "URL": "http:\/\/www.discoverytsx.com\/nyc\/", "ADRESS1": "226 W 44th St", "ADDRESS2": null, "CITY": "New York", "ZIP": 1036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987319, 40.757501 ] } }
+,
+{ "type": "Feature", "id": 28, "properties": { "NAME": "Drawing Center", "TEL": "(212) 219-2166", "URL": "http:\/\/www.drawingcenter.org\/about_visit.cfm", "ADRESS1": "35 Wooster St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.002904, 40.722452 ] } }
+,
+{ "type": "Feature", "id": 29, "properties": { "NAME": "Dyckman Farmhouse", "TEL": "(212) 304-9422", "URL": "http:\/\/www.dyckmanfarmhouse.org\/", "ADRESS1": "4881 Broadway", "ADDRESS2": null, "CITY": "New York", "ZIP": 10034.0 }, "geometry": { "type": "Point", "coordinates": [ -73.923839, 40.867131 ] } }
+,
+{ "type": "Feature", "id": 30, "properties": { "NAME": "East Village History Project", "TEL": "(212) 614-8702", "URL": "http:\/\/leshp.org\/", "ADRESS1": "308 Bowery", "ADDRESS2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992723, 40.72496 ] } }
+,
+{ "type": "Feature", "id": 31, "properties": { "NAME": "El Museo del Barrio", "TEL": "(212) 831-7272", "URL": "http:\/\/www.elmuseo.org\/", "ADRESS1": "1230 Fifth Ave", "ADDRESS2": null, "CITY": "New York", "ZIP": 10029.0 }, "geometry": { "type": "Point", "coordinates": [ -73.951368, 40.793099 ] } }
+,
+{ "type": "Feature", "id": 32, "properties": { "NAME": "Ellis Island Museum", "TEL": "(212) 363-3200", "URL": "http:\/\/www.ellisisland.org\/", "ADRESS1": "Ellis Island", "ADDRESS2": null, "CITY": "New York", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -74.041322, 40.698208 ] } }
+,
+{ "type": "Feature", "id": 33, "properties": { "NAME": "Fraunces Tavern Museum", "TEL": "(212) 425-1778", "URL": "http:\/\/www.frauncestavernmuseum.org\/", "ADRESS1": "54 Pearl Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10004.0 }, "geometry": { "type": "Point", "coordinates": [ -74.011339, 40.7034 ] } }
+,
+{ "type": "Feature", "id": 34, "properties": { "NAME": "Frick Collection", "TEL": "(212) 288-0700", "URL": "http:\/\/www.frick.org\/", "ADRESS1": "1 E. 70th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.96708, 40.771055 ] } }
+,
+{ "type": "Feature", "id": 35, "properties": { "NAME": "Garibaldi-Meucci Museum", "TEL": "(718) 442-1608", "URL": "http:\/\/statenislandusa.com\/pages\/garibaldi.html", "ADRESS1": "420 Tompkins Avenue", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10305.0 }, "geometry": { "type": "Point", "coordinates": [ -74.073878, 40.615166 ] } }
+,
+{ "type": "Feature", "id": 36, "properties": { "NAME": "Goethe-Institut New York", "TEL": "(212) 439-8700", "URL": "http:\/\/www.goethe.de\/ins\/us\/ney\/deindex.htm", "ADRESS1": "1014 Fifth Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10028.0 }, "geometry": { "type": "Point", "coordinates": [ -73.961742, 40.779166 ] } }
+,
+{ "type": "Feature", "id": 37, "properties": { "NAME": "Gracie Mansion", "TEL": "(212)-570-4751", "URL": "http:\/\/www.nyc.gov\/html\/om\/html\/gracie.html", "ADRESS1": "89th Street at East End Avenue", "ADDRESS2": "Carl Schurz Park", "CITY": "New York", "ZIP": 10128.0 }, "geometry": { "type": "Point", "coordinates": [ -73.943068, 40.776114 ] } }
+,
+{ "type": "Feature", "id": 38, "properties": { "NAME": "Hall Of Fame For Great Americans", "TEL": "(718) 289-5161", "URL": "http:\/\/www.bcc.cuny.edu\/hallofFame\/", "ADRESS1": "Hall of Fame Terrace & Sedgwick Avenue", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10453.0 }, "geometry": { "type": "Point", "coordinates": [ -73.91398, 40.858748 ] } }
+,
+{ "type": "Feature", "id": 39, "properties": { "NAME": "Harbor Defense Museum of Fort Hamilton", "TEL": "(718) 630-4349", "URL": "http:\/\/www.harbordefensemuseum.com\/", "ADRESS1": "230 Sheridan Loop", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11252.0 }, "geometry": { "type": "Point", "coordinates": [ -74.032311, 40.609009 ] } }
+,
+{ "type": "Feature", "id": 40, "properties": { "NAME": "Hispanic Society of America Museum", "TEL": "(212) 926-2234", "URL": "http:\/\/www.hispanicsociety.org\/", "ADRESS1": "613 West 155th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10032.0 }, "geometry": { "type": "Point", "coordinates": [ -73.946823, 40.833452 ] } }
+,
+{ "type": "Feature", "id": 41, "properties": { "NAME": "Holocaust Museum & Studies Center", "TEL": "(718) 817-7700", "URL": "http:\/\/www.holocauststudies.org\/", "ADRESS1": "75 W 205th St", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10468.0 }, "geometry": { "type": "Point", "coordinates": [ -73.890988, 40.878358 ] } }
+,
+{ "type": "Feature", "id": 42, "properties": { "NAME": "Hudson Waterfront Museum and Showboat Barge", "TEL": "(718) 624-4719", "URL": "http:\/\/www.waterfrontmuseum.org\/", "ADRESS1": "290 Conover St.", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11231.0 }, "geometry": { "type": "Point", "coordinates": [ -74.018087, 40.675572 ] } }
+,
+{ "type": "Feature", "id": 43, "properties": { "NAME": "International Center of Photography", "TEL": "(212) 857-0000", "URL": "http:\/\/www.icp.org\/", "ADRESS1": "1133 Avenue Of The Americas", "ADDRESS2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983837, 40.756021 ] } }
+,
+{ "type": "Feature", "id": 44, "properties": { "NAME": "Intrepid Sea-Air-Space Museum", "TEL": "(212) 245-0072", "URL": "http:\/\/www.intrepidmuseum.org\/", "ADRESS1": "Pier 86 12th Ave. & 46th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -74.000892, 40.764784 ] } }
+,
+{ "type": "Feature", "id": 45, "properties": { "NAME": "Isamu Noguchi Garden Museum", "TEL": "(718) 204-7088", "URL": "http:\/\/www.noguchi.org\/", "ADRESS1": "32-37 Vernon Boulevard", "ADDRESS2": null, "CITY": "Long Island City", "ZIP": 11106.0 }, "geometry": { "type": "Point", "coordinates": [ -73.937655, 40.766957 ] } }
+,
+{ "type": "Feature", "id": 46, "properties": { "NAME": "Italian American Museum", "TEL": "(212) 965-9000", "URL": "http:\/\/www.italianamericanmuseum.org\/", "ADRESS1": "155 Mulberry St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -73.997494, 40.719195 ] } }
+,
+{ "type": "Feature", "id": 47, "properties": { "NAME": "Jackie Robinson Museum", "TEL": "(212) 290-8600", "URL": "http:\/\/www.jackierobinson.org\/", "ADRESS1": "1 Hudson Square", "ADDRESS2": "75 Varick Street 2nd Floor", "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.006642, 40.723351 ] } }
+,
+{ "type": "Feature", "id": 48, "properties": { "NAME": "Jacques Marchais Center Museum of Tibetan Art", "TEL": "(718) 987-3500", "URL": "http:\/\/www.tibetanmuseum.org\/", "ADRESS1": "338 Lighthouse Avenue", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10306.0 }, "geometry": { "type": "Point", "coordinates": [ -74.138123, 40.576313 ] } }
+,
+{ "type": "Feature", "id": 49, "properties": { "NAME": "Jeffrey's Hook lighthouse (Little Red Lighthouse)", "TEL": "(212) 304-2365", "URL": "http:\/\/www.nycgovparks.org\/sub_about\/parks_divisions\/historic_houses\/hh_little_red_light.html", "ADRESS1": "178th Street at the Hudson River", "ADDRESS2": null, "CITY": "New York", "ZIP": 10033.0 }, "geometry": { "type": "Point", "coordinates": [ -73.946945, 40.85022 ] } }
+,
+{ "type": "Feature", "id": 50, "properties": { "NAME": "Jewish Museum", "TEL": "(212) 423-3200", "URL": "http:\/\/www.thejewishmuseum.org\/index.php", "ADRESS1": "1109 Fifth Ave", "ADDRESS2": null, "CITY": "New York", "ZIP": 10128.0 }, "geometry": { "type": "Point", "coordinates": [ -73.957187, 40.785403 ] } }
+,
+{ "type": "Feature", "id": 51, "properties": { "NAME": "John J. Harvey Fireboat", "TEL": null, "URL": "http:\/\/www.fireboat.org\/", "ADRESS1": "Pier 66 at West 26th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -74.009655, 40.752331 ] } }
+,
+{ "type": "Feature", "id": 52, "properties": { "NAME": "King Manor Museum", "TEL": "(718) 206-0545", "URL": "http:\/\/www.kingmanor.org\/", "ADRESS1": "152-01 Jamaica Avenue", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11432.0 }, "geometry": { "type": "Point", "coordinates": [ -73.803761, 40.703042 ] } }
+,
+{ "type": "Feature", "id": 53, "properties": { "NAME": "Kingsland Homestead", "TEL": "(718) 206-0545", "URL": "http:\/\/www.queenshistoricalsociety.org\/kingsland.html", "ADRESS1": "143-35 37th Avenue", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11354.0 }, "geometry": { "type": "Point", "coordinates": [ -73.824156, 40.763596 ] } }
+,
+{ "type": "Feature", "id": 54, "properties": { "NAME": "LaGuardia and Wagner Archives", "TEL": "(718) 482-5065", "URL": "http:\/\/www.laguardiawagnerarchive.lagcc.cuny.edu\/defaultc.htm", "ADRESS1": "31-10 Thomson Ave.", "ADDRESS2": "Fiorello H. LaGuardia Community College\/CUNY Room E-238", "CITY": "Queens", "ZIP": 11101.0 }, "geometry": { "type": "Point", "coordinates": [ -73.935146, 40.74396 ] } }
+,
+{ "type": "Feature", "id": 55, "properties": { "NAME": "Lee Young Hee Museum of Korean Culture", "TEL": "(212) 560-0722", "URL": "http:\/\/www.lyhkm.org\/", "ADRESS1": "2 West 32nd Street", "ADDRESS2": "Suite 301", "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986188, 40.747197 ] } }
+,
+{ "type": "Feature", "id": 56, "properties": { "NAME": "Lefferts Historic House", "TEL": "(718) 789-2822", "URL": "http:\/\/www.prospectpark.org\/visit\/places\/lefferts", "ADRESS1": "Prospect Park Willink Entrance", "ADDRESS2": "Flatbush and Ocean Avenues and Empire Boulevard", "CITY": "Brooklyn", "ZIP": 11215.0 }, "geometry": { "type": "Point", "coordinates": [ -73.963814, 40.66438 ] } }
+,
+{ "type": "Feature", "id": 57, "properties": { "NAME": "Madame Tussauds Wax Museum", "TEL": "(800) 246-8872", "URL": "http:\/\/www.madametussauds.com\/NewYork\/", "ADRESS1": "234 W. 42nd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988702, 40.756318 ] } }
+,
+{ "type": "Feature", "id": 58, "properties": { "NAME": "Merchant's House Museum", "TEL": "(212) 777-1089", "URL": "http:\/\/www.merchantshouse.com\/", "ADRESS1": "29 East Fourth Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992346, 40.727658 ] } }
+,
+{ "type": "Feature", "id": 59, "properties": { "NAME": "Metropolitan Museum of Art (MET)", "TEL": "(212) 535-7710", "URL": "http:\/\/www.metmuseum.org\/", "ADRESS1": "1000 Fifth Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10028.0 }, "geometry": { "type": "Point", "coordinates": [ -73.963451, 40.779424 ] } }
+,
+{ "type": "Feature", "id": 60, "properties": { "NAME": "Mexican Cultural Institute of New York", "TEL": "(212) 217-6422", "URL": "http:\/\/www.lavitrina.com\/", "ADRESS1": "27 E. 39th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10016.0 }, "geometry": { "type": "Point", "coordinates": [ -73.979881, 40.750785 ] } }
+,
+{ "type": "Feature", "id": 61, "properties": { "NAME": "Morgan Library and Museum", "TEL": "(212) 685-0008", "URL": "http:\/\/www.themorgan.org\/home.asp", "ADRESS1": "225 Madison Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10016.0 }, "geometry": { "type": "Point", "coordinates": [ -73.981321, 40.749295 ] } }
+,
+{ "type": "Feature", "id": 62, "properties": { "NAME": "Morris-Jumel Mansion", "TEL": "(212) 923-8008", "URL": "http:\/\/www.morrisjumel.org\/", "ADRESS1": "65 Jumel Terrace", "ADDRESS2": null, "CITY": "New York", "ZIP": 10032.0 }, "geometry": { "type": "Point", "coordinates": [ -73.938574, 40.834448 ] } }
+,
+{ "type": "Feature", "id": 63, "properties": { "NAME": "Mount Vernon Hotel Museum & Garden", "TEL": "(212) 838-6878", "URL": "http:\/\/www.mvhm.org\/", "ADRESS1": "421 East 61 Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.959711, 40.760526 ] } }
+,
+{ "type": "Feature", "id": 64, "properties": { "NAME": "Municipal Art Society", "TEL": "(212) 935-3960", "URL": "http:\/\/mas.org\/", "ADRESS1": "457 Madison Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10022.0 }, "geometry": { "type": "Point", "coordinates": [ -73.975, 40.758249 ] } }
+,
+{ "type": "Feature", "id": 65, "properties": { "NAME": "Museum for African Art", "TEL": "(718) 784-7700", "URL": "http:\/\/www.africanart.org\/", "ADRESS1": "36-01 43rd Avenue", "ADDRESS2": "3rd Floor", "CITY": "Queens", "ZIP": 11101.0 }, "geometry": { "type": "Point", "coordinates": [ -73.928224, 40.746342 ] } }
+,
+{ "type": "Feature", "id": 66, "properties": { "NAME": "Museum of American Finance", "TEL": "(212) 908-4110", "URL": "http:\/\/www.moaf.org\/index", "ADRESS1": "48 Wall Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10005.0 }, "geometry": { "type": "Point", "coordinates": [ -74.009122, 40.706485 ] } }
+,
+{ "type": "Feature", "id": 67, "properties": { "NAME": "Museum of American Illustration", "TEL": "(212) 838-2560", "URL": "http:\/\/societyillustrators.org\/museum\/index.cms", "ADRESS1": "128 E. 63d St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.9669, 40.764716 ] } }
+,
+{ "type": "Feature", "id": 68, "properties": { "NAME": "Museum of Arts & Design (MAD)", "TEL": "(212) 299-7777", "URL": "http:\/\/www.madmuseum.org\/", "ADRESS1": "2 Columbus Circle", "ADDRESS2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.982007, 40.767406 ] } }
+,
+{ "type": "Feature", "id": 69, "properties": { "NAME": "Museum of Biblical Art", "TEL": "(212) 408-1200", "URL": "http:\/\/www.mobia.org\/", "ADRESS1": "1865 Broadway", "ADDRESS2": null, "CITY": "New York", "ZIP": 10023.0 }, "geometry": { "type": "Point", "coordinates": [ -73.982726, 40.770253 ] } }
+,
+{ "type": "Feature", "id": 70, "properties": { "NAME": "Museum Of Chinese In America", "TEL": "(212) 619-4785", "URL": "http:\/\/www.mocanyc.org\/", "ADRESS1": "215 Centre Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -73.999192, 40.719454 ] } }
+,
+{ "type": "Feature", "id": 71, "properties": { "NAME": "Museum of Comic and Cartoon Art (MoCCA)", "TEL": "(212) 254 3511", "URL": "http:\/\/www.moccany.org\/", "ADRESS1": "594 Broadway", "ADDRESS2": "Suite 401", "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.996702, 40.724798 ] } }
+,
+{ "type": "Feature", "id": 72, "properties": { "NAME": "Museum of Contemporary African Diasporan Arts (MoCADA)", "TEL": "(718) 230-0492", "URL": "http:\/\/www.mocada.org\/", "ADRESS1": "80 Hanson Place", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11217.0 }, "geometry": { "type": "Point", "coordinates": [ -73.974425, 40.685245 ] } }
+,
+{ "type": "Feature", "id": 73, "properties": { "NAME": "Museum of Jewish Heritage", "TEL": "(646) 437-4200", "URL": "http:\/\/www.mjhnyc.org\/index.htm", "ADRESS1": "36 Battery Place", "ADDRESS2": null, "CITY": "New York", "ZIP": 10280.0 }, "geometry": { "type": "Point", "coordinates": [ -74.018586, 40.705987 ] } }
+,
+{ "type": "Feature", "id": 74, "properties": { "NAME": "Museum of Modern Art (MoMA)", "TEL": "(212) 708-9400", "URL": "http:\/\/www.moma.org\/", "ADRESS1": "11 West 53rd Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.977004, 40.761187 ] } }
+,
+{ "type": "Feature", "id": 75, "properties": { "NAME": "Museum of the City of New York", "TEL": "(212) 534-1672", "URL": "http:\/\/www.mcny.org", "ADRESS1": "1220 Fifth Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10029.0 }, "geometry": { "type": "Point", "coordinates": [ -73.951917, 40.792509 ] } }
+,
+{ "type": "Feature", "id": 76, "properties": { "NAME": "Museum of the Moving Image", "TEL": "(718) 784-4520", "URL": "http:\/\/www.movingimage.us\/site\/site.php", "ADRESS1": "35 Avenue at 36 Street", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11106.0 }, "geometry": { "type": "Point", "coordinates": [ -73.92451, 40.756945 ] } }
+,
+{ "type": "Feature", "id": 77, "properties": { "NAME": "National Academy Museum", "TEL": "(212) 369-4880", "URL": "https:\/\/nationalacademy.org\/index.asp", "ADRESS1": "1083 5th Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10128.0 }, "geometry": { "type": "Point", "coordinates": [ -73.958492, 40.783614 ] } }
+,
+{ "type": "Feature", "id": 78, "properties": { "NAME": "National Lighthouse Museum", "TEL": "(718) 556-1681", "URL": "http:\/\/statenislandusa.com\/pages\/lighthouse.html", "ADRESS1": "1 Lighthouse Plaza", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10301.0 }, "geometry": { "type": "Point", "coordinates": [ -74.073737, 40.640949 ] } }
+,
+{ "type": "Feature", "id": 79, "properties": { "NAME": "National Museum of the American Indian", "TEL": "(212) 514-3700", "URL": "http:\/\/www.nmai.si.edu\/", "ADRESS1": "1 Bowling Green", "ADDRESS2": null, "CITY": "New York", "ZIP": 10004.0 }, "geometry": { "type": "Point", "coordinates": [ -74.013727, 40.704322 ] } }
+,
+{ "type": "Feature", "id": 80, "properties": { "NAME": "National September 11 Memorial & Museum at the World Trade Center", "TEL": "(212) 227-7722", "URL": "http:\/\/www.national911memorial.org\/site\/PageServer?pagename=New_Home", "ADRESS1": "1 Liberty Plaza", "ADDRESS2": "20th Floor", "CITY": "New York", "ZIP": 10006.0 }, "geometry": { "type": "Point", "coordinates": [ -74.010916, 40.709655 ] } }
+,
+{ "type": "Feature", "id": 81, "properties": { "NAME": "Neue Galerie New York", "TEL": "(212) 628-6200", "URL": "http:\/\/www.neuegalerie.org\/", "ADRESS1": "1048 Fifth Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10028.0 }, "geometry": { "type": "Point", "coordinates": [ -73.960248, 40.781243 ] } }
+,
+{ "type": "Feature", "id": 82, "properties": { "NAME": "New Museum of Contemporary Art", "TEL": "(212) 219-1222", "URL": "http:\/\/www.newmuseum.org\/", "ADRESS1": "235 Bowery", "ADDRESS2": null, "CITY": "New York", "ZIP": 10002.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992839, 40.722347 ] } }
+,
+{ "type": "Feature", "id": 83, "properties": { "NAME": "New York City Fire Museum", "TEL": "(212) 691-1303", "URL": "http:\/\/www.nycfiremuseum.org\/", "ADRESS1": "278 Spring Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -74.006934, 40.725572 ] } }
+,
+{ "type": "Feature", "id": 84, "properties": { "NAME": "New York City Police Museum", "TEL": "(212) 480-3100", "URL": "http:\/\/www.nycpolicemuseum.org\/", "ADRESS1": "100 Old Slip", "ADDRESS2": null, "CITY": "New York", "ZIP": 10038.0 }, "geometry": { "type": "Point", "coordinates": [ -74.008118, 40.703479 ] } }
+,
+{ "type": "Feature", "id": 85, "properties": { "NAME": "New York Hall of Science", "TEL": "(718) 699-0005", "URL": "http:\/\/www.nysci.org\/", "ADRESS1": "47-01 111th Street", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11368.0 }, "geometry": { "type": "Point", "coordinates": [ -73.851687, 40.747148 ] } }
+,
+{ "type": "Feature", "id": 86, "properties": { "NAME": "New York Historical Society", "TEL": "(212) 873-3400", "URL": "https:\/\/www.nyhistory.org\/web\/", "ADRESS1": "2 West 77th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10024.0 }, "geometry": { "type": "Point", "coordinates": [ -73.974258, 40.779274 ] } }
+,
+{ "type": "Feature", "id": 87, "properties": { "NAME": "New York Tolerance Center", "TEL": "(212) 697-1180", "URL": "http:\/\/www.kintera.org\/site\/pp.asp?c=fwLYKnN8LzH&b=242506", "ADRESS1": "50 E 42nd St", "ADDRESS2": null, "CITY": "New York", "ZIP": 10017.0 }, "geometry": { "type": "Point", "coordinates": [ -73.979124, 40.752423 ] } }
+,
+{ "type": "Feature", "id": 88, "properties": { "NAME": "New York Transit Museum", "TEL": "(718) 694-4915", "URL": "http:\/\/www.mta.info\/mta\/museum\/", "ADRESS1": "Boerum Pl. & Schermenhorn Street", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -73.990026, 40.690524 ] } }
+,
+{ "type": "Feature", "id": 89, "properties": { "NAME": "Nicholas Roerich Museum", "TEL": "(212) 864-7752", "URL": "http:\/\/www.roerich.org\/", "ADRESS1": "319 West 107 Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10025.0 }, "geometry": { "type": "Point", "coordinates": [ -73.969022, 40.802914 ] } }
+,
+{ "type": "Feature", "id": 90, "properties": { "NAME": "Noble Maritime Collection", "TEL": "(718) 447-6490", "URL": "http:\/\/www.noblemaritime.org\/", "ADRESS1": "1000 Richmond Terrace", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10301.0 }, "geometry": { "type": "Point", "coordinates": [ -74.101772, 40.644312 ] } }
+,
+{ "type": "Feature", "id": 91, "properties": { "NAME": "Old Stone House", "TEL": "(718) 768-3195", "URL": "http:\/\/www.theoldstonehouse.org\/", "ADRESS1": "326 5th Avenue", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11215.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984619, 40.672994 ] } }
+,
+{ "type": "Feature", "id": 92, "properties": { "NAME": "P.S. 1 Contemporary Art Center", "TEL": "(718) 784-2084", "URL": "http:\/\/www.ps1.org\/", "ADRESS1": "22-25 Jackson Ave.", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11101.0 }, "geometry": { "type": "Point", "coordinates": [ -73.946212, 40.74584 ] } }
+,
+{ "type": "Feature", "id": 93, "properties": { "NAME": "Paley Center For Media (formerly Museum Of Television & Radio)", "TEL": "(212) 621-6800", "URL": "http:\/\/www.paleycenter.org\/", "ADRESS1": "25 West 52 Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.977602, 40.760574 ] } }
+,
+{ "type": "Feature", "id": 94, "properties": { "NAME": "Queens Art Museum - Bulova Corporate Center", "TEL": "(516) 624-1910", "URL": "http:\/\/www.bdg.net\/properties\/1\/", "ADRESS1": "75-20 Astoria Blvd.", "ADDRESS2": null, "CITY": "Jackson Heights", "ZIP": 11386.0 }, "geometry": { "type": "Point", "coordinates": [ -73.893148, 40.764608 ] } }
+,
+{ "type": "Feature", "id": 95, "properties": { "NAME": "Queens County Farm Museum", "TEL": "(718) 347-3276", "URL": "http:\/\/www.queensfarm.org\/", "ADRESS1": "73-50 Little Neck Parkway", "ADDRESS2": null, "CITY": "Queens", "ZIP": 11004.0 }, "geometry": { "type": "Point", "coordinates": [ -73.725737, 40.74557 ] } }
+,
+{ "type": "Feature", "id": 96, "properties": { "NAME": "Queens Museum of Art", "TEL": "(718) 592-9700", "URL": "http:\/\/www.queensmuseum.org\/", "ADRESS1": "Queens Museum of Art", "ADDRESS2": "Flushing Meadows Corona Park", "CITY": "Queens", "ZIP": 11368.0 }, "geometry": { "type": "Point", "coordinates": [ -73.846763, 40.745843 ] } }
+,
+{ "type": "Feature", "id": 97, "properties": { "NAME": "Rose Center for Earth and Space (Hayden Planetarium)", "TEL": "(212) 769-5100", "URL": "http:\/\/www.haydenplanetarium.org\/index.php", "ADRESS1": "15 West 81st Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10024.0 }, "geometry": { "type": "Point", "coordinates": [ -73.972575, 40.78286 ] } }
+,
+{ "type": "Feature", "id": 98, "properties": { "NAME": "Rose Museum at Carnegie Hall", "TEL": "(212) 903-9629", "URL": "http:\/\/www.carnegiehall.org\/textSite\/the_basics\/art_museum_archives.html", "ADRESS1": "154 West 57th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -73.979911, 40.765013 ] } }
+,
+{ "type": "Feature", "id": 99, "properties": { "NAME": "Rubin Museum of Art", "TEL": "(212) 620-5000", "URL": "http:\/\/www.rmanyc.org\/", "ADRESS1": "150 West 17th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.997792, 40.740021 ] } }
+,
+{ "type": "Feature", "id": 100, "properties": { "NAME": "Sandy Ground Historical Society", "TEL": "(718) 317-5796", "URL": "http:\/\/statenislandusa.com\/pages\/sandy_ground.html", "ADRESS1": "1538 Woodrow Road", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -74.216503, 40.540979 ] } }
+,
+{ "type": "Feature", "id": 101, "properties": { "NAME": "Scandinavia House: The Nordic Center in America", "TEL": "(212) 879-9779", "URL": "http:\/\/www.scandinaviahouse.org\/", "ADRESS1": "58 Park Ave.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10016.0 }, "geometry": { "type": "Point", "coordinates": [ -73.980088, 40.749447 ] } }
+,
+{ "type": "Feature", "id": 102, "properties": { "NAME": "Schomburg Center for Research in Black Culture", "TEL": "(212) 491-2200", "URL": "http:\/\/www.nypl.org\/research\/sc\/sc.html", "ADRESS1": "515 Malcolm X Boulevard", "ADDRESS2": null, "CITY": "New York", "ZIP": 10037.0 }, "geometry": { "type": "Point", "coordinates": [ -73.940991, 40.814613 ] } }
+,
+{ "type": "Feature", "id": 103, "properties": { "NAME": "School of Visual Arts Museum", "TEL": "(212) 592-2145", "URL": "http:\/\/www.schoolofvisualarts.edu\/sa\/index.jsp?sid0=201&page_id=482&event_id=865", "ADRESS1": "209 E. 23rd St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10010.0 }, "geometry": { "type": "Point", "coordinates": [ -73.982242, 40.73876 ] } }
+,
+{ "type": "Feature", "id": 104, "properties": { "NAME": "Seguine Mansion", "TEL": "(718) 667-6042", "URL": "http:\/\/www.historichousetrust.org\/item.php?i_id=38", "ADRESS1": "440 Seguine Avenue", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10307.0 }, "geometry": { "type": "Point", "coordinates": [ -74.197589, 40.515215 ] } }
+,
+{ "type": "Feature", "id": 105, "properties": { "NAME": "Skyscraper Museum", "TEL": "(212) 968-1961", "URL": "http:\/\/www.skyscraper.org\/home.htm", "ADRESS1": "39 Battery Place", "ADDRESS2": null, "CITY": "New York", "ZIP": 10280.0 }, "geometry": { "type": "Point", "coordinates": [ -74.017568, 40.705658 ] } }
+,
+{ "type": "Feature", "id": 106, "properties": { "NAME": "Solomon R. Guggenheim Museum", "TEL": "(212) 423-3500", "URL": "http:\/\/www.guggenheim.org\/", "ADRESS1": "1071 Fifth Avenue", "ADDRESS2": null, "CITY": "New York", "ZIP": 10128.0 }, "geometry": { "type": "Point", "coordinates": [ -73.958911, 40.78301 ] } }
+,
+{ "type": "Feature", "id": 107, "properties": { "NAME": "Sony Wonder Technology Lab", "TEL": "(212) 833-8100", "URL": "http:\/\/wondertechlab.sony.com\/", "ADRESS1": "550 Madison Ave", "ADDRESS2": "Sony Plaza", "CITY": "New York", "ZIP": 10022.0 }, "geometry": { "type": "Point", "coordinates": [ -73.973508, 40.761471 ] } }
+,
+{ "type": "Feature", "id": 108, "properties": { "NAME": "South Street Seaport Museum", "TEL": "(212) 748-8600", "URL": "http:\/\/www.southstreetseaportmuseum.org\/", "ADRESS1": "12 Fulton Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10038.0 }, "geometry": { "type": "Point", "coordinates": [ -74.003721, 40.706604 ] } }
+,
+{ "type": "Feature", "id": 109, "properties": { "NAME": "Staten Island Children's Museum", "TEL": "(718) 273-2060", "URL": "http:\/\/www.statenislandkids.org\/", "ADRESS1": "1000 Richmond Terr.", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10301.0 }, "geometry": { "type": "Point", "coordinates": [ -74.101892, 40.642709 ] } }
+,
+{ "type": "Feature", "id": 110, "properties": { "NAME": "Staten Island Museum \/ Staten Island Institute of Arts & Sciences", "TEL": "(718) 727-1135", "URL": "http:\/\/www.statenislandmuseum.org\/", "ADRESS1": "75 Stuyvesant Pl.", "ADDRESS2": null, "CITY": "Staten Island", "ZIP": 10301.0 }, "geometry": { "type": "Point", "coordinates": [ -74.077665, 40.64437 ] } }
+,
+{ "type": "Feature", "id": 111, "properties": { "NAME": "Studio Museum in Harlem", "TEL": "(212) 864-4500", "URL": "http:\/\/www.studiomuseum.org", "ADRESS1": "144 West 125th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10027.0 }, "geometry": { "type": "Point", "coordinates": [ -73.947726, 40.808246 ] } }
+,
+{ "type": "Feature", "id": 112, "properties": { "NAME": "Tenement Museum", "TEL": "(212) 431-0233", "URL": "http:\/\/www.tenement.org\/", "ADRESS1": "108 Orchard Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10002.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989679, 40.718688 ] } }
+,
+{ "type": "Feature", "id": 113, "properties": { "NAME": "The Freakatorium, El Museo Loco", "TEL": "(212) 375-0475", "URL": "http:\/\/www.freakatorium.com\/", "ADRESS1": "57 Clinton St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10002.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985014, 40.719617 ] } }
+,
+{ "type": "Feature", "id": 114, "properties": { "NAME": "The Jazz Museum in Harlem", "TEL": "(212) 348-8300", "URL": "http:\/\/www.jazzmuseuminharlem.org\/", "ADRESS1": "104 E. 126th Street", "ADDRESS2": "Suite 2D", "CITY": "New York", "ZIP": 10035.0 }, "geometry": { "type": "Point", "coordinates": [ -73.938059, 40.805277 ] } }
+,
+{ "type": "Feature", "id": 115, "properties": { "NAME": "The Jewish Children's Museum", "TEL": "(718) 467-0600", "URL": "http:\/\/www.jcmonline.org\/", "ADRESS1": "792 Eastern Pkwy", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11213.0 }, "geometry": { "type": "Point", "coordinates": [ -73.941962, 40.668912 ] } }
+,
+{ "type": "Feature", "id": 116, "properties": { "NAME": "The Museum at FIT", "TEL": "(212) 217-5800", "URL": "http:\/\/www.fitnyc.edu\/306.asp", "ADRESS1": "7th Avenue at West 27th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.99393, 40.747009 ] } }
+,
+{ "type": "Feature", "id": 117, "properties": { "NAME": "Theodore Roosevelt Birthplace", "TEL": "(212) 260-1616", "URL": "http:\/\/www.nps.gov\/thrb\/index.htm", "ADRESS1": "28 East 20th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989041, 40.738642 ] } }
+,
+{ "type": "Feature", "id": 118, "properties": { "NAME": "Ukrainian Museum", "TEL": "(212) 228-0110", "URL": "http:\/\/www.ukrainianmuseum.org\/", "ADRESS1": "222 East 6th Street", "ADDRESS2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989757, 40.727677 ] } }
+,
+{ "type": "Feature", "id": 119, "properties": { "NAME": "Valentine-Varian House", "TEL": "(718) 881-8900", "URL": "http:\/\/www.museumregister.com\/US\/NewYork\/Bronx\/ValentineVarianHouse\/Info.html", "ADRESS1": "3266 Bainbridge Ave.", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10467.0 }, "geometry": { "type": "Point", "coordinates": [ -73.879425, 40.87738 ] } }
+,
+{ "type": "Feature", "id": 120, "properties": { "NAME": "Van Cortlandt House Museum", "TEL": "(718) 543-3344", "URL": "http:\/\/www.vancortlandthouse.org\/", "ADRESS1": "VAN CRTLANDT MANSION", "ADDRESS2": "Broadway at West 246th Street", "CITY": "Bronx", "ZIP": 10471.0 }, "geometry": { "type": "Point", "coordinates": [ -73.894823, 40.891112 ] } }
+,
+{ "type": "Feature", "id": 121, "properties": { "NAME": "Wave Hill", "TEL": "(718) 549-3200", "URL": "http:\/\/wavehill.org\/visit\/", "ADRESS1": "West 249th Street & Independence Avenue", "ADDRESS2": null, "CITY": "Bronx", "ZIP": 10471.0 }, "geometry": { "type": "Point", "coordinates": [ -73.911654, 40.897885 ] } }
+,
+{ "type": "Feature", "id": 122, "properties": { "NAME": "Whitney Museum of American Art", "TEL": "1 (800) WHITNEY", "URL": "http:\/\/www.whitney.org\/", "ADRESS1": "945 Madison Ave.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10021.0 }, "geometry": { "type": "Point", "coordinates": [ -73.963834, 40.773408 ] } }
+,
+{ "type": "Feature", "id": 123, "properties": { "NAME": "Wyckoff Farmhouse Museum", "TEL": "(718) 629-5400", "URL": "http:\/\/www.wyckoffassociation.org\/", "ADRESS1": "5816 Clarendon Ave", "ADDRESS2": null, "CITY": "Brooklyn", "ZIP": 11203.0 }, "geometry": { "type": "Point", "coordinates": [ -73.920796, 40.644341 ] } }
+,
+{ "type": "Feature", "id": 124, "properties": { "NAME": "Leo Baeck Institute", "TEL": "(212) 744-6400", "URL": "http:\/\/www.lbi.org\/", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993764, 40.738028 ] } }
+,
+{ "type": "Feature", "id": 125, "properties": { "NAME": "American Sephardi Federation \/ Sephardic House", "TEL": "(212) 294-8350", "URL": "http:\/\/www.americansephardifederation.org\/", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993886, 40.738078 ] } }
+,
+{ "type": "Feature", "id": 126, "properties": { "NAME": "YIVO Institute for Jewish Research", "TEL": "(212) 246-6860", "URL": "http:\/\/www.yivoinstitute.org\/", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993794, 40.73796 ] } }
+,
+{ "type": "Feature", "id": 127, "properties": { "NAME": "American Jewish Historical Society", "TEL": "(212) 294-6160", "URL": "http:\/\/www.ajhs.org\/", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993929, 40.738016 ] } }
+,
+{ "type": "Feature", "id": 128, "properties": { "NAME": "Yeshiva University Museum", "TEL": "(212) 294-8330", "URL": "http:\/\/www.yumuseum.org\/", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993817, 40.738046 ] } }
+,
+{ "type": "Feature", "id": 129, "properties": { "NAME": "Center For Jewish History", "TEL": "(212) 294-8301", "URL": "http:\/\/www.cjh.org", "ADRESS1": "15 W. 16th St.", "ADDRESS2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993869, 40.737987 ] } }
+
+]
+}

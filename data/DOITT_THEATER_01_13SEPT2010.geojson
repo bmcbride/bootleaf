@@ -1,0 +1,240 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "NAME": "45th Street Theater", "TEL": "(212) 352-3101", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/45th-street-theatre_2278\/", "ADDRESS1": "354 West 45th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.990618, 40.759851 ] } }
+,
+{ "type": "Feature", "id": 1, "properties": { "NAME": "47th Street Theater", "TEL": "(800) 775-1617", "URL": "http:\/\/www.bestofoffbroadway.com\/theaters\/47streettheatre.html", "ADDRESS1": "304 West 47th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988106, 40.760471 ] } }
+,
+{ "type": "Feature", "id": 2, "properties": { "NAME": "59E59", "TEL": "(212) 753-5959", "URL": "http:\/\/www.59e59.org\/", "ADDRESS1": "59 East 59th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10022.0 }, "geometry": { "type": "Point", "coordinates": [ -73.970385, 40.763399 ] } }
+,
+{ "type": "Feature", "id": 3, "properties": { "NAME": "Acorn Theater", "TEL": "(212) 279-4200", "URL": "http:\/\/www.theatrerow.org\/theacorn.htm", "ADDRESS1": "410 West 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993324, 40.758537 ] } }
+,
+{ "type": "Feature", "id": 4, "properties": { "NAME": "Al Hirschfeld Theater", "TEL": "(212) 239-6200", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/alhirschfeldtheater\/theater.php", "ADDRESS1": "302 W 45th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989214, 40.759261 ] } }
+,
+{ "type": "Feature", "id": 5, "properties": { "NAME": "Ambassador Theatre", "TEL": "(800) 432-7565", "URL": "http:\/\/www.shubertorganization.com\/theatres\/ambassador.asp", "ADDRESS1": "219 West 49th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985001, 40.761259 ] } }
+,
+{ "type": "Feature", "id": 6, "properties": { "NAME": "American Airlines Theatre", "TEL": "(212) 719-9393", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/americanairlinestheater\/theater.php", "ADDRESS1": "227 W 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988049, 40.756779 ] } }
+,
+{ "type": "Feature", "id": 7, "properties": { "NAME": "Apollo Theater", "TEL": "(212) 531-5300", "URL": "http:\/\/www.apollotheater.org\/", "ADDRESS1": "253 West 125th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10027.0 }, "geometry": { "type": "Point", "coordinates": [ -73.95004, 40.810037 ] } }
+,
+{ "type": "Feature", "id": 8, "properties": { "NAME": "Arclight Theatre", "TEL": "(212) 595-0355", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/arclight.htm", "ADDRESS1": "152 W 71st St", "ADDRES2": null, "CITY": "New York", "ZIP": 10023.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98121, 40.77712 ] } }
+,
+{ "type": "Feature", "id": 9, "properties": { "NAME": "Astor Place Theatre", "TEL": "(212) 254-4370", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/astorplacetheater\/theater.php", "ADDRESS1": "434 Lafayette St", "ADDRES2": "Frnt", "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992344, 40.729377 ] } }
+,
+{ "type": "Feature", "id": 10, "properties": { "NAME": "Atlantic Theatre", "TEL": "(212) 645-1242", "URL": "http:\/\/www.atlantictheater.org\/", "ADDRESS1": "336 W 20th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -74.001554, 40.743888 ] } }
+,
+{ "type": "Feature", "id": 11, "properties": { "NAME": "August Wilson Theatre", "TEL": "(212) 239-6200", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/augustwilsontheater\/theater.php", "ADDRESS1": "245 W 52nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.9842, 40.763372 ] } }
+,
+{ "type": "Feature", "id": 12, "properties": { "NAME": "Barrow Street Theatre", "TEL": "(212) 243-6262", "URL": "http:\/\/www.barrowstreettheatre.com\/index.asp", "ADDRESS1": "27 Barrow St", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.003088, 40.732329 ] } }
+,
+{ "type": "Feature", "id": 13, "properties": { "NAME": "Beacon Theatre", "TEL": "(212) 465-6500", "URL": "http:\/\/www.beacontheatre.com\/", "ADDRESS1": "2124 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10023.0 }, "geometry": { "type": "Point", "coordinates": [ -73.980993, 40.780561 ] } }
+,
+{ "type": "Feature", "id": 14, "properties": { "NAME": "Belasco Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/belasco.asp", "ADDRESS1": "111 W 44th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983786, 40.756653 ] } }
+,
+{ "type": "Feature", "id": 15, "properties": { "NAME": "Bernard B. Jacobs Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/bernard_b_jacobs.asp", "ADDRESS1": "242 W 45th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987724, 40.758629 ] } }
+,
+{ "type": "Feature", "id": 16, "properties": { "NAME": "Bleecker Street Theater", "TEL": "(212) 260-8250", "URL": "http:\/\/www.45bleecker.com\/", "ADDRESS1": "45 Bleecker Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.994175, 40.725953 ] } }
+,
+{ "type": "Feature", "id": 17, "properties": { "NAME": "Booth Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/booth.asp", "ADDRESS1": "222 W 45th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987088, 40.758373 ] } }
+,
+{ "type": "Feature", "id": 18, "properties": { "NAME": "Broadhurst Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/broadhurst.asp", "ADDRESS1": "235 W 44th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987623, 40.758264 ] } }
+,
+{ "type": "Feature", "id": 19, "properties": { "NAME": "Broadway Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/broadway.asp", "ADDRESS1": "1681 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983351, 40.76327 ] } }
+,
+{ "type": "Feature", "id": 20, "properties": { "NAME": "Brooks Atkinson Theatre", "TEL": "(212) 719-4099", "URL": "http:\/\/www.brooksatkinsontheater.com\/", "ADDRESS1": "256 W 47th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986983, 40.759958 ] } }
+,
+{ "type": "Feature", "id": 21, "properties": { "NAME": "Castillo Theater", "TEL": "(212) 941-9400", "URL": "http:\/\/www.castillo.org\/", "ADDRESS1": "543 West 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.996964, 40.760605 ] } }
+,
+{ "type": "Feature", "id": 22, "properties": { "NAME": "Century Center For the Performing Arts", "TEL": "(212) 239-6200", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/century-center-for-the-performing-arts_59\/", "ADDRESS1": "111 E 15th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98889, 40.735167 ] } }
+,
+{ "type": "Feature", "id": 23, "properties": { "NAME": "Cherry Lane Theatre", "TEL": "(212) 989-2020¿", "URL": "http:\/\/cherrylanetheatre.org\/", "ADDRESS1": "38 Commerce Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.005311, 40.731262 ] } }
+,
+{ "type": "Feature", "id": 24, "properties": { "NAME": "Circle In the Square Theatre", "TEL": "(212) 307-0388", "URL": "http:\/\/www.circlesquare.org\/", "ADDRESS1": "1633 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984548, 40.762029 ] } }
+,
+{ "type": "Feature", "id": 25, "properties": { "NAME": "Connelly Theater", "TEL": "(212) 982-2287", "URL": "http:\/\/www.connellycenter.org\/theatre.htm", "ADDRESS1": "220 E 4th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10009.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983612, 40.723575 ] } }
+,
+{ "type": "Feature", "id": 26, "properties": { "NAME": "Cort Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/cort.asp", "ADDRESS1": "138 W 48th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983056, 40.759117 ] } }
+,
+{ "type": "Feature", "id": 27, "properties": { "NAME": "Daryl Roth Theatre", "TEL": "(212) 375-1110", "URL": "http:\/\/www.darylroththeatre.com\/", "ADDRESS1": "101 E 15th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98937, 40.735283 ] } }
+,
+{ "type": "Feature", "id": 28, "properties": { "NAME": "Duke Theatre", "TEL": "(646) 223-3010", "URL": "http:\/\/www.new42.org\/duke\/duke_home.aspx", "ADDRESS1": "229 W. 42nd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988172, 40.756823 ] } }
+,
+{ "type": "Feature", "id": 29, "properties": { "NAME": "Ed Sullivan Theater", "TEL": "(212) 975-4321", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/edsullivantheater\/theater.php", "ADDRESS1": "1697 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.982898, 40.763807 ] } }
+,
+{ "type": "Feature", "id": 30, "properties": { "NAME": "Ethel Barrymore Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/ethel_barrymore.asp", "ADDRESS1": "243 West 47th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986157, 40.7601 ] } }
+,
+{ "type": "Feature", "id": 31, "properties": { "NAME": "Eugene O'Neill Theater", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.ibdb.com\/venue.php?id=1158", "ADDRESS1": "230 W 49th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985763, 40.761078 ] } }
+,
+{ "type": "Feature", "id": 32, "properties": { "NAME": "Gene Frankel Theatre Workshop", "TEL": "(212) 777-1767", "URL": "http:\/\/www.genefrankel.com\/presentation_content.html", "ADDRESS1": "24 Bond St", "ADDRES2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993639, 40.72667 ] } }
+,
+{ "type": "Feature", "id": 33, "properties": { "NAME": "Gerald Schoenfeld Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/gerald_schoenfeld.asp", "ADDRESS1": "236 W 45th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987428, 40.758506 ] } }
+,
+{ "type": "Feature", "id": 34, "properties": { "NAME": "Gershwin Theatre", "TEL": "(212) 586-6510", "URL": "http:\/\/www.gershwintheatre.com\/", "ADDRESS1": "222 W 51st St", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985158, 40.762421 ] } }
+,
+{ "type": "Feature", "id": 35, "properties": { "NAME": "Gramercy Arts Theatre", "TEL": "(212) 889-2850", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/gramercy-arts-theatre_657\/", "ADDRESS1": "138 E 27th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10016.0 }, "geometry": { "type": "Point", "coordinates": [ -73.982578, 40.741653 ] } }
+,
+{ "type": "Feature", "id": 36, "properties": { "NAME": "Greenwich Street Theater", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/greenwich-street-theatre_196\/", "ADDRESS1": "547 Greenwich St", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.008623, 40.727293 ] } }
+,
+{ "type": "Feature", "id": 37, "properties": { "NAME": "Harold Clurman Theater", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/harold-clurman-theater_695\/", "ADDRESS1": "412 W 42nd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993423, 40.758536 ] } }
+,
+{ "type": "Feature", "id": 38, "properties": { "NAME": "Helen Hayes Theater", "TEL": "(212) 944-9450", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/hayes.htm", "ADDRESS1": "240 W 44th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987839, 40.757864 ] } }
+,
+{ "type": "Feature", "id": 39, "properties": { "NAME": "Henry Miller Theatre", "TEL": "(212) 719-1300", "URL": "http:\/\/www.roundabouttheatre.org\/hmt\/", "ADDRESS1": "124 W 43rd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984714, 40.755566 ] } }
+,
+{ "type": "Feature", "id": 40, "properties": { "NAME": "Here Theater", "TEL": "(212) 352-3101", "URL": "http:\/\/www.here.org", "ADDRESS1": "145 6th Avenue", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.004946, 40.725128 ] } }
+,
+{ "type": "Feature", "id": 41, "properties": { "NAME": "Hilton Theatre", "TEL": "(212) 556-4750", "URL": "http:\/\/www.hiltontheatre.com\/home.php?size=1280", "ADDRESS1": "214 W 43rd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987619, 40.756593 ] } }
+,
+{ "type": "Feature", "id": 42, "properties": { "NAME": "Imperial Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/imperial.asp", "ADDRESS1": "249 W 45th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987341, 40.758949 ] } }
+,
+{ "type": "Feature", "id": 43, "properties": { "NAME": "Jane Street Theatre", "TEL": "(212) 924-8404", "URL": "http:\/\/www.nyc.com\/arts__attractions\/jane_street_theatre.98884\/editorial_review.aspx", "ADDRESS1": "113 Jane St", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.009324, 40.738299 ] } }
+,
+{ "type": "Feature", "id": 44, "properties": { "NAME": "John Golden Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/john_golden.asp", "ADDRESS1": "252 W 45th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987965, 40.75872 ] } }
+,
+{ "type": "Feature", "id": 45, "properties": { "NAME": "Julia Miles Theater", "TEL": "(212) 757-3900", "URL": "http:\/\/www.womensproject.org\/julia_miles_theater.htm", "ADDRESS1": "424 W 55th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987899, 40.766886 ] } }
+,
+{ "type": "Feature", "id": 46, "properties": { "NAME": "Kraine Theater", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.httheater.org\/rentersKRAINE.html", "ADDRESS1": "85 E 4th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.9898, 40.72659 ] } }
+,
+{ "type": "Feature", "id": 47, "properties": { "NAME": "La Mama Experimental Theatre", "TEL": "(212) 475-7710", "URL": "http:\/\/www.lamama.org\/", "ADDRESS1": "74A East 4th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.990202, 40.726328 ] } }
+,
+{ "type": "Feature", "id": 48, "properties": { "NAME": "Lamb's Theatre", "TEL": "(212) 302-7847", "URL": "http:\/\/www.lambstheatre.org\/", "ADDRESS1": "130 W 44th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984584, 40.756494 ] } }
+,
+{ "type": "Feature", "id": 49, "properties": { "NAME": "Laura Pels Theater", "TEL": "(212) 719-9393", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/venue.php?t=laurapels", "ADDRESS1": "111 W 46th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98244, 40.757868 ] } }
+,
+{ "type": "Feature", "id": 50, "properties": { "NAME": "Lion Theatre", "TEL": "(212) 714-2442", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/venue.php?t=lion", "ADDRESS1": "410 W 42nd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.99343, 40.758456 ] } }
+,
+{ "type": "Feature", "id": 51, "properties": { "NAME": "Longacre Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/longacre.asp", "ADDRESS1": "220 W 48th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985973, 40.76035 ] } }
+,
+{ "type": "Feature", "id": 52, "properties": { "NAME": "Lucille Lortel Theatre", "TEL": "(212) 924-8782", "URL": "http:\/\/www.lortel.org\/llt_theater\/", "ADDRESS1": "121 Christopher St", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.005744, 40.733356 ] } }
+,
+{ "type": "Feature", "id": 53, "properties": { "NAME": "Lunt-Fontanne Theatre", "TEL": "(212) 575-9200", "URL": "http:\/\/www.luntfontannetheatre.com\/", "ADDRESS1": "205 W 46th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985919, 40.759181 ] } }
+,
+{ "type": "Feature", "id": 54, "properties": { "NAME": "Lyceum Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/lyceum.asp", "ADDRESS1": "149 W 45th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98453, 40.757775 ] } }
+,
+{ "type": "Feature", "id": 55, "properties": { "NAME": "Majestic Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/majestic.asp", "ADDRESS1": "245 W 44th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988012, 40.758413 ] } }
+,
+{ "type": "Feature", "id": 56, "properties": { "NAME": "Manhattan Ensemble Theatre", "TEL": "(212) 925-1900", "URL": "http:\/\/www.met.com\/", "ADDRESS1": "55 Mercer St", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.001209, 40.721988 ] } }
+,
+{ "type": "Feature", "id": 57, "properties": { "NAME": "Manhattan Theatre Source", "TEL": "(212) 260-4698", "URL": "http:\/\/www.theatresource.org\/index.htm", "ADDRESS1": "177 MacDougal St", "ADDRES2": "Frnt", "CITY": "New York", "ZIP": 10011.0 }, "geometry": { "type": "Point", "coordinates": [ -73.998405, 40.732828 ] } }
+,
+{ "type": "Feature", "id": 58, "properties": { "NAME": "Marquis Theatre", "TEL": "(212) 382-0100", "URL": "http:\/\/www.marquistheatre.com\/", "ADDRESS1": "1535 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985897, 40.758512 ] } }
+,
+{ "type": "Feature", "id": 59, "properties": { "NAME": "Mazer Theatre", "TEL": "(212) 780-2300", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/mazertheater\/location.php", "ADDRESS1": "197 E Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10002.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988352, 40.713981 ] } }
+,
+{ "type": "Feature", "id": 60, "properties": { "NAME": "McGinn Cazale Theater", "TEL": "(212) 787-3242", "URL": "http:\/\/www.theatermania.com\/broadway\/theaters\/mcginncazale-theater_186\/", "ADDRESS1": "2162 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10024.0 }, "geometry": { "type": "Point", "coordinates": [ -73.980555, 40.781807 ] } }
+,
+{ "type": "Feature", "id": 61, "properties": { "NAME": "Metropolitan Playhouse", "TEL": "(212) 995-8410", "URL": "http:\/\/www.metropolitanplayhouse.org\/", "ADDRESS1": "220 E 4th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10009.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983661, 40.723498 ] } }
+,
+{ "type": "Feature", "id": 62, "properties": { "NAME": "Michael Schimmel Center for the Arts at Pace University", "TEL": "(800) 874-7223", "URL": "http:\/\/www.pace.edu\/page.cfm?doc_id=26266", "ADDRESS1": "3 Spruce Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10038.0 }, "geometry": { "type": "Point", "coordinates": [ -74.005097, 40.711357 ] } }
+,
+{ "type": "Feature", "id": 63, "properties": { "NAME": "Miller Theatre at Columbia University", "TEL": "(212) 854-7799", "URL": "http:\/\/www.millertheatre.com\/", "ADDRESS1": "2960 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10027.0 }, "geometry": { "type": "Point", "coordinates": [ -73.96346, 40.807587 ] } }
+,
+{ "type": "Feature", "id": 64, "properties": { "NAME": "Minskoff Theatre", "TEL": "(212) 869-0550", "URL": "http:\/\/www.minskofftheatre.com\/", "ADDRESS1": "1515 Broadway", "ADDRES2": "Lbby", "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986054, 40.757923 ] } }
+,
+{ "type": "Feature", "id": 65, "properties": { "NAME": "Music Box Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/music_box.asp", "ADDRESS1": "239 W 45th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987142, 40.758887 ] } }
+,
+{ "type": "Feature", "id": 66, "properties": { "NAME": "Nederlander Theater", "TEL": "(212) 921-8000", "URL": "http:\/\/nederlandertheatre.com\/", "ADDRESS1": "208 W 41st St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988309, 40.755487 ] } }
+,
+{ "type": "Feature", "id": 67, "properties": { "NAME": "Neil Simon Theatre", "TEL": "(212) 757-8646", "URL": "http:\/\/www.neilsimontheatre.com\/", "ADDRESS1": "250 W 52nd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984528, 40.763018 ] } }
+,
+{ "type": "Feature", "id": 68, "properties": { "NAME": "New Amsterdam Theater", "TEL": "(212) 282-2900", "URL": "http:\/\/www.newamsterdamtheatre.net\/index.htm", "ADDRESS1": "214 W 42nd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987763, 40.75612 ] } }
+,
+{ "type": "Feature", "id": 69, "properties": { "NAME": "New Victory Theatre", "TEL": "(646) 223-3010", "URL": "http:\/\/www.newvictory.org\/", "ADDRESS1": "209 West 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987464, 40.756557 ] } }
+,
+{ "type": "Feature", "id": 70, "properties": { "NAME": "New World Stages", "TEL": "(646) 871-1730", "URL": "http:\/\/www.newworldstages.com\/", "ADDRESS1": "340 West 50th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987867, 40.762374 ] } }
+,
+{ "type": "Feature", "id": 71, "properties": { "NAME": "Next Stage Theater", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.newyorkcitytheatre.com\/theaters\/nextstagetheater\/location.php", "ADDRESS1": "312 West 11th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.006589, 40.735621 ] } }
+,
+{ "type": "Feature", "id": 72, "properties": { "NAME": "Nokia Theatre Times Square", "TEL": "(212) 930-1959", "URL": "http:\/\/nokiatheatrenyc.com\/", "ADDRESS1": "1515 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986218, 40.757678 ] } }
+,
+{ "type": "Feature", "id": 73, "properties": { "NAME": "Ohio Theatre", "TEL": "(212) 966-4844", "URL": "http:\/\/www.sohothinktank.org\/index.html", "ADDRESS1": "66 Wooster Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -74.001611, 40.72328 ] } }
+,
+{ "type": "Feature", "id": 74, "properties": { "NAME": "Ontological Hysteric Theater", "TEL": "(212) 941-8911", "URL": "http:\/\/www.ontological.com\/", "ADDRESS1": "260 W Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.005671, 40.720547 ] } }
+,
+{ "type": "Feature", "id": 75, "properties": { "NAME": "Orpheum Theater", "TEL": "(212) 828-9738", "URL": "http:\/\/www.orpheum-theater.com\/", "ADDRESS1": "1538 3rd Ave", "ADDRES2": null, "CITY": "New York", "ZIP": 10028.0 }, "geometry": { "type": "Point", "coordinates": [ -73.954009, 40.779455 ] } }
+,
+{ "type": "Feature", "id": 76, "properties": { "NAME": "P.S.122 Performance Space", "TEL": "(212) 477-5288", "URL": "http:\/\/www.ps122.org\/", "ADDRESS1": "150 1st Ave", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984537, 40.728218 ] } }
+,
+{ "type": "Feature", "id": 77, "properties": { "NAME": "Palace Theatre", "TEL": "(212) 730-8200", "URL": "http:\/\/www.palacetheatreonbroadway.com\/", "ADDRESS1": "1564 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98447, 40.75889 ] } }
+,
+{ "type": "Feature", "id": 78, "properties": { "NAME": "Pearl Theatre", "TEL": "(212) 505-3401", "URL": "http:\/\/www.pearltheatre.org\/", "ADDRESS1": "80 Saint Marks Pl", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.9858, 40.727559 ] } }
+,
+{ "type": "Feature", "id": 79, "properties": { "NAME": "People's Improv Theater", "TEL": "(212) 563-7488", "URL": "http:\/\/www.thepit-nyc.com\/", "ADDRESS1": "154 W 29th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.99229, 40.747367 ] } }
+,
+{ "type": "Feature", "id": 80, "properties": { "NAME": "Playwrights Horizons Theater School", "TEL": "(212) 529-8720", "URL": "http:\/\/www.phtschool.org\/", "ADDRESS1": "440 Lafayette St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992221, 40.729489 ] } }
+,
+{ "type": "Feature", "id": 81, "properties": { "NAME": "Queens Theatre in the Park", "TEL": "(718) 760-0064", "URL": "http:\/\/www.queenstheatre.org\/web\/", "ADDRESS1": "Flushing Meadows Corona Park", "ADDRES2": null, "CITY": "Queens", "ZIP": 11352.0 }, "geometry": { "type": "Point", "coordinates": [ -73.844552, 40.743979 ] } }
+,
+{ "type": "Feature", "id": 82, "properties": { "NAME": "Rattlestick Theater", "TEL": "(212) 627-2556", "URL": "http:\/\/www.rattlestick.org\/", "ADDRESS1": "224 Waverly Pl", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.002037, 40.736174 ] } }
+,
+{ "type": "Feature", "id": 83, "properties": { "NAME": "Richard Rodgers Theatre", "TEL": "(212) 221-1211", "URL": "http:\/\/www.richardrodgerstheatre.com\/", "ADDRESS1": "226 W 46th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986742, 40.759038 ] } }
+,
+{ "type": "Feature", "id": 84, "properties": { "NAME": "Samuel J. Friedman Theatre (formerly the Biltmore)", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.theatermania.com\/broadway\/theaters\/samuel-j-friedman-theatre_7420\/", "ADDRESS1": "261 W 47th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.986745, 40.760375 ] } }
+,
+{ "type": "Feature", "id": 85, "properties": { "NAME": "Second Stage Theater", "TEL": "(212) 246-4422", "URL": "http:\/\/www.2st.com\/", "ADDRESS1": "307 W 43rd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989738, 40.75824 ] } }
+,
+{ "type": "Feature", "id": 86, "properties": { "NAME": "Shubert Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/shubert.asp", "ADDRESS1": "225 W 44th St", "ADDRES2": "Lbby", "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.987239, 40.758138 ] } }
+,
+{ "type": "Feature", "id": 87, "properties": { "NAME": "Snapple Theater Center", "TEL": "(212) 921-7862", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/venue.php?t=snapple", "ADDRESS1": "1627 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984429, 40.761411 ] } }
+,
+{ "type": "Feature", "id": 88, "properties": { "NAME": "SoHo Playhouse", "TEL": "(212) 691-1555", "URL": "http:\/\/www.sohoplayhouse.com\/", "ADDRESS1": "15 Vandam St", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.004362, 40.726536 ] } }
+,
+{ "type": "Feature", "id": 89, "properties": { "NAME": "SoHo Repertory Theatre", "TEL": "(212) 941-8632", "URL": "http:\/\/www.sohorep.org\/", "ADDRESS1": "86 Franklin St", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.004729, 40.71823 ] } }
+,
+{ "type": "Feature", "id": 90, "properties": { "NAME": "St. James Theatre", "TEL": "(888) VISIT-NY", "URL": "http:\/\/www.stjames-theater.com\/?gclid=CPWjnLTO9p0CFcZM5QodoUaupw", "ADDRESS1": "246 W 44th St", "ADDRES2": "Lbby", "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988161, 40.757998 ] } }
+,
+{ "type": "Feature", "id": 91, "properties": { "NAME": "Studio 54 Theatre", "TEL": "(212) 719-1300", "URL": "http:\/\/www.roundabouttheatre.org\/ot_54.htm", "ADDRESS1": "254 W 54th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983771, 40.764354 ] } }
+,
+{ "type": "Feature", "id": 92, "properties": { "NAME": "Swedish Cottage Marionette Theater", "TEL": "(212) 988-9093", "URL": "http:\/\/www.nycgovparks.org\/sub_about\/parks_divisions\/historic_houses\/hh_swedish_cottage.html", "ADDRESS1": "West Side at 79th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10025.0 }, "geometry": { "type": "Point", "coordinates": [ -73.970376, 40.779966 ] } }
+,
+{ "type": "Feature", "id": 93, "properties": { "NAME": "Tenement Theatre", "TEL": "(212) 431-0233", "URL": "http:\/\/www.tenement.org\/prog_theater.html", "ADDRESS1": "97 Orchard Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10002.0 }, "geometry": { "type": "Point", "coordinates": [ -73.990278, 40.718548 ] } }
+,
+{ "type": "Feature", "id": 94, "properties": { "NAME": "The Beckett Theatre", "TEL": "(212) 714-2442", "URL": "http:\/\/www.theatrerow.org\/thebeckett.htm", "ADDRESS1": "410 W 42 St", "ADDRES2": "9 Ave", "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993741, 40.758685 ] } }
+,
+{ "type": "Feature", "id": 95, "properties": { "NAME": "The Cherry Pit", "TEL": "(212) 633-6533", "URL": "http:\/\/www.cherrylanetheatre.org\/", "ADDRESS1": "155 Bank St", "ADDRES2": null, "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.009022, 40.736458 ] } }
+,
+{ "type": "Feature", "id": 96, "properties": { "NAME": "The Little Shubert theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/little_shubert.asp", "ADDRESS1": "422 West 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993918, 40.758553 ] } }
+,
+{ "type": "Feature", "id": 97, "properties": { "NAME": "The Public Theater", "TEL": "(212) 260-2400", "URL": "http:\/\/www.publictheater.org\/", "ADDRESS1": "425 Lafayette St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.991774, 40.728923 ] } }
+,
+{ "type": "Feature", "id": 98, "properties": { "NAME": "The Secret Theatre", "TEL": "(718) 392-0722", "URL": "http:\/\/www.secrettheatre.com\/", "ADDRESS1": "44-02 23rd St.", "ADDRES2": null, "CITY": "Long Island City", "ZIP": 11101.0 }, "geometry": { "type": "Point", "coordinates": [ -73.944821, 40.748906 ] } }
+,
+{ "type": "Feature", "id": 99, "properties": { "NAME": "The Upright Citizens Brigade Theatre", "TEL": "(212) 366-9176", "URL": "http:\/\/www.ucbtheatre.com\/", "ADDRESS1": "307 W 26th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.997387, 40.747654 ] } }
+,
+{ "type": "Feature", "id": 100, "properties": { "NAME": "The Walter Reade Theater at Lincoln Center", "TEL": "(212) 875-5600", "URL": "http:\/\/www.filmlinc.com\/wrt\/wrt.html", "ADDRESS1": "70 Lincoln Center Plaza", "ADDRES2": null, "CITY": "New York", "ZIP": 10023.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984244, 40.774102 ] } }
+,
+{ "type": "Feature", "id": 101, "properties": { "NAME": "The Zipper Theater", "TEL": "(212) 563-0480", "URL": "http:\/\/www.yelp.com\/biz\/the-zipper-theater-new-york", "ADDRESS1": "336 W 37th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10018.0 }, "geometry": { "type": "Point", "coordinates": [ -73.994034, 40.754675 ] } }
+,
+{ "type": "Feature", "id": 102, "properties": { "NAME": "Theater For The New City", "TEL": "(212) 254-1109", "URL": "http:\/\/www.theaterforthenewcity.net\/", "ADDRESS1": "155 1st Avenue", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.98498, 40.728693 ] } }
+,
+{ "type": "Feature", "id": 103, "properties": { "NAME": "Theatre @ St. Clement's", "TEL": "(212) 246-7277", "URL": "http:\/\/www.stclementsnyc.org\/", "ADDRESS1": "423 West 46th Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.991571, 40.761567 ] } }
+,
+{ "type": "Feature", "id": 104, "properties": { "NAME": "Theatre 80 St Marks", "TEL": "(212) 353-3321", "URL": "http:\/\/www.theatermania.com\/new-york\/theaters\/theater-80_3446\/", "ADDRESS1": "80 Saint Marks Pl", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.985752, 40.727621 ] } }
+,
+{ "type": "Feature", "id": 105, "properties": { "NAME": "Theatre Row", "TEL": "(212) 714-2442", "URL": "http:\/\/www.theatrerow.org\/", "ADDRESS1": "410 W 42nd Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993896, 40.758728 ] } }
+,
+{ "type": "Feature", "id": 106, "properties": { "NAME": "Under St. Marks", "TEL": "(212) 777-6088", "URL": "http:\/\/www.httheater.org\/rentersUNDER.html", "ADDRESS1": "94 St. Marks Place", "ADDRES2": null, "CITY": "New York", "ZIP": 10009.0 }, "geometry": { "type": "Point", "coordinates": [ -73.984965, 40.72729 ] } }
+,
+{ "type": "Feature", "id": 107, "properties": { "NAME": "Union Square Theater", "TEL": "(212) 505-0700", "URL": "http:\/\/www.nytheatre.com\/nytheatre\/union.htm", "ADDRESS1": "100 E 17th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.988749, 40.736241 ] } }
+,
+{ "type": "Feature", "id": 108, "properties": { "NAME": "Village Theater", "TEL": "(212) 253-0623", "URL": "http:\/\/www.villagetheatre.org\/", "ADDRESS1": "158 Bleecker St", "ADDRES2": null, "CITY": "New York", "ZIP": 10012.0 }, "geometry": { "type": "Point", "coordinates": [ -74.000224, 40.728455 ] } }
+,
+{ "type": "Feature", "id": 109, "properties": { "NAME": "Vineyard Theatre", "TEL": "(212) 353-3366", "URL": "http:\/\/www.vineyardtheatre.org\/", "ADDRESS1": "108 E 15th St", "ADDRES2": null, "CITY": "New York", "ZIP": 10003.0 }, "geometry": { "type": "Point", "coordinates": [ -73.989189, 40.7347 ] } }
+,
+{ "type": "Feature", "id": 110, "properties": { "NAME": "Walkerspace Theater", "TEL": "(212) 868-4444", "URL": "http:\/\/www.theateronline.com\/venuebook.xzc?PK=238&View=Hist", "ADDRESS1": "46 Walker Street", "ADDRES2": null, "CITY": "New York", "ZIP": 10013.0 }, "geometry": { "type": "Point", "coordinates": [ -74.003514, 40.719312 ] } }
+,
+{ "type": "Feature", "id": 111, "properties": { "NAME": "Wamu Theater (formerly Theater At Madison Square Garden)", "TEL": "(212) 465-6741", "URL": "http:\/\/www.theateratmsg.com\/", "ADDRESS1": "4 Penn Plaza", "ADDRES2": null, "CITY": "New York", "ZIP": 10001.0 }, "geometry": { "type": "Point", "coordinates": [ -73.993395, 40.750497 ] } }
+,
+{ "type": "Feature", "id": 112, "properties": { "NAME": "Westside Theater", "TEL": "(212) 315-2244", "URL": "http:\/\/www.westsidetheatre.com\/", "ADDRESS1": "407 W 43rd St", "ADDRES2": null, "CITY": "New York", "ZIP": 10036.0 }, "geometry": { "type": "Point", "coordinates": [ -73.992553, 40.759527 ] } }
+,
+{ "type": "Feature", "id": 113, "properties": { "NAME": "Wings Theatre", "TEL": "(212) 627-2960", "URL": "http:\/\/www.wingstheatre.com\/", "ADDRESS1": "154 Christopher St", "ADDRES2": "Bsmt", "CITY": "New York", "ZIP": 10014.0 }, "geometry": { "type": "Point", "coordinates": [ -74.008893, 40.732399 ] } }
+,
+{ "type": "Feature", "id": 114, "properties": { "NAME": "Winter Garden Theatre", "TEL": "(212) 944-3700", "URL": "http:\/\/www.shubertorganization.com\/theatres\/winter_garden.asp", "ADDRESS1": "1634 Broadway", "ADDRES2": null, "CITY": "New York", "ZIP": 10019.0 }, "geometry": { "type": "Point", "coordinates": [ -73.983482, 40.761525 ] } }
+,
+{ "type": "Feature", "id": 115, "properties": { "NAME": "York Theatre", "TEL": "(212) 935-5820", "URL": "http:\/\/www.yorktheatre.org\/", "ADDRESS1": "619 Lexington Ave", "ADDRES2": null, "CITY": "New York", "ZIP": 10022.0 }, "geometry": { "type": "Point", "coordinates": [ -73.969979, 40.758357 ] } }
+,
+{ "type": "Feature", "id": 116, "properties": { "NAME": "Delacorte Theater", "TEL": "(212) 861-7277", "URL": "http:\/\/www.centralpark.com\/pages\/attractions\/delacorte-theatre.html", "ADDRESS1": "Central Park - Mid-Park at 80th Street", "ADDRES2": "SW corner of the Great Lawn", "CITY": "New York", "ZIP": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -73.968825, 40.780176 ] } }
+
+]
+}
