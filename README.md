@@ -1,4 +1,4 @@
 bootleaf
 ========
 
-Template for building web mapping applications with Bootstrap 3 and Leaflet
+A simple template for building web mapping applications with Bootstrap 3 and Leaflet
