@@ -449,7 +449,14 @@
                         maxWidth: 'auto',
                         autoPanPadding: new L.Point(5, $('.navbar').height()+5)
                     });
-                    theaterSearch.push({value: layer.feature.properties.NAME, tokens: [layer.feature.properties.NAME], layer: 'Theaters', id: layer._leaflet_id, lat: layer.feature.geometry.coordinates[1], lng: layer.feature.geometry.coordinates[0]});
+                    theaterSearch.push({
+                        value: layer.feature.properties.NAME,
+                        tokens: [layer.feature.properties.NAME],
+                        layer: 'Theaters',
+                        id: layer._leaflet_id,
+                        lat: layer.feature.geometry.coordinates[1],
+                        lng: layer.feature.geometry.coordinates[0]
+                    });
                 }
             }
         });
@@ -482,7 +489,14 @@
                         maxWidth: 'auto',
                         autoPanPadding: new L.Point(5, $('.navbar').height()+5)
                     });
-                    museumSearch.push({value: layer.feature.properties.NAME, tokens: [layer.feature.properties.NAME], layer: 'Museums', id: layer._leaflet_id, lat: layer.feature.geometry.coordinates[1], lng: layer.feature.geometry.coordinates[0]});
+                    museumSearch.push({
+                        value: layer.feature.properties.NAME,
+                        tokens: [layer.feature.properties.NAME],
+                        layer: 'Museums',
+                        id: layer._leaflet_id,
+                        lat: layer.feature.geometry.coordinates[1],
+                        lng: layer.feature.geometry.coordinates[0]
+                    });
                 }
             }
         });
@@ -531,22 +545,48 @@
         });
         
         // Typeahead search functionality
-        $(document).ajaxStop(function() {
+        $(document).one("ajaxStop", function() {
             $('#loading').hide();
             $('#searchbox').typeahead([{
                 name: 'Boroughs',
                 local: boroughSearch,
+                minLength: 2,
                 header: '<h4 class="typeahead-header">Boroughs</h4>'
-            }, {
+            },{
                 name: 'Theaters',
                 local: theaterSearch,
+                minLength: 2,
                 header: '<h4 class="typeahead-header"><img src="img/theater.png" width="24" height="28">&nbsp;Theaters</h4>'
-            }, {
+            },{
                 name: 'Museums',
                 local: museumSearch,
+                minLength: 2,
                 header: '<h4 class="typeahead-header"><img src="img/museum.png" width="24" height="28">&nbsp;Museums</h4>'
-            }]);
-            $('#searchbox').bind('typeahead:selected', function(obj, datum) {        
+            },{
+                name: 'GeoNames',
+                remote: {
+                    url: 'http://ws.geonames.org/searchJSON?featureClass=P&maxRows=10&countryCode=US&adminCode1=NY&name_startsWith=%QUERY',
+                    beforeSend: function(jqXhr, settings) {
+                        settings.url += '&east='+map.getBounds().getEast()+'&west='+map.getBounds().getWest()+'&north='+map.getBounds().getNorth()+'&south='+map.getBounds().getSouth();
+                    },
+                    filter: function(parsedResponse) {
+                        var dataset = [];
+                        for(i = 0; i < parsedResponse.geonames.length; i++) {
+                            dataset.push({
+                                value: parsedResponse.geonames[i].name,
+                                tokens: [parsedResponse.geonames[i].name],
+                                layer: 'GeoNames',
+                                lat: parsedResponse.geonames[i].lat,
+                                lng: parsedResponse.geonames[i].lng
+                            });
+                        }
+                        return dataset;
+                    }
+                },
+                minLength: 2,
+                limit: 5,
+                header: '<h4 class="typeahead-header">GeoNames Places</h4>'
+              }]).on('typeahead:selected', function (obj, datum) {
                 if (datum.layer === 'Boroughs') {
                     map.fitBounds(datum.bounds);
                 };
@@ -554,7 +594,7 @@
                     if (!map.hasLayer(theaters)) {
                         map.addLayer(theaters);
                     };
-                    map.setView([datum.lat,datum.lng], 17);
+                    map.setView([datum.lat, datum.lng], 17);
                     if (map._layers[datum.id]) {
                         map._layers[datum.id].openPopup();
                     };
@@ -563,10 +603,13 @@
                     if (!map.hasLayer(museums)) {
                         map.addLayer(museums);
                     };
-                    map.setView([datum.lat,datum.lng], 17);
+                    map.setView([datum.lat, datum.lng], 17);
                     if (map._layers[datum.id]) {
                         map._layers[datum.id].openPopup();
                     };
+                };
+                if (datum.layer === 'GeoNames') {
+                    map.setView([datum.lat, datum.lng], 14);
                 };
             });
         });
