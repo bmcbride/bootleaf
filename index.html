@@ -8,12 +8,14 @@
     <title>Bootstrap Leaflet Template</title>
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-glyphicons.css"> <!--https://github.com/twbs/bootstrap-glyphicons-->
-    <link rel="stylesheet" href="css/typeahead.js-bootstrap.css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
-    <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" rel="stylesheet" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css"> <!--https://github.com/twbs/bootstrap-glyphicons-->
+    <link href="css/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
+    <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]>
-        <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" rel="stylesheet" type="text/css" />
+        <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" rel="stylesheet" type="text/css">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
     <![endif]-->
 
     <!-- Custom styles for this template -->
@@ -116,7 +118,7 @@
             <div class="nav-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="glyphicon glyphicon-question-sign" style="color: white"></i>&nbsp;About</a></li>
-                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#contactModal').modal('show'); return false;"><i class="glyphicon glyphicon-envelope" style="color: white"></i>&nbsp;Contact</a></li></a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#contactModal').modal('show'); return false;">&nbsp;Contact</a></li>
                     <li class="dropdown">
                         <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-globe" style="color: white"></i>&nbsp;Tools <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -126,6 +128,7 @@
                                     <li><a href="#" onclick="$('#loginModal').modal('show'); return false;"><i class="glyphicon glyphicon-user"></i>&nbsp;Login</a></li>
                             </ul>
                     </li>
+                    <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".nav-collapse.in"><i class="icon-github-alt" style="color: white"></i>&nbsp;Fork me on GitHub</a></li>
                 </ul>
                 <form class="navbar-form pull-right searchbox">
                     <input id="searchbox" type="text" class="form-control" style="width: 250px;" placeholder="Search">
@@ -165,29 +168,27 @@
                             </ul>
                         </li>
                     </ul>
-                    <p>
-                        <div id="aboutTabsContent" class="tab-content">
-                            <div class="tab-pane fade active in" id="about">
-                                <p>Project description goes here...</p>
-                            </div>
-                            <div class="tab-pane fade" id="disclaimer">
-                                <p>The data provided on this site is for informational and planning purposes only.</p>
-                                <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information on this map is subject to such variations and corrections as might result from a complete title search and/or accurate field survey.</p>
-                            </div>
-                            <div class="tab-pane fade" id="boroughs-tab">
-                                <p>Borough data courtesy of <a href="http://www.nyc.gov/html/dcp/html/bytes/meta_dis_nyboroughwi.shtml" target="_blank">New York City Department of City Planning</a></p>
-                            </div>
-                            <div class="tab-pane fade" id="subway-lines-tab">
-                                <p><a href="http://spatialityblog.com/2010/07/08/mta-gis-data-update/#datalinks" target="_blank">MTA Subway data</a> courtesy of the <a href="http://www.urbanresearch.org/about/cur-components/cuny-mapping-service" target="_blank">CUNY Mapping Service at the Center for Urban Research</a></p>
-                            </div>
-                            <div class="tab-pane fade" id="theaters-tab">
-                                <p>Theater data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Theaters/kdu2-865w" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>
-                            </div>
-                            <div class="tab-pane fade" id="museums-tab">
-                                <p>Museum data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Museums-and-Galleries/sat5-adpb" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>
-                            </div>
+                    <div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
+                        <div class="tab-pane fade active in" id="about">
+                            <p>Project description goes here...</p>
                         </div>
-                    </p>
+                        <div class="tab-pane fade" id="disclaimer">
+                            <p>The data provided on this site is for informational and planning purposes only.</p>
+                            <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information on this map is subject to such variations and corrections as might result from a complete title search and/or accurate field survey.</p>
+                        </div>
+                        <div class="tab-pane fade" id="boroughs-tab">
+                            <p>Borough data courtesy of <a href="http://www.nyc.gov/html/dcp/html/bytes/meta_dis_nyboroughwi.shtml" target="_blank">New York City Department of City Planning</a></p>
+                        </div>
+                        <div class="tab-pane fade" id="subway-lines-tab">
+                            <p><a href="http://spatialityblog.com/2010/07/08/mta-gis-data-update/#datalinks" target="_blank">MTA Subway data</a> courtesy of the <a href="http://www.urbanresearch.org/about/cur-components/cuny-mapping-service" target="_blank">CUNY Mapping Service at the Center for Urban Research</a></p>
+                        </div>
+                        <div class="tab-pane fade" id="theaters-tab">
+                            <p>Theater data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Theaters/kdu2-865w" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>
+                        </div>
+                        <div class="tab-pane fade" id="museums-tab">
+                            <p>Museum data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Museums-and-Galleries/sat5-adpb" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>
+                        </div>
+                    </div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
