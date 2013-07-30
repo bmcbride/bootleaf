@@ -565,7 +565,7 @@
             },{
                 name: 'GeoNames',
                 remote: {
-                    url: 'http://ws.geonames.org/searchJSON?featureClass=P&maxRows=10&countryCode=US&adminCode1=NY&name_startsWith=%QUERY',
+                    url: 'http://ws.geonames.org/searchJSON?featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY',
                     beforeSend: function(jqXhr, settings) {
                         settings.url += '&east='+map.getBounds().getEast()+'&west='+map.getBounds().getWest()+'&north='+map.getBounds().getNorth()+'&south='+map.getBounds().getSouth();
                     },
