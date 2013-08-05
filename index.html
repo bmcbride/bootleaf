@@ -10,7 +10,6 @@
     <!-- Core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css"> <!--https://github.com/twbs/bootstrap-glyphicons-->
     <link href="css/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
     <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]>
@@ -117,15 +116,15 @@
             <a class="navbar-brand" href="#">Project Name</a>
             <div class="nav-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="glyphicon glyphicon-question-sign" style="color: white"></i>&nbsp;About</a></li>
-                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#contactModal').modal('show'); return false;">&nbsp;Contact</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign" style="color: white"></i>&nbsp;About</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".nav-collapse.in" onclick="$('#contactModal').modal('show'); return false;"><i class="icon-envelope" style="color: white"></i>&nbsp;Contact</a></li>
                     <li class="dropdown">
-                        <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-globe" style="color: white"></i>&nbsp;Tools <b class="caret"></b></a>
+                        <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe" style="color: white"></i>&nbsp;Tools <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="glyphicon glyphicon-fullscreen"></i>&nbsp;Zoom To Full Extent</a></li>
-                                <li><a href="#" onclick="$('#legendModal').modal('show'); return false;"><i class="glyphicon glyphicon-picture"></i>&nbsp;Show Legend</a></li>
+                                <li><a href="#" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="icon-fullscreen"></i>&nbsp;Zoom To Full Extent</a></li>
+                                <li><a href="#" onclick="$('#legendModal').modal('show'); return false;"><i class="icon-picture"></i>&nbsp;Show Legend</a></li>
                                 <li class="divider"></li>
-                                    <li><a href="#" onclick="$('#loginModal').modal('show'); return false;"><i class="glyphicon glyphicon-user"></i>&nbsp;Login</a></li>
+                                    <li><a href="#" onclick="$('#loginModal').modal('show'); return false;"><i class="icon-user"></i>&nbsp;Login</a></li>
                             </ul>
                     </li>
                     <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".nav-collapse.in"><i class="icon-github-alt" style="color: white"></i>&nbsp;Fork me on GitHub</a></li>
@@ -156,10 +155,10 @@
                 
                 <div class="modal-body">
                      <ul id="aboutTabs" class="nav nav-tabs">
-                        <li class="active"><a href="#about" data-toggle="tab"><i class="glyphicon glyphicon-question-sign"></i>&nbsp;About the project</a></li>
-                        <li><a href="#disclaimer" data-toggle="tab"><i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;Disclaimer</a></li>
+                        <li class="active"><a href="#about" data-toggle="tab"><i class="icon-question-sign"></i>&nbsp;About the project</a></li>
+                        <li><a href="#disclaimer" data-toggle="tab"><i class="icon-exclamation-sign"></i>&nbsp;Disclaimer</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-globe"></i>&nbsp;Metadata <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe"></i>&nbsp;Metadata <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#boroughs-tab" data-toggle="tab">Boroughs</a></li>
                                 <li><a href="#subway-lines-tab" data-toggle="tab">Subway Lines</a></li>
@@ -556,11 +555,13 @@
                 name: 'Theaters',
                 local: theaterSearch,
                 minLength: 2,
+                limit: 10,
                 header: '<h4 class="typeahead-header"><img src="img/theater.png" width="24" height="28">&nbsp;Theaters</h4>'
             },{
                 name: 'Museums',
                 local: museumSearch,
                 minLength: 2,
+                limit: 10,
                 header: '<h4 class="typeahead-header"><img src="img/museum.png" width="24" height="28">&nbsp;Museums</h4>'
             },{
                 name: 'GeoNames',
