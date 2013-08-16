@@ -63,6 +63,9 @@
             padding: 3px 0;
             border-bottom: 1px solid #ccc;
         }
+        .search-container {
+            width: 250px;
+        }
         #searchbox {
             -webkit-border-top-left-radius: 4px;
             -webkit-border-bottom-left-radius: 4px;
@@ -87,11 +90,22 @@
             margin-left: 20px;
             margin-right: 20px;
         }
-        @media (max-width: 979px) {
-            .searchbox{
+        @media (max-width: 992px) {
+            .navbar .navbar-brand {
+                font-size: 18px;
                 float: left;
             }
-
+            .search-container {
+                width: 150px;
+            }
+            .leaflet-control-attribution {
+                display: none;
+            }
+        }
+        @media (max-width: 768px){
+            .search-container {
+                width: 100%;
+            }
         }
         /* Print Handling */
         @media print {
@@ -138,7 +152,7 @@
                 <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="icon-github-alt" style="color: white"></i>&nbsp;&nbsp;Fork me on GitHub</a></li>
             </ul>
             <form class="navbar-form navbar-right">
-                <div class="input-group" style="width: 250px;">
+                <div class="input-group search-container">
                     <input id="searchbox" type="text" class="form-control" placeholder="Search">
                     <span class="input-group-addon"><i class="icon-search"></i></span>
                 </div>
@@ -185,12 +199,12 @@
                                     Features
                                 </div>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders</li>
+                                    <li class="list-group-item">Fullscreen mobile-friendly map template with responsive navbar and modal placeholders</li>
                                     <li class="list-group-item">jQuery loading of external GeoJSON files</li>
                                     <li class="list-group-item">Elegant client-side multi-layer feature search with autocomplete using <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a></li>
                                     <li class="list-group-item">Integration of Bootstrap tables into Leaflet popups</li>
-                                    <li class="list-group-item">Logic for minimizing Layer Control and removing Scale Control on small screens</li>
-                                    <li class="list-group-item">Marker icons included in Layer Control</li>
+                                    <li class="list-group-item">Logic for minimizing layer control and removing scale control on small screens</li>
+                                    <li class="list-group-item">Marker icons included in layer control</li>
                                 </ul>
                             </div>
                         </div>
