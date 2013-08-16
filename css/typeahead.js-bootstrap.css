@@ -1,7 +1,12 @@
+.twitter-typeahead  {
+  width: 100%;
+}
+
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {
   margin-bottom: 0;
 }
+
 
 .tt-dropdown-menu {
   min-width: 160px;
