@@ -1,9 +1,10 @@
-bootleaf
+BootLeaf
 ========
 
-A simple template for building web mapping applications with Bootstrap 3 and Leaflet.
+Simple templates for building web mapping applications with Bootstrap 3 and Leaflet.
 
-Demo: http://bmcbride.github.io/bootleaf/
+* Simple Demo: http://bmcbride.github.io/bootleaf/
+* Sidebar Demo: http://bmcbride.github.io/bootleaf/sidebar.html
 
 ### Features:
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
