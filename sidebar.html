@@ -8,7 +8,7 @@
     <title>BootLeaf Template</title>
 
     <!-- Core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet" type="text/css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
     <link href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" rel="stylesheet" type="text/css">
@@ -347,9 +347,11 @@
                                 <label for="comment">Comment:</label>
                                 <textarea class="form-control" rows="3" id="comment"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                         </fieldset>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -387,16 +389,18 @@
                                 <label for="email">Password:</label>
                                 <input type="password" class="form-control" id="password">
                             </div>
-                            <button type="submit" class="btn btn-default pull-right">Login</button>
                         </fieldset>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Login</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
     <script type="text/javascript">
