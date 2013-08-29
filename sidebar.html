@@ -596,8 +596,7 @@
                                         '<tr><th>Line</th><td>' + feature.properties.Line + '</td></tr>'+
                                     '<table>';
                     layer.bindPopup(content, {
-                        maxWidth: 'auto',
-                        autoPanPadding: new L.Point(5, $('.navbar').height()+5)
+                        maxWidth: 'auto'
                     });
                 }
                 layer.on({
@@ -644,8 +643,7 @@
                                         '<tr><th>Website</th><td><a href="' + feature.properties.URL + '" target="_blank">' + feature.properties.URL + '</a></td></tr>'+
                                     '<table>';
                     layer.bindPopup(content, {
-                        maxWidth: 'auto',
-                        autoPanPadding: new L.Point(5, $('.navbar').height()+5)
+                        maxWidth: 'auto'
                     });
                     theaterSearch.push({
                         value: layer.feature.properties.NAME,
@@ -684,8 +682,7 @@
                                         '<tr><th>Website</th><td><a href="' + feature.properties.URL + '" target="_blank">' + feature.properties.URL + '</a></td></tr>'+
                                     '<table>';
                     layer.bindPopup(content, {
-                        maxWidth: 'auto',
-                        autoPanPadding: new L.Point(5, $('.navbar').height()+5)
+                        maxWidth: 'auto'
                     });
                     museumSearch.push({
                         value: layer.feature.properties.NAME,
