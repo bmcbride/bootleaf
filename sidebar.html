@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
     <style>
-        html, body, #map, #sidebar, #container {
+        html, body, #sidebar, #container {
             height: 100%;
             margin: 0px;
         }
@@ -29,8 +29,12 @@
         label {
             font-weight: normal;
         }
-        .panel-heading a:hover {
-            text-decoration: none;
+        #map {
+            height: 100%;
+            margin: 0px;
+            -webkit-box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
         }
         #loading {
             position: absolute;
@@ -79,6 +83,9 @@
             margin-bottom: 0px;
             margin-left: 20px;
             margin-right: 20px;
+        }
+        .panel-heading a:hover {
+            text-decoration: none;
         }
         a.toggle {
             position: fixed;
