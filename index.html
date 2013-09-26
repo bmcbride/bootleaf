@@ -595,10 +595,8 @@
         });
 
         // Typeahead search functionality
-        //$('#navbar-collapse').collapse('hide');
         $(document).one("ajaxStop", function() {
             $('#loading').hide();
-            //$('#navbar-collapse').collapse('hide');
             $('#searchbox').typeahead([{
                 name: 'Boroughs',
                 local: boroughSearch,
