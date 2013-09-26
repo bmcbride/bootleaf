@@ -24,8 +24,12 @@
             width: 100%;
             overflow: hidden;
         }
+        body {
+            padding-top: 50px;
+        }
         label {
             font-weight: normal;
+            margin-bottom: 0px;
         }
         input[type="radio"], input[type="checkbox"] {
             margin: 0;
@@ -45,7 +49,10 @@
             color: white;
         }
         .navbar {
-            opacity: 0.9;
+            opacity: 1;
+        }
+        .navbar-collapse.in {
+            overflow-y: hidden;
         }
         .tt-dropdown-menu {
             overflow: auto;
@@ -73,9 +80,6 @@
             -moz-border-bottom-left-radius: 4px;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
-        }
-        .leaflet-top {
-            top: 50px;
         }
         .leaflet-control-layers-base input, .leaflet-control-layers-overlays input {
             float: left;
@@ -136,27 +140,27 @@
             </button>
             <a class="navbar-brand" href="#">BootLeaf</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign" style="color: white"></i>&nbsp;&nbsp;About</a></li>
-                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#contactModal').modal('show'); return false;"><i class="icon-envelope" style="color: white"></i>&nbsp;&nbsp;Contact</a></li>
-                <li class="dropdown">
-                    <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="icon-fullscreen"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-                            <li><a href="#" onclick="$('#legendModal').modal('show'); return false;"><i class="icon-picture"></i>&nbsp;&nbsp;Show Legend</a></li>
-                            <li class="divider"></li>
-                                <li><a href="#" onclick="$('#loginModal').modal('show'); return false;"><i class="icon-user"></i>&nbsp;&nbsp;Login</a></li>
-                        </ul>
-                </li>
-                <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="icon-github-alt" style="color: white"></i>&nbsp;&nbsp;Fork me on GitHub</a></li>
-            </ul>
+        <div class="navbar-collapse collapse" id="navbar-collapse">
             <form class="navbar-form navbar-right">
                 <div class="input-group search-container">
                     <input id="searchbox" type="text" class="form-control" placeholder="Search">
                     <span class="input-group-addon"><i class="icon-search"></i></span>
                 </div>
             </form>
+            <ul class="nav navbar-nav">
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#contactModal').modal('show'); return false;"><i class="icon-envelope" style="color: white"></i>&nbsp;&nbsp;Contact</a></li>
+                <li class="dropdown">
+                    <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="icon-fullscreen"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="icon-picture"></i>&nbsp;&nbsp;Show Legend</a></li>
+                            <li class="divider"></li>
+                                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="icon-user"></i>&nbsp;&nbsp;Login</a></li>
+                        </ul>
+                </li>
+                <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="icon-github-alt" style="color: white"></i>&nbsp;&nbsp;Fork me on GitHub</a></li>
+            </ul>
         </div><!--/.navbar-collapse -->
     </div>
 
@@ -342,7 +346,13 @@
                 };
             },
             onEachFeature: function (feature, layer) {
-                boroughSearch.push({value: layer.feature.properties.BoroName, tokens: [layer.feature.properties.BoroName], layer: 'Boroughs', id: layer._leaflet_id, bounds: layer.getBounds()});
+                boroughSearch.push({
+                    value: layer.feature.properties.BoroName,
+                    tokens: [layer.feature.properties.BoroName],
+                    layer: 'Boroughs',
+                    id: layer._leaflet_id,
+                    bounds: layer.getBounds()
+                });
             }
         });
         $.getJSON("data/boroughs.geojson", function (data) {
@@ -585,8 +595,10 @@
         });
 
         // Typeahead search functionality
+        //$('#navbar-collapse').collapse('hide');
         $(document).one("ajaxStop", function() {
             $('#loading').hide();
+            //$('#navbar-collapse').collapse('hide');
             $('#searchbox').typeahead([{
                 name: 'Boroughs',
                 local: boroughSearch,
@@ -653,9 +665,17 @@
                 if (datum.layer === 'GeoNames') {
                     map.setView([datum.lat, datum.lng], 14);
                 };
+                if ($('#navbar-collapse').height() > 50) {
+                    $('#navbar-collapse').collapse('hide');
+                };
             }).on('typeahead:initialized ', function () {
-                $('.tt-dropdown-menu').css('max-height', $(document).height()-$('.navbar').height()-20);
+                $('.tt-dropdown-menu').css('max-height', 300);
             });
+        });
+
+        $('#navbar-collapse').on('shown.bs.collapse', function () {
+            $(".navbar-collapse.in").css('max-height', $(document).height()-$('.navbar-header').height());
+            $(".navbar-collapse.in").css('height', $(document).height()-$('.navbar-header').height());
         });
 
         // Placeholder hack for IE
