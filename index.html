@@ -10,7 +10,7 @@
     <!-- Core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
+    <link href="assets/typeahead.js/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
     <link href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome-ie7.min.css" rel="stylesheet">
@@ -309,7 +309,7 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
+    <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
     <script type="text/javascript">
         var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
@@ -349,7 +349,7 @@
                     value: layer.feature.properties.BoroName,
                     tokens: [layer.feature.properties.BoroName],
                     layer: 'Boroughs',
-                    id: layer._leaflet_id,
+                    id: L.stamp(layer),
                     bounds: layer.getBounds()
                 });
             }
@@ -502,7 +502,7 @@
                         value: layer.feature.properties.NAME,
                         tokens: [layer.feature.properties.NAME],
                         layer: 'Theaters',
-                        id: layer._leaflet_id,
+                        id: L.stamp(layer),
                         lat: layer.feature.geometry.coordinates[1],
                         lng: layer.feature.geometry.coordinates[0]
                     });
@@ -542,7 +542,7 @@
                         value: layer.feature.properties.NAME,
                         tokens: [layer.feature.properties.NAME],
                         layer: 'Museums',
-                        id: layer._leaflet_id,
+                        id: L.stamp(layer),
                         lat: layer.feature.geometry.coordinates[1],
                         lng: layer.feature.geometry.coordinates[0]
                     });
