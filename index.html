@@ -349,7 +349,7 @@
                     value: layer.feature.properties.BoroName,
                     tokens: [layer.feature.properties.BoroName],
                     layer: 'Boroughs',
-                    id: layer._leaflet_id,
+                    id: L.stamp(layer),
                     bounds: layer.getBounds()
                 });
             }
@@ -502,7 +502,7 @@
                         value: layer.feature.properties.NAME,
                         tokens: [layer.feature.properties.NAME],
                         layer: 'Theaters',
-                        id: layer._leaflet_id,
+                        id: L.stamp(layer),
                         lat: layer.feature.geometry.coordinates[1],
                         lng: layer.feature.geometry.coordinates[0]
                     });
@@ -542,7 +542,7 @@
                         value: layer.feature.properties.NAME,
                         tokens: [layer.feature.properties.NAME],
                         layer: 'Museums',
-                        id: layer._leaflet_id,
+                        id: L.stamp(layer),
                         lat: layer.feature.geometry.coordinates[1],
                         lng: layer.feature.geometry.coordinates[0]
                     });
