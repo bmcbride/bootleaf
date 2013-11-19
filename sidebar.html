@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>BootLeaf Template</title>
@@ -714,9 +715,6 @@
 
         // Highlight search box text on click
         $("#searchbox").click(function () {
-            $(this).select();
-        });
-        $("#searchbox").bind("touchstart", function () {
             $(this).select();
         });
 
