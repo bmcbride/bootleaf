@@ -768,6 +768,7 @@
                 if (datum.layer === "Theaters") {
                     if (!map.hasLayer(theaters)) {
                         map.addLayer(theaters);
+                        $("#theaters").prop("checked", true);
                     };
                     map.setView([datum.lat, datum.lng], 17);
                     if (map._layers[datum.id]) {
@@ -777,6 +778,7 @@
                 if (datum.layer === "Museums") {
                     if (!map.hasLayer(museums)) {
                         map.addLayer(museums);
+                        $("#museums").prop("checked", true);
                     };
                     map.setView([datum.lat, datum.lng], 17);
                     if (map._layers[datum.id]) {
