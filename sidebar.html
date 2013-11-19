@@ -792,8 +792,7 @@
                     $("#navbar-collapse").collapse("hide");
                 };
             }).on("typeahead:initialized ", function () {
-                $(".tt-dropdown-menu").css("max-height", $("#container").height()-$(".navbar").height()-20);
-                // $(".tt-dropdown-menu").css("min-width", $(".tt-dropdown-menu").width()+50);
+                $(".tt-dropdown-menu").css("max-height", 300);
             });
         });
 
