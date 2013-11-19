@@ -716,6 +716,9 @@
         $("#searchbox").click(function () {
             $(this).select();
         });
+        $("#searchbox").bind("touchstart", function () {
+            $(this).select();
+        });
 
         // Typeahead search functionality
         $(document).one("ajaxStop", function() {
