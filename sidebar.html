@@ -383,9 +383,9 @@
     </div><!-- /.modal -->
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
-    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
     <script type="text/javascript">
         var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
@@ -411,7 +411,6 @@
             $("#toggle i").toggleClass("fa fa-check-square-o fa fa-map-marker");
             $("#map").toggleClass("col-sm-9 col-lg-9 col-sm-12 col-lg-12");
             $("#sidebar").toggle();
-            //map.invalidateSize();
             if (document.body.clientWidth <= 767) {
                 $("#map").toggle();
             };
