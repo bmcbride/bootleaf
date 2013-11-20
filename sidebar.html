@@ -30,6 +30,9 @@
         label {
             font-weight: normal;
         }
+        .table {
+            margin-bottom: 0px;
+        }
         #map {
             height: 100%;
             margin: 0px;
@@ -83,10 +86,13 @@
             border-bottom-left-radius: 4px;
         }
         .leaflet-popup-content {
-            margin-top: 14px;
-            margin-bottom: 0px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .leaflet-popup-content-wrapper {
+            border-radius: 5px;
         }
         .panel-heading a:hover {
             text-decoration: none;
@@ -595,7 +601,8 @@
                                         "<tr><th>Line</th><td>" + feature.properties.Line + "</td></tr>"+
                                     "<table>";
                     layer.bindPopup(content, {
-                        maxWidth: "auto"
+                        maxWidth: "auto",
+                        closeButton: false
                     });
                 }
                 layer.on({
@@ -642,7 +649,8 @@
                                         "<tr><th>Website</th><td><a href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
                                     "<table>";
                     layer.bindPopup(content, {
-                        maxWidth: "auto"
+                        maxWidth: "auto",
+                        closeButton: false
                     });
                     theaterSearch.push({
                         value: layer.feature.properties.NAME,
@@ -681,7 +689,8 @@
                                         "<tr><th>Website</th><td><a href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
                                     "<table>";
                     layer.bindPopup(content, {
-                        maxWidth: "auto"
+                        maxWidth: "auto",
+                        closeButton: false
                     });
                     museumSearch.push({
                         value: layer.feature.properties.NAME,
