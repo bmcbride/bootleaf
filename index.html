@@ -668,12 +668,13 @@
                     };
                 }).on("typeahead:initialized ", function () {
                     $(".tt-dropdown-menu").css("max-height", 300);
+                }).on("typeahead:opened", function () {
+                    $(".navbar-collapse.in").css("max-height", $(document).height()-$(".navbar-header").height());
+                    $(".navbar-collapse.in").css("height", $(document).height()-$(".navbar-header").height());
+                }).on("typeahead:closed", function () {
+                    $(".navbar-collapse.in").css("max-height", "");
+                    $(".navbar-collapse.in").css("height", "");
                 });
-            });
-
-            $("#navbar-collapse").on("shown.bs.collapse", function () {
-                $(".navbar-collapse.in").css("max-height", $(document).height()-$(".navbar-header").height());
-                $(".navbar-collapse.in").css("height", $(document).height()-$(".navbar-header").height());
             });
 
             // Placeholder hack for IE
