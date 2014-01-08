@@ -108,6 +108,12 @@
                 .search-container {
                     width: 100%;
                 }
+                .url-break {
+                    word-break: break-all;
+                    word-break: break-word;
+                    -webkit-hyphens: auto;
+                    hyphens: auto;
+                }
             }
             /* Print Handling */
             @media print {
@@ -382,6 +388,19 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
+        <div class="modal fade" id="featureModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-primary" id="feature-title"></h4>
+                    </div>
+                    <div class="modal-body" id="feature-info">
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
@@ -594,10 +613,21 @@
                                             "<tr><th>Division</th><td>" + feature.properties.Division + "</td></tr>"+
                                             "<tr><th>Line</th><td>" + feature.properties.Line + "</td></tr>"+
                                         "<table>";
-                        layer.bindPopup(content, {
-                            maxWidth: "auto",
-                            closeButton: false
-                        });
+                        if (document.body.clientWidth <= 767) {
+                            layer.on({
+                                click: function(e) {
+                                    $("#feature-title").html(feature.properties.Line);
+                                    $("#feature-info").html(content);
+                                    $("#featureModal").modal("show");
+                                }
+                            });
+
+                        } else {
+                            layer.bindPopup(content, {
+                                maxWidth: "auto",
+                                closeButton: false
+                            });
+                        };
                     }
                     layer.on({
                         mouseover: function(e) {
@@ -640,12 +670,24 @@
                                             "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>"+
                                             "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>"+
                                             "<tr><th>Address</th><td>" + feature.properties.ADDRESS1 + "</td></tr>"+
-                                            "<tr><th>Website</th><td><a href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                                            "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
                                         "<table>";
-                        layer.bindPopup(content, {
-                            maxWidth: "auto",
-                            closeButton: false
-                        });
+
+                        if (document.body.clientWidth <= 767) {
+                            layer.on({
+                                click: function(e) {
+                                    $("#feature-title").html(feature.properties.NAME);
+                                    $("#feature-info").html(content);
+                                    $("#featureModal").modal("show");
+                                }
+                            });
+
+                        } else {
+                            layer.bindPopup(content, {
+                                maxWidth: "auto",
+                                closeButton: false
+                            });
+                        };
                         theaterSearch.push({
                             value: layer.feature.properties.NAME,
                             tokens: [layer.feature.properties.NAME],
@@ -680,12 +722,23 @@
                                             "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>"+
                                             "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>"+
                                             "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>"+
-                                            "<tr><th>Website</th><td><a href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                                            "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
                                         "<table>";
-                        layer.bindPopup(content, {
-                            maxWidth: "auto",
-                            closeButton: false
-                        });
+                        if (document.body.clientWidth <= 767) {
+                            layer.on({
+                                click: function(e) {
+                                    $("#feature-title").html(feature.properties.NAME);
+                                    $("#feature-info").html(content);
+                                    $("#featureModal").modal("show");
+                                }
+                            });
+
+                        } else {
+                            layer.bindPopup(content, {
+                                maxWidth: "auto",
+                                closeButton: false
+                            });
+                        };
                         museumSearch.push({
                             value: layer.feature.properties.NAME,
                             tokens: [layer.feature.properties.NAME],
