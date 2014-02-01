@@ -369,8 +369,6 @@
             });
             $.getJSON("data/boroughs.geojson", function (data) {
                 boroughs.addData(data);
-            }).complete(function () {
-                map.fitBounds(boroughs.getBounds());
             });
 
             var subwayLines = L.geoJson(null, {
@@ -642,6 +640,7 @@
 
             // Typeahead search functionality
             $(document).one("ajaxStop", function() {
+                map.fitBounds(boroughs.getBounds());
                 $("#loading").hide();
                 $("#searchbox").typeahead([{
                     name: "Boroughs",
