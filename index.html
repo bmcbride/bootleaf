@@ -11,7 +11,7 @@
         <title>BootLeaf Template</title>
 
         <!-- Core CSS -->
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="assets/typeahead.js/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
         <link href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" rel="stylesheet" type="text/css">
@@ -38,14 +38,6 @@
                 margin: -10px 0 0 -110px;
                 z-index: 20001;
             }
-            #searchbox {
-                -webkit-border-top-left-radius: 4px;
-                -webkit-border-bottom-left-radius: 4px;
-                -moz-border-top-left-radius: 4px;
-                -moz-border-bottom-left-radius: 4px;
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
             .leaflet-control-layers label {
                 font-weight: normal;
                 margin-bottom: 0px;
@@ -60,9 +52,6 @@
             }
             .navbar-collapse.in {
                 overflow-y: hidden;
-            }
-            .tt-dropdown-menu {
-                overflow: auto;
             }
             .tt-hint, .tt-query {
                 display: block;
@@ -80,9 +69,6 @@
             .tt-suggestion + .tt-suggestion {
                 border-top: 1px solid #ccc;
             }
-            .search-container {
-                width: 250px;
-            }
             .leaflet-control-layers-expanded {
                 opacity: 0.9;
             }
@@ -98,16 +84,9 @@
             @media (max-width: 992px) {
                 .navbar .navbar-brand {
                     font-size: 18px;
-                    float: left;
-                }
-                .search-container {
-                    width: 150px;
                 }
             }
             @media (max-width: 767px){
-                .search-container {
-                    width: 100%;
-                }
                 .url-break {
                     word-break: break-all;
                     word-break: break-word;
@@ -129,12 +108,12 @@
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
 
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -144,21 +123,23 @@
                 <a class="navbar-brand" href="#">BootLeaf</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapse">
-                <form class="navbar-form navbar-right">
-                    <div class="input-group search-container">
-                        <input id="searchbox" type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    </div>
-                </form>
+                <div class="col-sm-3 col-md-4 pull-right">
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input id="searchbox" type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        </div>
+                    </form>
+                </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+                    <li><a href="#aboutModal" data-toggle="modal"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
                     <li class="dropdown">
                         <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-                                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
+                                <li><a href="#legendModal" data-toggle="modal"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
                                 <li class="divider hidden-xs"></li>
-                                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+                                    <li><a href="#loginModal" data-toggle="modal"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
                             </ul>
                     </li>
                     <li class="dropdown">
@@ -170,7 +151,7 @@
                                 <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
                             </ul>
                     </li>
-                    <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-github-alt" style="color: white"></i>&nbsp;&nbsp;Fork me on GitHub</a></li>
+                    <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-github-alt" style="color: white"></i>&nbsp;&nbsp;GitHub Repo</a></li>
                 </ul>
             </div><!--/.navbar-collapse -->
         </div>
@@ -320,8 +301,8 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
         <script type="text/javascript">
@@ -606,14 +587,11 @@
             // Hack to preserver layer order in Layer control
             map.removeLayer(subwayLines);
 
-            var scaleControl = L.control.scale();
-
-            // Larger screens get scale control and expanded layer control
+            // Larger screens get expanded layer control
             if (document.body.clientWidth <= 767) {
                 var isCollapsed = true;
             } else {
                 var isCollapsed = false;
-                map.addControl(scaleControl);
             };
 
             var baseLayers = {
@@ -639,7 +617,7 @@
             });
 
             // Typeahead search functionality
-            $(document).one("ajaxStop", function() {
+            $(document).one("ajaxStop", function () {
                 map.fitBounds(boroughs.getBounds());
                 $("#loading").hide();
                 $("#searchbox").typeahead([{
@@ -647,28 +625,31 @@
                     local: boroughSearch,
                     minLength: 2,
                     header: "<h4 class='typeahead-header'>Boroughs</h4>"
-                },{
+                },
+                {
                     name: "Theaters",
                     local: theaterSearch,
                     minLength: 2,
                     limit: 10,
                     header: "<h4 class='typeahead-header'><img src='img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>"
-                },{
+                },
+                {
                     name: "Museums",
                     local: museumSearch,
                     minLength: 2,
                     limit: 10,
                     header: "<h4 class='typeahead-header'><img src='img/museum.png' width='24' height='28'>&nbsp;Museums</h4>"
-                },{
+                },
+                {
                     name: "GeoNames",
                     remote: {
                         url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
-                        beforeSend: function(jqXhr, settings) {
-                            settings.url += "&east="+map.getBounds().getEast()+"&west="+map.getBounds().getWest()+"&north="+map.getBounds().getNorth()+"&south="+map.getBounds().getSouth();
+                        beforeSend: function (jqXhr, settings) {
+                            settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
                         },
-                        filter: function(parsedResponse) {
+                        filter: function (parsedResponse) {
                             var dataset = [];
-                            for(i = 0; i < parsedResponse.geonames.length; i++) {
+                            for (i = 0; i < parsedResponse.geonames.length; i++) {
                                 dataset.push({
                                     value: parsedResponse.geonames[i].name,
                                     tokens: [parsedResponse.geonames[i].name],
@@ -683,7 +664,7 @@
                     minLength: 2,
                     limit: 5,
                     header: "<h4 class='typeahead-header'><img src='img/globe.png' width='25' height='25'>&nbsp;GeoNames Places</h4>"
-                  }]).on("typeahead:selected", function (obj, datum) {
+                }]).on("typeahead:selected", function (obj, datum) {
                     if (datum.layer === "Boroughs") {
                         map.fitBounds(datum.bounds);
                     };
@@ -714,8 +695,8 @@
                 }).on("typeahead:initialized ", function () {
                     $(".tt-dropdown-menu").css("max-height", 300);
                 }).on("typeahead:opened", function () {
-                    $(".navbar-collapse.in").css("max-height", $(document).height()-$(".navbar-header").height());
-                    $(".navbar-collapse.in").css("height", $(document).height()-$(".navbar-header").height());
+                    $(".navbar-collapse.in").css("max-height", $(document).height() - $(".navbar-header").height());
+                    $(".navbar-collapse.in").css("height", $(document).height() - $(".navbar-header").height());
                 }).on("typeahead:closed", function () {
                     $(".navbar-collapse.in").css("max-height", "");
                     $(".navbar-collapse.in").css("height", "");
