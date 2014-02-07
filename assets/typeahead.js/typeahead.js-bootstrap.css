@@ -1,6 +1,7 @@
 .twitter-typeahead {
   width: 100%;
   position: relative;
+  display: block !important;
 }
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {
@@ -143,6 +144,7 @@
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
+  overflow: auto;
 }
 .tt-suggestion {
   display: block;
