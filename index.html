@@ -13,8 +13,8 @@
         <!-- Core CSS -->
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/typeahead.js/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
         <link href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" rel="stylesheet" type="text/css">
+        <link href="assets/leaflet-sidebar/L.Control.Sidebar.css" rel="stylesheet" type="text/css">
 
         <!-- Custom styles for this template -->
         <style>
@@ -53,24 +53,50 @@
             .navbar-collapse.in {
                 overflow-y: hidden;
             }
-            .tt-hint, .tt-query {
-                display: block;
+            .typeahead {
+                background-color: #FFFFFF;
+            }
+            .tt-dropdown-menu {
+                background-color: #FFFFFF;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 4px 4px 4px 4px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                margin-top: 4px;
+                padding: 4px 0;
                 width: 100%;
-                height: 34px;
-                padding: 6px 12px;
+                max-height: 300px;
+                overflow: auto;
+            }
+            .tt-suggestion {
                 font-size: 14px;
-                border-radius: 4px;
+                line-height: 20px;
+                padding: 3px 10px;
+            }
+            .tt-suggestion.tt-cursor {
+                background-color: #0097CF;
+                color: #FFFFFF;
+                cursor: pointer;
+            }
+            .tt-suggestion p {
+                margin: 0;
+            }
+            .tt-suggestion + .tt-suggestion {
+                border-top: 1px solid #ccc;
             }
             .typeahead-header {
                 margin: 0 5px 5px 5px;
                 padding: 3px 0;
                 border-bottom: 2px solid #333;
             }
-            .tt-suggestion + .tt-suggestion {
-                border-top: 1px solid #ccc;
-            }
-            .leaflet-control-layers-expanded {
-                opacity: 0.9;
+            .has-feedback .form-control-feedback {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: block;
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
             }
             .leaflet-popup-content {
                 margin-top: 5px;
@@ -80,6 +106,14 @@
             }
             .leaflet-popup-content-wrapper {
                 border-radius: 5px;
+            }
+            .leaflet-sidebar {
+                z-index: 1020;
+            }
+            .leaflet-sidebar .close {
+                right: 0px;
+                top: 5px;
+                background: transparent;
             }
             @media (max-width: 992px) {
                 .navbar .navbar-brand {
@@ -122,41 +156,47 @@
                 </button>
                 <a class="navbar-brand" href="#">BootLeaf</a>
             </div>
-            <div class="navbar-collapse collapse" id="navbar-collapse">
-                <div class="col-sm-3 col-md-4 pull-right">
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="input-group">
-                            <input id="searchbox" type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                        </div>
-                    </form>
-                </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group has-feedback navbar-right">
+                        <input id="searchbox" type="text" placeholder="Search" class="form-control">
+                        <span id="searchicon" class="fa fa-search form-control-feedback"></span>
+                    </div>
+                </form>
                 <ul class="nav navbar-nav">
                     <li><a href="#aboutModal" data-toggle="modal"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
                     <li class="dropdown">
                         <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-                                <li><a href="#legendModal" data-toggle="modal"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
-                                <li class="divider hidden-xs"></li>
-                                    <li><a href="#loginModal" data-toggle="modal"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
-                            </ul>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
+                            <li><a href="#legendModal" data-toggle="modal"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
+                            <li class="divider hidden-xs"></li>
+                                <li><a href="#loginModal" data-toggle="modal"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a id="downloadDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-download" style="color: white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>
-                                <li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>
-                                <li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" download="theaters.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Theaters</a></li>
-                                <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
-                            </ul>
+                        <ul class="dropdown-menu">
+                            <li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>
+                            <li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>
+                            <li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" download="theaters.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Theaters</a></li>
+                            <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
+                        </ul>
                     </li>
-                    <li><a href="https://github.com/bmcbride/bootleaf" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-github-alt" style="color: white"></i>&nbsp;&nbsp;GitHub Repo</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.toggle(); return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;Sidebar</a></li>
                 </ul>
             </div><!--/.navbar-collapse -->
         </div>
 
         <div id="map"></div>
+        <div id="sidebar">
+            <h2>leaflet-sidebar</h2>
+            <p>A <a href="https://github.com/turbo87/leaflet-sidebar/">responsive sidebar plugin</a> for <a href="http://leafletjs.com/">Leaflet</a>, a JS library for interactive maps.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
         <div id="loading" style="display:block;">
             <div class="loading-indicator">
                 <div class="progress progress-striped active">
@@ -190,7 +230,8 @@
                         </ul>
                         <div id="aboutTabsContent" class="tab-content" style="padding-top: 10px;">
                             <div class="tab-pane fade active in" id="about">
-                                <p>A simple template for building web mapping applications with <a href="http://getbootstrap.com/">Bootstrap 3</a> and <a href="http://leafletjs.com/" target="_blank">Leaflet</a>.</p>
+                                <p>A simple, open source template for building web mapping applications with <a href="http://getbootstrap.com/">Bootstrap 3</a>, <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, and <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a>.</p>
+                                <p>Open source, MIT licensed, available on <a href="https://github.com/bmcbride/bootleaf" target="_blank">GitHub</a>.</p>
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         Features
@@ -303,8 +344,9 @@
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
+        <script type="text/javascript" src="assets/typeahead/typeahead.bundle.min.js"></script>
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <script type="text/javascript" src="assets/leaflet-sidebar/L.Control.Sidebar.js"></script>
         <script type="text/javascript">
             var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
@@ -340,9 +382,8 @@
                 },
                 onEachFeature: function (feature, layer) {
                     boroughSearch.push({
-                        value: layer.feature.properties.BoroName,
-                        tokens: [layer.feature.properties.BoroName],
-                        layer: "Boroughs",
+                        name: layer.feature.properties.BoroName,
+                        source: "Boroughs",
                         id: L.stamp(layer),
                         bounds: layer.getBounds()
                     });
@@ -514,9 +555,8 @@
                             });
                         };
                         theaterSearch.push({
-                            value: layer.feature.properties.NAME,
-                            tokens: [layer.feature.properties.NAME],
-                            layer: "Theaters",
+                            name: layer.feature.properties.NAME,
+                            source: "Theaters",
                             id: L.stamp(layer),
                             lat: layer.feature.geometry.coordinates[1],
                             lng: layer.feature.geometry.coordinates[0]
@@ -565,9 +605,8 @@
                             });
                         };
                         museumSearch.push({
-                            value: layer.feature.properties.NAME,
-                            tokens: [layer.feature.properties.NAME],
-                            layer: "Museums",
+                            name: layer.feature.properties.NAME,
+                            source: "Museums",
                             id: L.stamp(layer),
                             lat: layer.feature.geometry.coordinates[1],
                             lng: layer.feature.geometry.coordinates[0]
@@ -611,6 +650,11 @@
                 collapsed: isCollapsed
             }).addTo(map);
 
+            var sidebar = L.control.sidebar("sidebar", {
+                closeButton: true,
+                position: "left"
+            }).addTo(map);
+
             // Highlight search box text on click
             $("#searchbox").click(function () {
                 $(this).select();
@@ -620,55 +664,110 @@
             $(document).one("ajaxStop", function () {
                 map.fitBounds(boroughs.getBounds());
                 $("#loading").hide();
-                $("#searchbox").typeahead([{
+
+                var boroughsBH = new Bloodhound({
                     name: "Boroughs",
+                    datumTokenizer: function (d) {
+                        return Bloodhound.tokenizers.whitespace(d.name);
+                    },
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
                     local: boroughSearch,
-                    minLength: 2,
-                    header: "<h4 class='typeahead-header'>Boroughs</h4>"
-                },
-                {
+                    limit: 10
+                });
+
+                var theatersBH = new Bloodhound({
                     name: "Theaters",
+                    datumTokenizer: function (d) {
+                        return Bloodhound.tokenizers.whitespace(d.name);
+                    },
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
                     local: theaterSearch,
-                    minLength: 2,
-                    limit: 10,
-                    header: "<h4 class='typeahead-header'><img src='img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>"
-                },
-                {
+                    limit: 10
+                });
+
+                var museumsBH = new Bloodhound({
                     name: "Museums",
+                    datumTokenizer: function (d) {
+                        return Bloodhound.tokenizers.whitespace(d.name);
+                    },
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
                     local: museumSearch,
-                    minLength: 2,
-                    limit: 10,
-                    header: "<h4 class='typeahead-header'><img src='img/museum.png' width='24' height='28'>&nbsp;Museums</h4>"
-                },
-                {
+                    limit: 10
+                });
+
+                var geonamesBH = new Bloodhound({
                     name: "GeoNames",
+                    datumTokenizer: function (d) {
+                        return Bloodhound.tokenizers.whitespace(d.name);
+                    },
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
                     remote: {
                         url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
-                        beforeSend: function (jqXhr, settings) {
-                            settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
+                        filter: function (data) {
+                            return $.map(data.geonames, function (result) {
+                                return {
+                                    name: result.name + ", " + result.adminCode1,
+                                    lat: result.lat,
+                                    lng: result.lng,
+                                    source: "GeoNames"
+                                };
+                            });
                         },
-                        filter: function (parsedResponse) {
-                            var dataset = [];
-                            for (i = 0; i < parsedResponse.geonames.length; i++) {
-                                dataset.push({
-                                    value: parsedResponse.geonames[i].name,
-                                    tokens: [parsedResponse.geonames[i].name],
-                                    layer: "GeoNames",
-                                    lat: parsedResponse.geonames[i].lat,
-                                    lng: parsedResponse.geonames[i].lng
-                                });
+                        ajax: {
+                            beforeSend: function (jqXhr, settings) {
+                                settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
+                                $("#searchicon").removeClass("fa-search").addClass("fa-refresh fa-spin");
+                            },
+                            complete: function (jqXHR, status) {
+                                $('#searchicon').removeClass("fa-refresh fa-spin").addClass("fa-search");
                             }
-                            return dataset;
                         }
                     },
-                    minLength: 2,
-                    limit: 5,
-                    header: "<h4 class='typeahead-header'><img src='img/globe.png' width='25' height='25'>&nbsp;GeoNames Places</h4>"
-                }]).on("typeahead:selected", function (obj, datum) {
-                    if (datum.layer === "Boroughs") {
+                    limit: 10
+                });
+                boroughsBH.initialize();
+                theatersBH.initialize();
+                museumsBH.initialize();
+                geonamesBH.initialize();
+
+                // instantiate the typeahead UI
+                $("#searchbox").typeahead({
+                    minLength: 3,
+                    highlight: true,
+                    hint: false
+                }, {
+                    name: "Boroughs",
+                    displayKey: "name",
+                    source: boroughsBH.ttAdapter(),
+                    templates: {
+                        header: "<h4 class='typeahead-header'>Boroughs</h4>"
+                    }
+                }, {
+                    name: "Theaters",
+                    displayKey: "name",
+                    source: theatersBH.ttAdapter(),
+                    templates: {
+                        header: "<h4 class='typeahead-header'><img src='img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>"
+                    }
+                }, {
+                    name: "Museums",
+                    displayKey: "name",
+                    source: museumsBH.ttAdapter(),
+                    templates: {
+                        header: "<h4 class='typeahead-header'><img src='img/museum.png' width='24' height='28'>&nbsp;Museums</h4>"
+                    }
+                }, {
+                    name: "GeoNames",
+                    displayKey: "name",
+                    source: geonamesBH.ttAdapter(),
+                    templates: {
+                        header: "<h4 class='typeahead-header'><img src='img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
+                    }
+                }).on("typeahead:selected", function (obj, datum) {
+                    if (datum.source === "Boroughs") {
                         map.fitBounds(datum.bounds);
                     };
-                    if (datum.layer === "Theaters") {
+                    if (datum.source === "Theaters") {
                         if (!map.hasLayer(theaters)) {
                             map.addLayer(theaters);
                         };
@@ -677,7 +776,7 @@
                             map._layers[datum.id].fire("click");
                         };
                     };
-                    if (datum.layer === "Museums") {
+                    if (datum.source === "Museums") {
                         if (!map.hasLayer(museums)) {
                             map.addLayer(museums);
                         };
@@ -686,14 +785,12 @@
                             map._layers[datum.id].fire("click");
                         };
                     };
-                    if (datum.layer === "GeoNames") {
+                    if (datum.source === "GeoNames") {
                         map.setView([datum.lat, datum.lng], 14);
                     };
-                    if ($("#navbar-collapse").height() > 50) {
-                        $("#navbar-collapse").collapse("hide");
+                    if ($(".navbar-collapse").height() > 50) {
+                        $(".navbar-collapse").collapse("hide");
                     };
-                }).on("typeahead:initialized ", function () {
-                    $(".tt-dropdown-menu").css("max-height", 300);
                 }).on("typeahead:opened", function () {
                     $(".navbar-collapse.in").css("max-height", $(document).height() - $(".navbar-header").height());
                     $(".navbar-collapse.in").css("height", $(document).height() - $(".navbar-header").height());
@@ -701,6 +798,8 @@
                     $(".navbar-collapse.in").css("max-height", "");
                     $(".navbar-collapse.in").css("height", "");
                 });
+                $(".twitter-typeahead").css("position", "static");
+                $(".twitter-typeahead").css("display", "block");
             });
 
             // Placeholder hack for IE
