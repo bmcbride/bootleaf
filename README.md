@@ -22,9 +22,7 @@ http://bmcbride.github.io/bootleaf/
 ![Desktop Sidebar](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-desktop2.png)
 
 ![Mobile](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-mobile1.png)
-
 ![Mobile Popup](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-mobile2.png)
 
 ![Mobile Search](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-mobile3.png)
-
 ![Mobile Menu](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-mobile4.png)
