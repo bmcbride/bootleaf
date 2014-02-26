@@ -44,14 +44,14 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li><a href="#aboutModal" data-toggle="modal"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
                     <li class="dropdown">
                         <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-                            <li><a href="#legendModal" data-toggle="modal"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
+                            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
                             <li class="divider hidden-xs"></li>
-                                <li><a href="#loginModal" data-toggle="modal"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+                                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
