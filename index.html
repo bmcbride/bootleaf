@@ -92,7 +92,6 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title">Welcome to the BootLeaf template!</h4>
                     </div>
-
                     <div class="modal-body">
                          <ul id="aboutTabs" class="nav nav-tabs">
                             <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;About the project</a></li>
@@ -132,21 +131,33 @@
                             </div>
                             <div class="tab-pane fade" id="contact">
                                 <form id="contact-form">
-                                    <fieldset>
-                                        <div class="form-group">
-                                            <label for="name">Name:</label>
-                                            <input type="text" class="form-control" id="name">
+                                    <div class="well well-sm">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="first-name">First Name:</label>
+                                                    <input type="text" class="form-control" id="first-name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="last-name">Last Name:</label>
+                                                    <input type="text" class="form-control" id="last-email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" class="form-control" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label for="message">Message:</label>
+                                                <textarea class="form-control" rows="8" id="message"></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="email">Email:</label>
-                                            <input type="text" class="form-control" id="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="comment">Comment:</label>
-                                            <textarea class="form-control" rows="3" id="comment"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
-                                    </fieldset>
+                                    </div>    
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="boroughs-tab">
