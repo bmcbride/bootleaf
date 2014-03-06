@@ -260,10 +260,8 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, boroughs, subwayLines, theaters]
+  layers: [mapquestOSM]
 });
-/* Hack to preserver layer order in Layer control */
-map.removeLayer(subwayLines);
 
 /* Larger screens get expanded layer control */
 if (document.body.clientWidth <= 767) {
@@ -288,6 +286,9 @@ var overlays = {
 var layerControl = L.control.layers(baseLayers, overlays, {
   collapsed: isCollapsed
 }).addTo(map);
+
+/* Add overlay layers to map after defining layer control to preserver order */
+map.addLayer(boroughs).addLayer(theaters);
 
 var sidebar = L.control.sidebar("sidebar", {
   closeButton: true,
