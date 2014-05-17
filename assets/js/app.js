@@ -198,6 +198,7 @@ var theaters = L.geoJson(null, {
       }
       theaterSearch.push({
         name: layer.feature.properties.NAME,
+        address: layer.feature.properties.ADDRESS1,
         source: "Theaters",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
@@ -243,6 +244,7 @@ var museums = L.geoJson(null, {
       }
       museumSearch.push({
         name: layer.feature.properties.NAME,
+        address: layer.feature.properties.ADRESS1,
         source: "Museums",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
@@ -385,14 +387,16 @@ $(document).one("ajaxStop", function () {
     displayKey: "name",
     source: theatersBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>"
+      header: "<h4 class='typeahead-header'><img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters</h4>",
+      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
     name: "Museums",
     displayKey: "name",
     source: museumsBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums</h4>"
+      header: "<h4 class='typeahead-header'><img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums</h4>",
+      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
     name: "GeoNames",
