@@ -164,6 +164,12 @@ $.getJSON("data/subways.geojson", function (data) {
   subwayLines.addData(data);
 });
 
+var theatersClusters = new L.MarkerClusterGroup({
+  spiderfyOnMaxZoom: true,
+  showCoverageOnHover: false,
+  zoomToBoundsOnClick: true,
+  disableClusteringAtZoom: 16
+});
 var theaters = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
@@ -209,6 +215,7 @@ var theaters = L.geoJson(null, {
 });
 $.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
   theaters.addData(data);
+  theatersClusters.addLayer(theaters);
 });
 
 var museums = L.geoJson(null, {
@@ -260,7 +267,7 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM]
+  layers: [mapquestOSM, boroughs, theatersClusters]
 });
 
 /* Larger screens get expanded layer control */
@@ -279,16 +286,24 @@ var baseLayers = {
 var overlays = {
   "Boroughs": boroughs,
   "Subway Lines": subwayLines,
-  "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaters,
+  "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theatersClusters,
   "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museums
 };
 
-var layerControl = L.control.layers(baseLayers, overlays, {
+var groupedOverlays = {
+  "Points of Interest": {
+    "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theatersClusters,
+    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museums
+  },
+  "Reference": {
+    "Boroughs": boroughs,
+    "Subway Lines": subwayLines
+  }
+};
+
+var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
   collapsed: isCollapsed
 }).addTo(map);
-
-/* Add overlay layers to map after defining layer control to preserver order */
-map.addLayer(boroughs).addLayer(theaters);
 
 var sidebar = L.control.sidebar("sidebar", {
   closeButton: true,
