@@ -1,6 +1,4 @@
-var map, boroughSearch = [],
-    theaterSearch = [],
-    museumSearch = [];
+var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 /* Basemap Layers */
 var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {

@@ -34,6 +34,7 @@ L.Control.Sidebar = L.Control.extend({
             close.innerHTML = '&times;';
         }
     },
+
     addTo: function (map) {
         var container = this._container;
         var content = this._contentContainer;
@@ -44,6 +45,12 @@ L.Control.Sidebar = L.Control.extend({
 
             L.DomEvent.on(close, 'click', this.hide, this);
         }
+
+        L.DomEvent
+            .on(container, 'transitionend',
+                this._handleTransitionEvent, this)
+            .on(container, 'webkitTransitionEnd',
+                this._handleTransitionEvent, this);
 
         // Attach sidebar container to controls container
         var controlContainer = map._controlContainer;
@@ -86,6 +93,12 @@ L.Control.Sidebar = L.Control.extend({
             .off(content, 'dblclick', stop)
             .off(content, 'mousewheel', stop)
             .off(content, 'MozMousePixelScroll', stop);
+
+        L.DomEvent
+            .off(container, 'transitionend',
+                this._handleTransitionEvent, this)
+            .off(container, 'webkitTransitionEnd',
+                this._handleTransitionEvent, this);
 
         if (this._closeButton && this._close) {
             var close = this._closeButton;
@@ -154,6 +167,11 @@ L.Control.Sidebar = L.Control.extend({
         } else {
             return this._container.offsetWidth;
         }
+    },
+
+    _handleTransitionEvent: function (e) {
+        if (e.propertyName == 'left' || e.propertyName == 'right')
+            this.fire(this.isVisible() ? 'shown' : 'hidden');
     }
 });
 

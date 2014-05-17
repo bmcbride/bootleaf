@@ -60,6 +60,12 @@
     border-radius: 4px;
 }
 
+.leaflet-touch .leaflet-sidebar > .leaflet-control {
+    box-shadow: none;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+}
+
 @media(max-width:767px){
     .leaflet-sidebar {
         width: 100%;
@@ -94,6 +100,10 @@
 
     .leaflet-sidebar.right.visible ~ .leaflet-right {
         right: 100%;
+    }
+
+    .leaflet-touch .leaflet-sidebar > .leaflet-control {
+        border: 0;
     }
 }
 
