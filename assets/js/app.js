@@ -309,7 +309,8 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, boroughs, markerClusters]
+  layers: [mapquestOSM, boroughs, markerClusters],
+  zoomControl: false
 });
 
 /* Layer control listeners that allow for a single markerClusters layer */
@@ -337,6 +338,10 @@ if (document.body.clientWidth <= 767) {
 } else {
   var isCollapsed = false;
 }
+
+var zoomControl = L.control.zoom({
+  position: "bottomright"
+}).addTo(map);
 
 var baseLayers = {
   "Street Map": mapquestOSM,
