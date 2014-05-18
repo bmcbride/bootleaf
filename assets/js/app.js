@@ -29,6 +29,10 @@ function sidebarClick(lat, lng, id, layer) {
   if (!map.hasLayer(layer)) {
     map.addLayer(layer);
   }
+  /* If sidebar takes up entire screen, hide it and go to the map */
+  if (document.body.clientWidth <= 767) {
+    sidebar.hide();
+  }
   map._layers[id].fire("click");
 }
 
