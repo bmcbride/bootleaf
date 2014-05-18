@@ -322,6 +322,9 @@ var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
   collapsed: isCollapsed
 }).addTo(map);
 
+/* Add overlay layers after layer control added to map to preserve layer order */
+map.addLayer(theaterLayer).addLayer(boroughs);
+
 var sidebar = L.control.sidebar("sidebar", {
   closeButton: true,
   position: "left"
@@ -334,8 +337,8 @@ $("#searchbox").click(function () {
 
 /* Typeahead search functionality */
 $(document).one("ajaxStop", function () {
-  /* Add overlay layers after layer control added to map to preserve layer order & fit map to boroughs bounds */
-  map.addLayer(theaterLayer).addLayer(boroughs).fitBounds(boroughs.getBounds());
+  /* Fit map to boroughs bounds */
+  map.fitBounds(boroughs.getBounds());
   $("#loading").hide();
 
   var boroughsBH = new Bloodhound({
