@@ -1,5 +1,37 @@
 var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
+$(document).ready(function() {
+  getViewport();
+});
+
+function getViewport() {
+  if (sidebar.isVisible()) {
+    map.setActiveArea({
+      position: "absolute",
+      top: "50px",
+      left: $(".leaflet-sidebar").css("width"),
+      right: "0px",
+      height: $("#map").css("height")
+    });
+  } else {
+    map.setActiveArea({
+      position: "absolute",
+      top: "50px",
+      left: "0px",
+      right: "0px",
+      height: $("#map").css("height")
+    });
+  }
+}
+
+function sidebarClick(lat, lng, id, layer) {
+  map.setView([lat, lng], 17);
+  if (!map.hasLayer(layer)) {
+    map.addLayer(layer);
+  }
+  map._layers[id].fire("click");
+}
+
 /* Basemap Layers */
 var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -134,7 +166,6 @@ var subwayLines = L.geoJson(null, {
             $("#featureModal").modal("show");
           }
         });
-
       } else {
         layer.bindPopup(content, {
           maxWidth: "auto",
@@ -199,13 +230,13 @@ var theaters = L.geoJson(null, {
             $("#featureModal").modal("show");
           }
         });
-
       } else {
         layer.bindPopup(content, {
           maxWidth: "auto",
           closeButton: false
         });
       }
+      $("#theater-list tbody").append('<tr><td>'+layer.feature.properties.NAME+'</td><td><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', theaterLayer); return false;">'+layer.feature.properties.ADDRESS1+'</a></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -248,13 +279,13 @@ var museums = L.geoJson(null, {
             $("#featureModal").modal("show");
           }
         });
-
       } else {
         layer.bindPopup(content, {
           maxWidth: "auto",
           closeButton: false
         });
       }
+      $("#museum-list tbody").append('<tr><td>'+layer.feature.properties.NAME+'</td><td><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', museumLayer); return false;">'+layer.feature.properties.ADRESS1+'</a></td></tr>');
       museumSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADRESS1,
@@ -326,6 +357,10 @@ var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
 var sidebar = L.control.sidebar("sidebar", {
   closeButton: true,
   position: "left"
+}).on("shown", function () {
+  getViewport();
+}).on("hidden", function () {
+  getViewport();
 }).addTo(map);
 
 /* Highlight search box text on click */
