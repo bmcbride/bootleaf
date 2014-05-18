@@ -164,12 +164,16 @@ $.getJSON("data/subways.geojson", function (data) {
   subwayLines.addData(data);
 });
 
-var theatersClusters = new L.MarkerClusterGroup({
+/* Single marker cluster layer to hold all clusters */
+var markerClusters = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: true,
   showCoverageOnHover: false,
   zoomToBoundsOnClick: true,
   disableClusteringAtZoom: 16
 });
+
+/* Empty layer placeholder to add to layer control for listening when to add/remove theaters to markerClusters layer */
+var theaterLayer = L.geoJson(null);
 var theaters = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
@@ -215,9 +219,10 @@ var theaters = L.geoJson(null, {
 });
 $.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
   theaters.addData(data);
-  theatersClusters.addLayer(theaters);
 });
 
+/* Empty layer placeholder to add to layer control for listening when to add/remove museums to markerClusters layer */
+var museumLayer = L.geoJson(null);
 var museums = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {
@@ -267,7 +272,26 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, boroughs, theatersClusters]
+  layers: [mapquestOSM, markerClusters]
+});
+
+/* Layer control listeners that allow for a single markerClusters layer */
+map.on("overlayadd", function(e) {
+  if (e.layer === theaterLayer) {
+    markerClusters.addLayer(theaters);
+  }
+  if (e.layer === museumLayer) {
+    markerClusters.addLayer(museums);
+  }
+});
+
+map.on("overlayremove", function(e) {
+  if (e.layer === theaterLayer) {
+    markerClusters.removeLayer(theaters);
+  }
+  if (e.layer === museumLayer) {
+    markerClusters.removeLayer(museums);
+  }
 });
 
 /* Larger screens get expanded layer control */
@@ -283,17 +307,10 @@ var baseLayers = {
   "Imagery with Streets": mapquestHYB
 };
 
-var overlays = {
-  "Boroughs": boroughs,
-  "Subway Lines": subwayLines,
-  "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theatersClusters,
-  "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museums
-};
-
 var groupedOverlays = {
   "Points of Interest": {
-    "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theatersClusters,
-    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museums
+    "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaterLayer,
+    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer
   },
   "Reference": {
     "Boroughs": boroughs,
@@ -317,7 +334,8 @@ $("#searchbox").click(function () {
 
 /* Typeahead search functionality */
 $(document).one("ajaxStop", function () {
-  map.fitBounds(boroughs.getBounds());
+  /* Add overlay layers after layer control added to map to preserve layer order & fit map to boroughs bounds */
+  map.addLayer(theaterLayer).addLayer(boroughs).fitBounds(boroughs.getBounds());
   $("#loading").hide();
 
   var boroughsBH = new Bloodhound({
@@ -425,8 +443,8 @@ $(document).one("ajaxStop", function () {
       map.fitBounds(datum.bounds);
     }
     if (datum.source === "Theaters") {
-      if (!map.hasLayer(theaters)) {
-        map.addLayer(theaters);
+      if (!map.hasLayer(theaterLayer)) {
+        map.addLayer(theaterLayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
@@ -434,8 +452,8 @@ $(document).one("ajaxStop", function () {
       }
     }
     if (datum.source === "Museums") {
-      if (!map.hasLayer(museums)) {
-        map.addLayer(museums);
+      if (!map.hasLayer(museumLayer)) {
+        map.addLayer(museumLayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
