@@ -219,6 +219,7 @@ var theaters = L.geoJson(null, {
 });
 $.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
   theaters.addData(data);
+  map.addLayer(theaterLayer);
 });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove museums to markerClusters layer */
@@ -272,7 +273,7 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, theaterLayer, boroughs, markerClusters]
+  layers: [mapquestOSM, boroughs, markerClusters]
 });
 
 /* Layer control listeners that allow for a single markerClusters layer */
