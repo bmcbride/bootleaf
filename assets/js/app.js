@@ -2,13 +2,16 @@ var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(document).ready(function() {
   getViewport();
+  /* Hack to refresh tabs after append */
+  $("#poi-tabs a[href='#museums']").tab("show");
+  $("#poi-tabs a[href='#theaters']").tab("show");
 });
 
 function getViewport() {
   if (sidebar.isVisible()) {
     map.setActiveArea({
       position: "absolute",
-      top: "50px",
+      top: "0px",
       left: $(".leaflet-sidebar").css("width"),
       right: "0px",
       height: $("#map").css("height")
@@ -16,7 +19,7 @@ function getViewport() {
   } else {
     map.setActiveArea({
       position: "absolute",
-      top: "50px",
+      top: "0px",
       left: "0px",
       right: "0px",
       height: $("#map").css("height")
@@ -241,7 +244,7 @@ var theaters = L.geoJson(null, {
           closeButton: false
         });
       }
-      $("#theater-list tbody").append('<tr><td>'+layer.feature.properties.NAME+'</td><td><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', theaterLayer); return false;">'+layer.feature.properties.ADDRESS1+'</a></td></tr>');
+      $("#theater-table tbody").append('<tr><td class="theater-name">'+layer.feature.properties.NAME+'</td><td class="theater-address"><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', theaterLayer); return false;">'+layer.feature.properties.ADDRESS1+'</a></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -290,7 +293,7 @@ var museums = L.geoJson(null, {
           closeButton: false
         });
       }
-      $("#museum-list tbody").append('<tr><td>'+layer.feature.properties.NAME+'</td><td><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', museumLayer); return false;">'+layer.feature.properties.ADRESS1+'</a></td></tr>');
+      $("#museum-table tbody").append('<tr><td class="museum-name">'+layer.feature.properties.NAME+'</td><td class="museum-address"><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', museumLayer); return false;">'+layer.feature.properties.ADRESS1+'</a></td></tr>');
       museumSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADRESS1,
@@ -403,6 +406,7 @@ $(document).one("ajaxStop", function () {
     local: theaterSearch,
     limit: 10
   });
+  var theaterList = new List("theaters", {valueNames: ["theater-name", "theater-address"]}).sort("theater-name", {order:"asc"});
 
   var museumsBH = new Bloodhound({
     name: "Museums",
@@ -413,6 +417,7 @@ $(document).one("ajaxStop", function () {
     local: museumSearch,
     limit: 10
   });
+  var museumList = new List("museums", {valueNames: ["museum-name", "museum-address"]}).sort("museum-name", {order:"asc"});
 
   var geonamesBH = new Bloodhound({
     name: "GeoNames",

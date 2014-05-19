@@ -82,25 +82,45 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane active" id="theaters">
-          <table class="table table-condensed table-striped" id="theater-list">
+          <p>
+            <div class="row">
+              <div class="col-xs-8 col-md-8">
+                <input type="text" class="form-control search" placeholder="Search" />
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <button type="button" class="btn btn-primary pull-right sort" data-sort="theater-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
+              </div>
+            </div>
+          </p>
+          <table class="table table-condensed table-striped" id="theater-table">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Address</th>
               <tr>
             </thead>
-            <tbody></tbody>
+            <tbody class="list"></tbody>
           </table>
         </div>
         <div class="tab-pane active" id="museums">
-          <table class="table table-condensed table-striped" id="museum-list">
+          <p>
+            <div class="row">
+              <div class="col-xs-8 col-md-8">
+                <input type="text" class="form-control search" placeholder="Search" />
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <button type="button" class="btn btn-primary pull-right sort" data-sort="museum-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
+              </div>
+            </div>
+          </p>
+          <table class="table table-condensed table-striped" id="museum-table">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Address</th>
               <tr>
             </thead>
-            <tbody></tbody>
+            <tbody class="list"></tbody>
           </table>
         </div>
       </div>
@@ -263,6 +283,7 @@
     <script src="assets/bootstrap-3.1.1/js/bootstrap.min.js"></script>
     <script src="assets/typeahead-0.10.2/typeahead.bundle.min.js"></script>
     <script src="assets/handlebars-1.3.0/handlebars.js"></script>
+    <script src="assets/list-1.1.1/list.min.js"></script>
     <script src="assets/leaflet-0.7.2/leaflet.js"></script>
     <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
     <script src="assets/leaflet-activearea/L.activearea.js"></script>
