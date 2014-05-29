@@ -130,3 +130,22 @@ input[type="radio"], input[type="checkbox"] {
     display: none !important;
   }
 }
+
+/* Animation for pulsing geolocation marker */
+svg .pulsate {
+    stroke-width: 4;
+    animation: geopulse 5s infinite;
+    -webkit-animation: geopulse 5s infinite;
+}
+
+@-webkit-keyframes geopulse {
+    0% {stroke-width:0}
+    50% {stroke-width:20}
+    100% {stroke-width:0}
+}
+
+@keyframes geopulse {
+    0% {stroke-width:0}
+    50% {stroke-width:20}
+    100% {stroke-width:0}
+}
