@@ -11,10 +11,13 @@
     <title>BootLeaf</title>
 
     <link rel="stylesheet" href="assets/bootstrap-3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/leaflet-0.7.2/leaflet.css">
-    <link rel="stylesheet" href="assets/leaflet-sidebar/L.Control.Sidebar.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/leaflet-sidebar-0.1.5/L.Control.Sidebar.css">
+    <link rel="stylesheet" href="assets/leaflet-markercluster-0.4.0/MarkerCluster.css">
+    <link rel="stylesheet" href="assets/leaflet-markercluster-0.4.0/MarkerCluster.Default.css">
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/leaflet-markercluster-0.4.0/MarkerCluster.Default.ie.css"><![endif]-->
+    <link rel="stylesheet" href="assets/css/app.css">
 
     <link rel="apple-touch-icon" href="assets/img/favicon-152.png">
     <link rel="shortcut icon" sizes="196x196" href="assets/img/favicon-196.png">
@@ -70,12 +73,57 @@
 
     <div id="map"></div>
     <div id="sidebar">
-      <h2>leaflet-sidebar</h2>
-      <p>A <a href="https://github.com/turbo87/leaflet-sidebar/">responsive sidebar plugin</a> for <a href="http://leafletjs.com/">Leaflet</a>, a JS library for interactive maps.</p>
-      <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <h4>Points of Interest</h4>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="poi-tabs">
+        <li class="active"><a href="#theaters" onclick="$('#poi-tabs a[href=\'#theaters\']').tab('show'); return false;">Theaters</a></li>
+        <li><a href="#museums" onclick="$('#poi-tabs a[href=\'#museums\']').tab('show'); return false;">Museums</a></li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="theaters">
+          <p>
+            <div class="row">
+              <div class="col-xs-8 col-md-8">
+                <input type="text" class="form-control search" placeholder="Search" />
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <button type="button" class="btn btn-primary pull-right sort" data-sort="theater-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
+              </div>
+            </div>
+          </p>
+          <table class="table table-condensed table-striped" id="theater-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+              <tr>
+            </thead>
+            <tbody class="list"></tbody>
+          </table>
+        </div>
+        <div class="tab-pane active" id="museums">
+          <p>
+            <div class="row">
+              <div class="col-xs-8 col-md-8">
+                <input type="text" class="form-control search" placeholder="Search" />
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <button type="button" class="btn btn-primary pull-right sort" data-sort="museum-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
+              </div>
+            </div>
+          </p>
+          <table class="table table-condensed table-striped" id="museum-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+              <tr>
+            </thead>
+            <tbody class="list"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <div id="loading">
       <div class="loading-indicator">
@@ -114,12 +162,13 @@
                   <div class="panel-heading">Features</div>
                   <ul class="list-group">
                     <li class="list-group-item">Fullscreen mobile-friendly map template with responsive navbar and modal placeholders</li>
-                    <li class="list-group-item">jQuery loading of external GeoJSON files</li>
-                    <li class="list-group-item">Elegant client-side multi-layer feature search with autocomplete using <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a></li>
                     <li class="list-group-item">Integration of Bootstrap tables into Leaflet popups</li>
                     <li class="list-group-item">Logic for minimizing layer control and switching to modal popups on small screens</li>
+                    <li class="list-group-item">jQuery loading of external GeoJSON files</li>
+                    <li class="list-group-item">Logical multiple layer marker clustering via the <a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">leaflet marker cluster</a> plugin</li>
+                    <li class="list-group-item">Elegant client-side multi-layer feature search with autocomplete using <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a></li>
                     <li class="list-group-item">Responsive sidebar functionality via the <a href="https://github.com/turbo87/leaflet-sidebar/" target="_blank">leaflet-sidebar</a> plugin</li>
-                    <li class="list-group-item">Marker icons included in layer control</li>
+                    <li class="list-group-item">Marker icons included in grouped layer control via the <a href="https://github.com/ismyrnow/Leaflet.groupedlayercontrol" target="_blank">grouped layer control</a> plugin</li>
                   </ul>
                 </div>
               </div>
@@ -232,9 +281,14 @@
 
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/bootstrap-3.1.1/js/bootstrap.min.js"></script>
-    <script src="assets/typeahead/typeahead.bundle.min.js"></script>
+    <script src="assets/typeahead-0.10.2/typeahead.bundle.min.js"></script>
+    <script src="assets/handlebars-1.3.0/handlebars.js"></script>
+    <script src="assets/list-1.1.1/list.min.js"></script>
     <script src="assets/leaflet-0.7.2/leaflet.js"></script>
-    <script src="assets/leaflet-sidebar/L.Control.Sidebar.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
+    <script src="assets/leaflet-activearea/L.activearea.js"></script>
+    <script src="assets/leaflet-sidebar-0.1.5/L.Control.Sidebar.js"></script>
+    <script src="assets/leaflet-markercluster-0.4.0/leaflet.markercluster.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
