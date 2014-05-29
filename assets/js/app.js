@@ -542,3 +542,37 @@ if (navigator.appName == "Microsoft Internet Explorer") {
     }
   });
 }
+
+/* Initialize the Geolocator */
+function onLocationFound(e){
+    this.currentAccuracyCircle = this.currentAccuracyCircle || null;
+    this.currentLocationPoint = this.currentLocationPoint || null;
+    if(this.currentAccuracyCircle === null){
+        this.currentAccuracyCircle = new L.Circle(e.latlng,e.accuracy/2,{
+                // stroke
+                weight:1.0,
+                color:'#130085',
+                opacity:0.6,
+
+                // fill
+                fillColor:'#130085',
+                fillOpacity:0.1
+            });
+
+            this.currentLocationPoint  = new L.Circle(e.latlng,0.5,{
+                color:'#130085',
+                fillColor:'#130085',
+                weight:4.0
+            });
+
+            this.currentAccuracyCircle.addTo(map);
+            this.currentLocationPoint.addTo(map);
+            var currentClass = $(this.currentLocationPoint._path).attr('class');
+            $(this.currentLocationPoint._path).attr('class', currentClass + ' pulsate');
+    }else{
+            this.currentAccuracyCircle.setLatLng(e.latlng);
+            this.currentLocationPoint.setLatLng(e.latlng);
+            this.currentAccuracyCircle.setRadius(e.accuracy/2);
+    }
+} 
+map.on('locationfound', onLocationFound);
