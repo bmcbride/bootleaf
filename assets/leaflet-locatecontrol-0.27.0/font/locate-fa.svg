@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="locate-fa" horiz-adv-x="1000" >
+<font-face font-family="locate-fa" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="location" unicode="&#xe802;" d="m429 493q0 59-42 101t-101 42t-101-42t-42-101t42-101t101-42t101 42t42 101z m142 0q0-61-18-100l-203-432q-9-18-27-29t-37-11t-38 11t-26 29l-204 432q-18 39-18 100q0 118 84 202t202 84t202-84t83-202z" horiz-adv-x="571.4" />
+<glyph glyph-name="direction" unicode="&#xe800;" d="m782 655l-357-714q-10-20-32-20q-3 0-8 1q-13 3-20 13t-8 22v322h-321q-13 0-22 7t-13 20t2 23t17 17l714 357q7 4 16 4q15 0 25-10q8-8 10-20t-3-22z" horiz-adv-x="785.7" />
+<glyph glyph-name="spinner" unicode="&#xe801;" d="m277 100q0-33-24-57t-57-23q-33 0-56 23t-24 57t24 57t56 23q33 0 57-23t24-57z m241-107q0-30-21-51t-51-21t-50 21t-21 51t21 50t50 21t51-21t21-50z m-339 357q0-37-27-63t-63-26t-63 26t-26 63t26 63t63 26t63-26t27-63z m580-250q0-26-18-44t-45-18t-44 18t-18 44t18 44t44 19t45-19t18-44z m-464 500q0-41-29-69t-70-29t-69 29t-29 69t29 69t69 29t70-29t29-69z m259 107q0-45-32-76t-76-31t-75 31t-32 76t32 76t75 31t76-31t32-76z m303-357q0-22-15-38t-38-16t-38 16t-16 38t16 38t38 16t38-16t15-38z m-116 250q0-18-13-32t-32-13t-31 13t-13 32t13 31t31 14t32-14t13-31z" horiz-adv-x="875" />
+</font>
+</defs>
+</svg>
