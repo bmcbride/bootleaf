@@ -313,7 +313,8 @@ map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
   layers: [mapquestOSM, boroughs, markerClusters],
-  zoomControl: false
+  zoomControl: false,
+  attributionControl: false
 });
 
 /* Layer control listeners that allow for a single markerClusters layer */
@@ -334,6 +335,27 @@ map.on("overlayremove", function(e) {
     markerClusters.removeLayer(museums);
   }
 });
+
+/* Attribution control */
+function updateAttribution(e) {
+  $.each(map._layers, function(index, layer) {
+    if (layer.getAttribution) {
+      $("#attribution").html((layer.getAttribution()));
+    }
+  });
+}
+map.on("layeradd", updateAttribution);
+map.on("layerremove", updateAttribution);
+
+var attributionControl = L.control({
+  position: "bottomright"
+});
+attributionControl.onAdd = function (map) {
+  var div = L.DomUtil.create("div", "leaflet-control-attribution");
+  div.innerHTML = "Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a> | <a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
+  return div;
+};
+map.addControl(attributionControl);
 
 var zoomControl = L.control.zoom({
   position: "bottomright"
