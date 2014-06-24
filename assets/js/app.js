@@ -367,6 +367,7 @@ var zoomControl = L.control.zoom({
   position: "bottomright"
 }).addTo(map);
 
+/* GPS enabled geolocation control set to follow the user's location */
 var locateControl = L.control.locate({
   position: "bottomright",
   drawCircle: true,
