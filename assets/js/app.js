@@ -40,7 +40,7 @@ function sidebarClick(id) {
   markerClusters.zoomToShowLayer(layer, function() {
     map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 18);
     layer.fire("click");
-  })
+  });
 }
 
 /* Basemap Layers */
