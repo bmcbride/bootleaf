@@ -109,43 +109,43 @@
 
 @media(min-width:768px) and (max-width:991px){
     .leaflet-sidebar {
-        width: 305px;
+        width: 300px;
     }
 
     .leaflet-sidebar.left.visible ~ .leaflet-left {
-        left: 305px;
+        left: 300px;
     }
 
     .leaflet-sidebar.right.visible ~ .leaflet-right {
-        right: 305px;
+        right: 300px;
     }
 }
 
 @media(min-width:992px) and (max-width:1199px){
     .leaflet-sidebar {
-        width: 390px;
+        width: 300px;
     }
 
     .leaflet-sidebar.left.visible ~ .leaflet-left {
-        left: 390px;
+        left: 300px;
     }
 
     .leaflet-sidebar.right.visible ~ .leaflet-right {
-        right: 390px;
+        right: 300px;
     }
 }
 
 @media(min-width:1200px){
     .leaflet-sidebar {
-        width: 460px;
+        width: 300px;
     }
 
     .leaflet-sidebar.left.visible ~ .leaflet-left {
-        left: 460px;
+        left: 300px;
     }
 
     .leaflet-sidebar.right.visible ~ .leaflet-right {
-        right: 460px;
+        right: 300px;
     }
 }
 
