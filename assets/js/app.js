@@ -2,9 +2,6 @@ var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(document).ready(function() {
   getViewport();
-  /* Hack to refresh tabs after append */
-  $("#poi-tabs a[href='#museums']").tab("show");
-  $("#poi-tabs a[href='#theaters']").tab("show");
 });
 
 function getViewport() {
@@ -25,19 +22,25 @@ function getViewport() {
       height: $("#map").css("height")
     });
   }
+  if (document.body.clientWidth <= 767) {
+    $(".leaflet-sidebar .close").css("top", "8px");
+  } else {
+    $(".leaflet-sidebar .close").css("top", "15px");
+  }
 }
 
-function sidebarClick(lat, lng, id, layer) {
+function sidebarClick(id) {
   /* If sidebar takes up entire screen, hide it and go to the map */
   if (document.body.clientWidth <= 767) {
     sidebar.hide();
     getViewport();
   }
-  map.setView([lat, lng], 17);
-  if (!map.hasLayer(layer)) {
-    map.addLayer(layer);
-  }
-  map._layers[id].fire("click");
+  map.addLayer(theaterLayer).addLayer(museumLayer);
+  var layer = markerClusters.getLayer(id);
+  markerClusters.zoomToShowLayer(layer, function() {
+    map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 18);
+    layer.fire("click");
+  })
 }
 
 /* Basemap Layers */
@@ -61,6 +64,8 @@ var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sa
 })]);
 
 /* Overlay Layers */
+var highlight = L.geoJson(null);
+
 var boroughs = L.geoJson(null, {
   style: function (feature) {
     return {
@@ -166,20 +171,19 @@ var subwayLines = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
       var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Division</th><td>" + feature.properties.Division + "</td></tr>" + "<tr><th>Line</th><td>" + feature.properties.Line + "</td></tr>" + "<table>";
-      if (document.body.clientWidth <= 767) {
-        layer.on({
-          click: function (e) {
-            $("#feature-title").html(feature.properties.Line);
-            $("#feature-info").html(content);
-            $("#featureModal").modal("show");
-          }
-        });
-      } else {
-        layer.bindPopup(content, {
-          maxWidth: "auto",
-          closeButton: false
-        });
-      }
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.Line);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+          highlight.clearLayers().addLayer(L.circleMarker([e.latlng.lat, e.latlng.lng], {
+            stroke: false,
+            fillColor: "#00FFFF",
+            fillOpacity: 0.7,
+            radius: 10
+          }));
+        }
+      });
     }
     layer.on({
       mouseover: function (e) {
@@ -229,22 +233,20 @@ var theaters = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
       var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADDRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-
-      if (document.body.clientWidth <= 767) {
-        layer.on({
-          click: function (e) {
-            $("#feature-title").html(feature.properties.NAME);
-            $("#feature-info").html(content);
-            $("#featureModal").modal("show");
-          }
-        });
-      } else {
-        layer.bindPopup(content, {
-          maxWidth: "auto",
-          closeButton: false
-        });
-      }
-      $("#theater-table tbody").append('<tr><td class="theater-name">'+layer.feature.properties.NAME+'</td><td class="theater-address"><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', theaterLayer); return false;">'+layer.feature.properties.ADDRESS1+'</a></td></tr>');
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.NAME);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+            stroke: false,
+            fillColor: "#00FFFF",
+            fillOpacity: 0.7,
+            radius: 10
+          }));
+        }
+      });
+      $("#theater-table tbody").append('<tr style="cursor: pointer;" onclick="sidebarClick('+L.stamp(layer)+'); return false;"><td class="theater-name">'+layer.feature.properties.NAME+'<i class="fa fa-chevron-right pull-right"></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -279,21 +281,20 @@ var museums = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
       var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-      if (document.body.clientWidth <= 767) {
-        layer.on({
-          click: function (e) {
-            $("#feature-title").html(feature.properties.NAME);
-            $("#feature-info").html(content);
-            $("#featureModal").modal("show");
-          }
-        });
-      } else {
-        layer.bindPopup(content, {
-          maxWidth: "auto",
-          closeButton: false
-        });
-      }
-      $("#museum-table tbody").append('<tr><td class="museum-name">'+layer.feature.properties.NAME+'</td><td class="museum-address"><a href="#" onclick="sidebarClick('+layer.feature.geometry.coordinates[1]+', '+layer.feature.geometry.coordinates[0]+', '+L.stamp(layer)+', museumLayer); return false;">'+layer.feature.properties.ADRESS1+'</a></td></tr>');
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.NAME);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+            stroke: false,
+            fillColor: "#00FFFF",
+            fillOpacity: 0.7,
+            radius: 10
+          }));
+        }
+      });
+      $("#museum-table tbody").append('<tr style="cursor: pointer;" onclick="sidebarClick('+L.stamp(layer)+'); return false;"><td class="museum-name">'+layer.feature.properties.NAME+'<i class="fa fa-chevron-right pull-right"></td></tr>');
       museumSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADRESS1,
@@ -312,7 +313,7 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, boroughs, markerClusters],
+  layers: [mapquestOSM, boroughs, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -334,6 +335,11 @@ map.on("overlayremove", function(e) {
   if (e.layer === museumLayer) {
     markerClusters.removeLayer(museums);
   }
+});
+
+/* Clear feature highlight when featureModal is closed */
+$("#featureModal").on("hide.bs.modal", function (e) {
+  highlight.clearLayers();
 });
 
 /* Attribution control */
@@ -392,6 +398,23 @@ var locateControl = L.control.locate({
   }
 }).addTo(map);
 
+var sidebar = L.control.sidebar("sidebar", {
+  closeButton: true,
+  position: "left"
+}).on("shown", function () {
+  getViewport();
+}).on("hidden", function () {
+  getViewport();
+}).addTo(map);
+
+/* Larger screens get expanded layer control and visible sidebar */
+if (document.body.clientWidth <= 767) {
+  var isCollapsed = true;
+} else {
+  var isCollapsed = false;
+  sidebar.show();
+}
+
 var baseLayers = {
   "Street Map": mapquestOSM,
   "Aerial Imagery": mapquestOAM,
@@ -409,24 +432,8 @@ var groupedOverlays = {
   }
 };
 
-/* Larger screens get expanded layer control */
-if (document.body.clientWidth <= 767) {
-  var isCollapsed = true;
-} else {
-  var isCollapsed = false;
-}
-
 var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
   collapsed: isCollapsed
-}).addTo(map);
-
-var sidebar = L.control.sidebar("sidebar", {
-  closeButton: true,
-  position: "left"
-}).on("shown", function () {
-  getViewport();
-}).on("hidden", function () {
-  getViewport();
 }).addTo(map);
 
 /* Highlight search box text on click */
@@ -459,7 +466,7 @@ $(document).one("ajaxStop", function () {
     local: theaterSearch,
     limit: 10
   });
-  var theaterList = new List("theaters", {valueNames: ["theater-name", "theater-address"]}).sort("theater-name", {order:"asc"});
+  var theaterList = new List("theaters", {valueNames: ["theater-name"]}).sort("theater-name", {order:"asc"});
 
   var museumsBH = new Bloodhound({
     name: "Museums",
