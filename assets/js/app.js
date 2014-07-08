@@ -391,7 +391,7 @@ var locateControl = L.control.locate({
     outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
   },
   locateOptions: {
-    maxZoom: 17,
+    maxZoom: 18,
     watch: true,
     enableHighAccuracy: true,
     maximumAge: 10000,
