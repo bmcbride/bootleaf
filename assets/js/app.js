@@ -23,9 +23,9 @@ function getViewport() {
     });
   }
   if (document.body.clientWidth <= 767) {
-    $(".leaflet-sidebar .close").css("top", "8px");
+    $(".leaflet-sidebar .close").css("top", "2px");
   } else {
-    $(".leaflet-sidebar .close").css("top", "15px");
+    $(".leaflet-sidebar .close").css("top", "12px");
   }
 }
 
