@@ -43,7 +43,7 @@ input[type="radio"], input[type="checkbox"] {
   right: 0px;
   top: 5px;
   background: transparent;
-  font-size: 21px;
+  font-size: 28px;
 }
 .leaflet-control-layers label {
   font-weight: normal;
@@ -54,11 +54,9 @@ input[type="radio"], input[type="checkbox"] {
   margin-bottom: .2em;
   display: block;
 }
-
 .leaflet-control-layers-group {
   margin-bottom: .5em;
 }
-
 .leaflet-control-layers-group label {
   padding-left: .5em;
 }
@@ -117,15 +115,6 @@ input[type="radio"], input[type="checkbox"] {
   height: 34px;
   line-height: 34px;
   text-align: center;
-}
-.leaflet-popup-content {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.leaflet-popup-content-wrapper {
-  border-radius: 5px;
 }
 @media (max-width: 992px) {
   .navbar .navbar-brand {
