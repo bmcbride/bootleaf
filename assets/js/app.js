@@ -588,18 +588,3 @@ $(document).one("ajaxStop", function () {
   $(".twitter-typeahead").css("position", "static");
   $(".twitter-typeahead").css("display", "block");
 });
-
-/* Placeholder hack for IE */
-if (navigator.appName == "Microsoft Internet Explorer") {
-  $("input").each(function () {
-    if ($(this).val() === "" && $(this).attr("placeholder") !== "") {
-      $(this).val($(this).attr("placeholder"));
-      $(this).focus(function () {
-        if ($(this).val() === $(this).attr("placeholder")) $(this).val("");
-      });
-      $(this).blur(function () {
-        if ($(this).val() === "") $(this).val($(this).attr("placeholder"));
-      });
-    }
-  });
-}
