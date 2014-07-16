@@ -22,11 +22,6 @@ function getViewport() {
       height: $("#map").css("height")
     });
   }
-  if (document.body.clientWidth <= 767) {
-    $(".leaflet-sidebar .close").css("top", "2px");
-  } else {
-    $(".leaflet-sidebar .close").css("top", "12px");
-  }
 }
 
 function sidebarClick(id) {
