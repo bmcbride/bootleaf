@@ -332,8 +332,8 @@ map.on("overlayremove", function(e) {
   }
 });
 
-/* Clear feature highlight when featureModal is closed */
-$("#featureModal").on("hide.bs.modal", function (e) {
+/* Clear feature highlight when map is clicked */
+map.on("click", function(e) {
   highlight.clearLayers();
 });
 
