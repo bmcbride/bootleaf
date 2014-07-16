@@ -40,10 +40,7 @@ input[type="radio"], input[type="checkbox"] {
   padding: 0px;
 }
 .leaflet-sidebar .close {
-  right: 0px;
-  top: 5px;
-  background: transparent;
-  font-size: 28px;
+  display: none;
 }
 .leaflet-control-layers label {
   font-weight: normal;

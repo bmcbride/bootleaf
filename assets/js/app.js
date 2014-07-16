@@ -22,11 +22,6 @@ function getViewport() {
       height: $("#map").css("height")
     });
   }
-  if (document.body.clientWidth <= 767) {
-    $(".leaflet-sidebar .close").css("top", "2px");
-  } else {
-    $(".leaflet-sidebar .close").css("top", "12px");
-  }
 }
 
 function sidebarClick(id) {
@@ -337,8 +332,8 @@ map.on("overlayremove", function(e) {
   }
 });
 
-/* Clear feature highlight when featureModal is closed */
-$("#featureModal").on("hide.bs.modal", function (e) {
+/* Clear feature highlight when map is clicked */
+map.on("click", function(e) {
   highlight.clearLayers();
 });
 
