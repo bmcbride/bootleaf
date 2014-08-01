@@ -70,6 +70,16 @@ input[type="radio"], input[type="checkbox"] {
 .navbar-collapse.in {
   overflow-y: hidden;
 }
+.navbar-header .navbar-icon-container {
+  margin-right: 15px;
+}
+.navbar-header .navbar-icon {
+  line-height: 50px;
+  height: 50px;
+}
+.navbar-header a.navbar-icon {
+  margin-left: 25px;
+}
 .typeahead {
   background-color: #FFFFFF;
 }
