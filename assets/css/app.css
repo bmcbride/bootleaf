@@ -1,4 +1,4 @@
-html, body, #map {
+html, body, #container {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -8,6 +8,20 @@ body {
 }
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
+}
+#sidebar {
+  width: 250px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+  -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+#map {
+  width: auto;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 #loading {
   position: absolute;
@@ -22,25 +36,13 @@ input[type="radio"], input[type="checkbox"] {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
 }
 .sidebar-table {
   position: absolute;
   width: 100%;
-  top: 150px;
+  top: 124px;
   bottom: 0px;
-  left: 0px;
-  right: 0px;
   overflow: auto;
-}
-.leaflet-sidebar {
-  z-index: 1020;
-}
-.leaflet-sidebar > .leaflet-control {
-  padding: 0px;
-}
-.leaflet-sidebar .close {
-  display: none;
 }
 .leaflet-control-layers label {
   font-weight: normal;
@@ -124,6 +126,9 @@ input[type="radio"], input[type="checkbox"] {
     word-break: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
+  }
+  #sidebar {
+    display: none;
   }
 }
 /* Print Handling */

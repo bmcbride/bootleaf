@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css">
     <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css">
     <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css">
-    <link rel="stylesheet" href="assets/leaflet-sidebar-0.1.5/L.Control.Sidebar.css">
     <link rel="stylesheet" href="assets/css/app.css">
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
@@ -63,74 +62,51 @@
                 <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
               </ul>
           </li>
-          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.toggle(); return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;POI List</a></li>
+          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#sidebar').toggle(); map.invalidateSize(); return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;POI List</a></li>
         </ul>
       </div><!--/.navbar-collapse -->
     </div>
 
-    <div id="map"></div>
-    <div id="sidebar">
-      <div class="sidebar-wrapper">
-        <div class="panel panel-default" style="margin: 0px; border: none; border-radius: 0px; -webkit-box-shadow: none; box-shadow: none;">
-          <div class="panel-heading">
-            <h3 class="panel-title" style="display: inline;">Points of Interest<button type="button" class="btn btn-xs btn-default pull-right" onclick="sidebar.hide();"><i class="fa fa-chevron-left"></i></button></h3>
-          </div>
-          <div class="panel-body">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" id="poi-tabs">
-              <li class="active"><a href="#theaters" onclick="$('#poi-tabs a[href=\'#theaters\']').tab('show'); return false;"><img src="assets/img/theater.png" height="16px" width="14px">&nbsp;Theaters</a></li>
-              <li><a href="#museums" onclick="$('#poi-tabs a[href=\'#museums\']').tab('show'); return false;"><img src="assets/img/museum.png" height="16px" width="14px">&nbsp;Museums</a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div class="tab-pane active" id="theaters">
-                <p>
-                  <div class="row">
-                    <div class="col-xs-8 col-md-8">
-                      <input type="text" class="form-control search" placeholder="Search" />
-                    </div>
-                    <div class="col-xs-4 col-md-4">
-                      <button type="button" class="btn btn-primary pull-right sort" data-sort="theater-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
-                    </div>
+    <div id="container">
+      <div id="sidebar">
+        <div class="sidebar-wrapper">
+          <div class="panel panel-default" style="margin: 0px; border: none; border-radius: 0px; -webkit-box-shadow: none; box-shadow: none;" id="features">
+            <div class="panel-heading">
+              <h3 class="panel-title">Points of Interest
+              <button type="button" class="btn btn-xs btn-default pull-right" style="margin-top: -2px;" onclick="$('#sidebar').hide(); map.invalidateSize();"><i class="fa fa-chevron-left"></i></button></h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                <div class="row">
+                  <div class="col-xs-8 col-md-8">
+                    <input type="text" class="form-control search" placeholder="Search" />
                   </div>
-                </p>
-                <div class="sidebar-table">
-                  <table class="table table-hover" id="theater-table">
-                    <thead class="hidden">
-                      <tr>
-                        <th>Name</th>
-                      <tr>
-                    </thead>
-                    <tbody class="list"></tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="tab-pane" id="museums">
-                <p>
-                  <div class="row">
-                    <div class="col-xs-8 col-md-8">
-                      <input type="text" class="form-control search" placeholder="Search" />
-                    </div>
-                    <div class="col-xs-4 col-md-4">
-                      <button type="button" class="btn btn-primary pull-right sort" data-sort="museum-name"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
-                    </div>
+                  <div class="col-xs-4 col-md-4">
+                    <button type="button" class="btn btn-primary pull-right sort" data-sort="feature-name" id="sort-btn"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
                   </div>
-                </p>
-                <div class="sidebar-table">
-                  <table class="table table-hover" id="museum-table">
-                    <thead class="hidden">
-                      <tr>
-                        <th>Name</th>
-                      <tr>
-                    </thead>
-                    <tbody class="list"></tbody>
-                  </table>
                 </div>
-              </div>
+              </p>
+            </div>
+            <div class="sidebar-table">
+              <table class="table table-hover" id="feature-list">
+                <thead class="hidden">
+                  <tr>
+                    <th>Icon</th>
+                  <tr>
+                  <tr>
+                    <th>Name</th>
+                  <tr>
+                  <tr>
+                    <th>Chevron</th>
+                  <tr>
+                </thead>
+                <tbody class="list"></tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
+      <div id="map"></div>
     </div>
     <div id="loading">
       <div class="loading-indicator">
@@ -319,8 +295,6 @@
     <script src="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
     <script src="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js"></script>
     <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
-    <script src="assets/leaflet-activearea/L.activearea.js"></script>
-    <script src="assets/leaflet-sidebar-0.1.5/L.Control.Sidebar.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
