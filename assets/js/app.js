@@ -1,41 +1,21 @@
-var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
-$(document).ready(function() {
-  getViewport();
+$(document).on("click", ".feature-name", function(e) {
+  sidebarClick(parseInt($(this).attr('id')));
 });
 
-function getViewport() {
-  if (sidebar.isVisible()) {
-    map.setActiveArea({
-      position: "absolute",
-      top: "0px",
-      left: $(".leaflet-sidebar").css("width"),
-      right: "0px",
-      height: $("#map").css("height")
-    });
-  } else {
-    map.setActiveArea({
-      position: "absolute",
-      top: "0px",
-      left: "0px",
-      right: "0px",
-      height: $("#map").css("height")
-    });
-  }
-}
-
 function sidebarClick(id) {
-  /* If sidebar takes up entire screen, hide it and go to the map */
-  if (document.body.clientWidth <= 767) {
-    sidebar.hide();
-    getViewport();
-  }
   map.addLayer(theaterLayer).addLayer(museumLayer);
   var layer = markerClusters.getLayer(id);
   markerClusters.zoomToShowLayer(layer, function() {
-    map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 18);
+    map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 17);
     layer.fire("click");
   });
+  /* Hide sidebar and go to the map on small screens */
+  if (document.body.clientWidth <= 767) {
+    $("#sidebar").hide();
+    map.invalidateSize();
+  }
 }
 
 /* Basemap Layers */
@@ -241,7 +221,7 @@ var theaters = L.geoJson(null, {
           }));
         }
       });
-      $("#theater-table tbody").append('<tr style="cursor: pointer;" onclick="sidebarClick('+L.stamp(layer)+'); return false;"><td class="theater-name">'+layer.feature.properties.NAME+'<i class="fa fa-chevron-right pull-right"></td></tr>');
+      $("#feature-list tbody").append('<tr style="cursor: pointer;"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/theater.png"></td><td class="feature-name" id="'+L.stamp(layer)+'">'+layer.feature.properties.NAME+'</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -289,7 +269,7 @@ var museums = L.geoJson(null, {
           }));
         }
       });
-      $("#museum-table tbody").append('<tr style="cursor: pointer;" onclick="sidebarClick('+L.stamp(layer)+'); return false;"><td class="museum-name">'+layer.feature.properties.NAME+'<i class="fa fa-chevron-right pull-right"></td></tr>');
+      $("#feature-list tbody").append('<tr style="cursor: pointer;"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/museum.png"></td><td class="feature-name" id="'+L.stamp(layer)+'">'+layer.feature.properties.NAME+'</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       museumSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADRESS1,
@@ -353,7 +333,7 @@ var attributionControl = L.control({
 });
 attributionControl.onAdd = function (map) {
   var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a> | <a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
+  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
   return div;
 };
 map.addControl(attributionControl);
@@ -394,21 +374,11 @@ var locateControl = L.control.locate({
   }
 }).addTo(map);
 
-var sidebar = L.control.sidebar("sidebar", {
-  closeButton: true,
-  position: "left"
-}).on("shown", function () {
-  getViewport();
-}).on("hidden", function () {
-  getViewport();
-}).addTo(map);
-
 /* Larger screens get expanded layer control and visible sidebar */
 if (document.body.clientWidth <= 767) {
   var isCollapsed = true;
 } else {
   var isCollapsed = false;
-  sidebar.show();
 }
 
 var baseLayers = {
@@ -439,9 +409,11 @@ $("#searchbox").click(function () {
 
 /* Typeahead search functionality */
 $(document).one("ajaxStop", function () {
+  $("#loading").hide();
   /* Fit map to boroughs bounds */
   map.fitBounds(boroughs.getBounds());
-  $("#loading").hide();
+  featureList = new List("features", {valueNames: ["feature-name"]});
+  featureList.sort("feature-name", {order:"asc"});
 
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
@@ -462,7 +434,6 @@ $(document).one("ajaxStop", function () {
     local: theaterSearch,
     limit: 10
   });
-  var theaterList = new List("theaters", {valueNames: ["theater-name"]}).sort("theater-name", {order:"asc"});
 
   var museumsBH = new Bloodhound({
     name: "Museums",
@@ -473,7 +444,6 @@ $(document).one("ajaxStop", function () {
     local: museumSearch,
     limit: 10
   });
-  var museumList = new List("museums", {valueNames: ["museum-name", "museum-address"]}).sort("museum-name", {order:"asc"});
 
   var geonamesBH = new Bloodhound({
     name: "GeoNames",
