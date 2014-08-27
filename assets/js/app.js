@@ -4,6 +4,48 @@ $(document).on("click", ".feature-name", function(e) {
   sidebarClick(parseInt($(this).attr('id')));
 });
 
+$("#about-btn").click(function() {
+  $("#aboutModal").modal("show");
+  return false;
+});
+
+$("#full-extent-btn").click(function() {
+  map.fitBounds(boroughs.getBounds());
+  return false;
+});
+
+$("#legend-btn").click(function() {
+  $("#legendModal").modal("show");
+  return false;
+});
+
+$("#login-btn").click(function() {
+  $("#loginModal").modal("show");
+  return false;
+});
+
+$("#list-btn").click(function() {
+  $('#sidebar').toggle();
+  map.invalidateSize();
+  return false;
+});
+
+$("#nav-btn").click(function() {
+  $(".navbar-collapse").collapse("toggle");
+  return false;
+});
+
+$("#sidebar-toggle-btn").click(function() {
+  $("#sidebar").toggle();
+  map.invalidateSize();
+  return false;
+});
+
+$("#sidebar-hide-btn").click(function() {
+  $('#sidebar').hide();
+  map.invalidateSize();
+});
+
 function sidebarClick(id) {
   map.addLayer(theaterLayer).addLayer(museumLayer);
   var layer = markerClusters.getLayer(id);
