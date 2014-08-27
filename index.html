@@ -30,8 +30,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="navbar-header">
         <div class="navbar-icon-container">
-          <a href="#" class="navbar-icon pull-right visible-xs" onclick="$('.navbar-collapse').collapse('toggle'); return false;"><i class="fa fa-bars fa-lg" style="color: white"></i></a>
-          <a href="#" class="navbar-icon pull-right visible-xs" onclick="$('#sidebar').toggle(); map.invalidateSize(); return false;"><i class="fa fa-search fa-lg" style="color: white"></i></a>
+          <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg" style="color: white"></i></a>
+          <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg" style="color: white"></i></a>
         </div>
         <a class="navbar-brand" href="#">BootLeaf</a>
       </div>
@@ -43,14 +43,14 @@
           </div>
         </form>
         <ul class="nav navbar-nav">
-          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
           <li class="dropdown">
             <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
+              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
+              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="legend-btn"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
               <li class="divider hidden-xs"></li>
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="login-btn"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -62,7 +62,7 @@
                 <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
               </ul>
           </li>
-          <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#sidebar').toggle(); map.invalidateSize(); return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;POI List</a></li>
+          <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="list-btn"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;POI List</a></li>
         </ul>
       </div><!--/.navbar-collapse -->
     </div>
@@ -73,7 +73,7 @@
           <div class="panel panel-default" style="margin: 0px; border: none; border-radius: 0px; -webkit-box-shadow: none; box-shadow: none;" id="features">
             <div class="panel-heading">
               <h3 class="panel-title">Points of Interest
-              <button type="button" class="btn btn-xs btn-default pull-right" style="margin-top: -2px;" onclick="$('#sidebar').hide(); map.invalidateSize();"><i class="fa fa-chevron-left"></i></button></h3>
+              <button type="button" class="btn btn-xs btn-default pull-right" style="margin-top: -2px;" id="sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>
             </div>
             <div class="panel-body">
               <p>
@@ -227,7 +227,7 @@
     </div><!-- /.modal -->
 
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
