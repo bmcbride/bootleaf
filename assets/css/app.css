@@ -142,14 +142,17 @@ input[type="radio"], input[type="checkbox"] {
   }
 }
 @media (max-width: 767px){
+  #sidebar {
+    display: none;
+  }
   .url-break {
     word-break: break-all;
     word-break: break-word;
     -webkit-hyphens: auto;
       hyphens: auto;
   }
-  #sidebar {
-    display: none;
+  .dropdown-menu a i{
+    color: #FFFFFF;
   }
 }
 /* Print Handling */
