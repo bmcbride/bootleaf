@@ -51,6 +51,9 @@ input[type="radio"], input[type="checkbox"] {
 .white {
   color: #FFFFFF;
 }
+.feature-row {
+  cursor: pointer;
+}
 .sidebar-wrapper {
   width: 100%;
   height: 100%;
