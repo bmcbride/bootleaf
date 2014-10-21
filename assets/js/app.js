@@ -1,7 +1,7 @@
 var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(document).on("click", ".feature-row", function(e) {
-  sidebarClick(parseInt($(this).attr("id")));
+  sidebarClick(parseInt($(this).attr("id"), 10));
 });
 
 $("#about-btn").click(function() {
