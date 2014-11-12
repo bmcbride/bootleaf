@@ -53,10 +53,8 @@ $("#sidebar-hide-btn").click(function() {
 function sidebarClick(id) {
   map.addLayer(theaterLayer).addLayer(museumLayer);
   var layer = markerClusters.getLayer(id);
-  markerClusters.zoomToShowLayer(layer, function() {
-    map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 17);
-    layer.fire("click");
-  });
+  map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 17);
+  layer.fire("click");
   /* Hide sidebar and go to the map on small screens */
   if (document.body.clientWidth <= 767) {
     $("#sidebar").hide();
