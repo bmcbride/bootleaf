@@ -451,6 +451,13 @@ $("#searchbox").click(function () {
   $(this).select();
 });
 
+/* Prevent hitting enter from refreshing the page */
+$("#searchbox").keypress(function (e) {
+  if (e.which == 13) {
+    e.preventDefault();
+  }
+});
+
 /* Typeahead search functionality */
 $(document).one("ajaxStop", function () {
   $("#loading").hide();
