@@ -1,6 +1,7 @@
 var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(document).on("click", ".feature-row", function(e) {
+  $(document).off("mouseout", ".feature-row", clearHighlight);
   sidebarClick(parseInt($(this).attr("id"), 10));
 });
 
@@ -8,9 +9,7 @@ $(document).on("mouseover", ".feature-row", function(e) {
   highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"), $(this).attr("lng")], highlightStyle));
 });
 
-$(document).on("mouseout", ".feature-row", function(e) {
-  highlight.clearLayers();
-});
+$(document).on("mouseout", ".feature-row", clearHighlight);
 
 $("#about-btn").click(function() {
   $("#aboutModal").modal("show");
@@ -57,6 +56,10 @@ $("#sidebar-hide-btn").click(function() {
   $('#sidebar').hide();
   map.invalidateSize();
 });
+
+function clearHighlight() {
+  highlight.clearLayers();
+}
 
 function sidebarClick(id) {
   var layer = markerClusters.getLayer(id);
@@ -491,6 +494,10 @@ $("#searchbox").keypress(function (e) {
   if (e.which == 13) {
     e.preventDefault();
   }
+});
+
+$("#featureModal").on("hidden.bs.modal", function (e) {
+  $(document).on("mouseout", ".feature-row", clearHighlight);
 });
 
 /* Typeahead search functionality */
