@@ -62,7 +62,7 @@ input[type="radio"], input[type="checkbox"] {
 .sidebar-table {
   position: absolute;
   width: 100%;
-  top: 124px;
+  top: 103px;
   bottom: 0px;
   overflow: auto;
 }
