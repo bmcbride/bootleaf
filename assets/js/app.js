@@ -439,17 +439,27 @@ var locateControl = L.control.locate({
   follow: true,
   setView: true,
   keepCurrentZoomLevel: true,
+  remainActive: false,
+  markerClass: L.circleMarker,
+  circleStyle: {
+    weight: 1,
+    clickable: false
+  },  
   markerStyle: {
     weight: 1,
     opacity: 0.8,
     fillOpacity: 0.8
   },
-  circleStyle: {
-    weight: 1,
-    clickable: false
-  },
-  icon: "icon-direction",
+  followCircleStyle: {},
+  followMarkerStyle: {},
+  icon: 'fa fa-location-arrow',
+  iconLoading: 'fa fa-spinner fa-spin',
+  circlePadding: [0, 0],
   metric: false,
+  onLocationError: function(err) {alert(err.message)},
+  onLocationOutsideMapBounds:  function(context) {
+          alert(context.options.strings.outsideMapBoundsMsg);
+  },
   strings: {
     title: "My location",
     popup: "You are within {distance} {unit} from this point",
