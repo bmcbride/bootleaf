@@ -448,7 +448,7 @@ var locateControl = L.control.locate({
     weight: 1,
     clickable: false
   },
-  icon: "icon-direction",
+  icon: "fa fa-location-arrow",
   metric: false,
   strings: {
     title: "My location",
