@@ -665,3 +665,18 @@ if (!L.Browser.touch) {
 } else {
   L.DomEvent.disableClickPropagation(container);
 }
+
+/* EasyButtons for Map - http://cliffcloud.github.io/Leaflet.EasyButton/ */
+L.easyButton("fa fa-map-marker",
+              function (){
+                $('#sidebar').toggle();
+                  map.invalidateSize();
+                  return false;
+                },
+             'POI List'
+            )
+      
+/* Stops EasyButtons from retaining focus after click event */      
+$(".leaflet-bar-part").mouseup(function(){
+    $(this).blur();
+})
