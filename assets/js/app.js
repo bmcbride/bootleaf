@@ -9,9 +9,11 @@ $(document).on("click", ".feature-row", function(e) {
   sidebarClick(parseInt($(this).attr("id"), 10));
 });
 
-$(document).on("mouseover", ".feature-row", function(e) {
-  highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"), $(this).attr("lng")], highlightStyle));
-});
+if ( !("ontouchstart" in window) ) {
+  $(document).on("mouseover", ".feature-row", function(e) {
+    highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"), $(this).attr("lng")], highlightStyle));
+  });
+}
 
 $(document).on("mouseout", ".feature-row", clearHighlight);
 
