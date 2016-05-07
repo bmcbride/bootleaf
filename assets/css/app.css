@@ -19,10 +19,10 @@ input[type="radio"], input[type="checkbox"] {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
 #container.toggled {
     padding-left: 250px;
 }
-
 
 #sidebar-wrapper {
   position: fixed;
@@ -58,12 +58,12 @@ input[type="radio"], input[type="checkbox"] {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 #map {
-  width: 100%;
+  width: auto;
   height: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 #loading {
@@ -75,6 +75,7 @@ input[type="radio"], input[type="checkbox"] {
   margin: -10px 0 0 -110px;
   z-index: 20001;
 }
+
 #features {
   margin: 0px;
   border: none;
@@ -104,7 +105,6 @@ input[type="radio"], input[type="checkbox"] {
   cursor: pointer;
   width: 250px;
 }
-
 
 .sidebar-table {
   position: absolute;
@@ -202,10 +202,6 @@ input[type="radio"], input[type="checkbox"] {
   }
   #sidebar-wrapper {
     width: 0;
-  }
-  #map{
-    margin-right: -250px;
-    padding-left: 250px;
   }
   .url-break {
     word-break: break-all;

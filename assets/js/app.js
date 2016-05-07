@@ -1,10 +1,13 @@
 var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(window).resize(function() {
+  sizeLayerControl();
   if (document.body.clientWidth <= 767) {
     $("#container").removeClass("toggled")
+    map.invalidateSize();
   }else{
     $("#container").addClass("toggled")
+    map.invalidateSize();
   }
 });
 
