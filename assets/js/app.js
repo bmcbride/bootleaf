@@ -11,9 +11,7 @@ $(window).resize(function() {
   }
 });
 
-if (document.body.clientWidth >= 767) {
-  $("#container").toggleClass("toggled");
-}else{
+if (document.body.clientWidth <= 767) {
   $("#container").removeClass("toggled");
 }
 
