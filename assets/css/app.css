@@ -1,4 +1,4 @@
-html, body, #container {
+html, body{
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -9,20 +9,71 @@ body {
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
 }
+#container{
+  padding-left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#container.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #fff;
+}
+
+#container.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
 #sidebar {
+  display: block;
   width: 250px;
   height: 100%;
   max-width: 100%;
   float: left;
-  -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
 }
+
+#page-content-wrapper {
+  width: 100%;
+  padding-left: 0px;
+  height: 100%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/*#container.toggled #page-content-wrapper {
+    margin-right: 250px;
+}*/
+
+#container.toggled #map {
+    padding-left: 250px;
+}
+
+
 #map {
-  width: auto;
+  width: 100%;
   height: 100%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
 #loading {
   position: absolute;
   width: 220px;
@@ -32,12 +83,13 @@ input[type="radio"], input[type="checkbox"] {
   margin: -10px 0 0 -110px;
   z-index: 20001;
 }
+
 #features {
   margin: 0px;
   border: none;
   border-radius: 0px;
   -webkit-box-shadow: none;
-    box-shadow: none;
+  box-shadow: none;
 }
 #sidebar-hide-btn {
   margin-top: -2px;
@@ -51,14 +103,17 @@ input[type="radio"], input[type="checkbox"] {
 .white {
   color: #FFFFFF;
 }
+.panel-heading{
+  width: 250px;
+}
+.panel-body{
+  width: 250px;
+}
 .feature-row {
   cursor: pointer;
+  width: 250px;
 }
-.sidebar-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+
 .sidebar-table {
   position: absolute;
   width: 100%;
@@ -148,8 +203,13 @@ input[type="radio"], input[type="checkbox"] {
   }
 }
 @media (max-width: 767px){
-  #sidebar {
-    display: none;
+  #container{
+    padding-left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #sidebar-wrapper {
+    width: 0;
   }
   .url-break {
     word-break: break-all;

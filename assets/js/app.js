@@ -2,7 +2,18 @@ var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 $(window).resize(function() {
   sizeLayerControl();
+  if (document.body.clientWidth <= 767) {
+    $("#container").removeClass("toggled")
+    map.invalidateSize();
+  }else{
+    $("#container").addClass("toggled")
+    map.invalidateSize();
+  }
 });
+
+if (document.body.clientWidth <= 767) {
+  $("#container").removeClass("toggled");
+}
 
 $(document).on("click", ".feature-row", function(e) {
   $(document).off("mouseout", ".feature-row", clearHighlight);
@@ -42,25 +53,25 @@ $("#login-btn").click(function() {
 });
 
 $("#list-btn").click(function() {
-  $('#sidebar').toggle();
-  map.invalidateSize();
+  $("#sidebar").animate({width:'toggle'},350);
   return false;
 });
 
 $("#nav-btn").click(function() {
   $(".navbar-collapse").collapse("toggle");
+  map.invalidateSize();
   return false;
 });
 
 $("#sidebar-toggle-btn").click(function() {
-  $("#sidebar").toggle();
-  map.invalidateSize();
+  $("#sidebar").animate({width:'toggle'},350);
   return false;
 });
 
 $("#sidebar-hide-btn").click(function() {
-  $('#sidebar').hide();
+  $("#sidebar").animate({width:'toggle'},350);
   map.invalidateSize();
+  return false;
 });
 
 function sizeLayerControl() {
@@ -77,7 +88,8 @@ function sidebarClick(id) {
   layer.fire("click");
   /* Hide sidebar and go to the map on small screens */
   if (document.body.clientWidth <= 767) {
-    $("#sidebar").hide();
+    $("#sidebar-wrapper").hide();
+    $("#container").removeClass("toggled");
     map.invalidateSize();
   }
 }
@@ -161,85 +173,21 @@ $.getJSON("data/boroughs.geojson", function (data) {
   boroughs.addData(data);
 });
 
+//Create a color dictionary based off of subway route_id
+var subwayColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
+    "5":"#009b2e", "6":"#009b2e", "7":"#ce06cb", "A":"#fd9a00", "C":"#fd9a00",
+    "E":"#fd9a00", "SI":"#fd9a00","H":"#fd9a00", "Air":"#ffff00", "B":"#ffff00",
+    "D":"#ffff00", "F":"#ffff00", "M":"#ffff00", "G":"#9ace00", "FS":"#6e6e6e",
+    "GS":"#6e6e6e", "J":"#976900", "Z":"#976900", "L":"#969696", "N":"#ffff00",
+    "Q":"#ffff00", "R":"#ffff00" };
+
 var subwayLines = L.geoJson(null, {
   style: function (feature) {
-    if (feature.properties.route_id === "1" || feature.properties.route_id === "2" || feature.properties.route_id === "3") {
       return {
-        color: "#ff3135",
+        color: subwayColors[feature.properties.route_id],
         weight: 3,
         opacity: 1
       };
-    }
-    if (feature.properties.route_id === "4" || feature.properties.route_id === "5" || feature.properties.route_id === "6") {
-      return {
-        color: "#009b2e",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "7") {
-      return {
-        color: "#ce06cb",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "A" || feature.properties.route_id === "C" || feature.properties.route_id === "E" || feature.properties.route_id === "SI" || feature.properties.route_id === "H") {
-      return {
-        color: "#fd9a00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "Air") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "B" || feature.properties.route_id === "D" || feature.properties.route_id === "F" || feature.properties.route_id === "M") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "G") {
-      return {
-        color: "#9ace00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "FS" || feature.properties.route_id === "GS") {
-      return {
-        color: "#6e6e6e",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "J" || feature.properties.route_id === "Z") {
-      return {
-        color: "#976900",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "L") {
-      return {
-        color: "#969696",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "N" || feature.properties.route_id === "Q" || feature.properties.route_id === "R") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
