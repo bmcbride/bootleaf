@@ -53,8 +53,7 @@ $("#login-btn").click(function() {
 });
 
 $("#list-btn").click(function() {
-  $("#container").toggleClass("toggled");
-  map.invalidateSize();
+  $("#sidebar").animate({width:'toggle'},350);
   return false;
 });
 
@@ -65,13 +64,12 @@ $("#nav-btn").click(function() {
 });
 
 $("#sidebar-toggle-btn").click(function() {
-  $("#container").toggleClass("toggled");
-  map.invalidateSize();
+  $("#sidebar").animate({width:'toggle'},350);
   return false;
 });
 
 $("#sidebar-hide-btn").click(function() {
-  $("#container").toggleClass("toggled");
+  $("#sidebar").animate({width:'toggle'},350);
   map.invalidateSize();
   return false;
 });

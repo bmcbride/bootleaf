@@ -43,11 +43,11 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #sidebar {
+  display: block;
   width: 250px;
   height: 100%;
   max-width: 100%;
-  position: fixed;
-  left: 250px;
+  float: left;
 }
 
 #page-content-wrapper {
