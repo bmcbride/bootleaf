@@ -42,7 +42,7 @@ $("#login-btn").click(function() {
 });
 
 $("#list-btn").click(function() {
-  $("#sidebar").animate({width:'toggle'},350);
+  animateSidebar();
   return false;
 });
 
@@ -52,13 +52,22 @@ $("#nav-btn").click(function() {
 });
 
 $("#sidebar-toggle-btn").click(function() {
-  $("#sidebar").animate({width:'toggle'},350);
+  animateSidebar();
   return false;
 });
 
 $("#sidebar-hide-btn").click(function() {
-  $("#sidebar").animate({width:'toggle'},350);
+  animateSidebar();
+  return false;
 });
+
+function animateSidebar() {
+  $("#sidebar").animate({
+    width: "toggle"
+  }, 350, function() {
+    map.invalidateSize();
+  });
+}
 
 function sizeLayerControl() {
   $(".leaflet-control-layers").css("max-height", $("#map").height() - 50);
