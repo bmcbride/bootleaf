@@ -42,8 +42,7 @@ $("#login-btn").click(function() {
 });
 
 $("#list-btn").click(function() {
-  $('#sidebar').toggle();
-  map.invalidateSize();
+  animateSidebar();
   return false;
 });
 
@@ -53,15 +52,22 @@ $("#nav-btn").click(function() {
 });
 
 $("#sidebar-toggle-btn").click(function() {
-  $("#sidebar").toggle();
-  map.invalidateSize();
+  animateSidebar();
   return false;
 });
 
 $("#sidebar-hide-btn").click(function() {
-  $('#sidebar').hide();
-  map.invalidateSize();
+  animateSidebar();
+  return false;
 });
+
+function animateSidebar() {
+  $("#sidebar").animate({
+    width: "toggle"
+  }, 350, function() {
+    map.invalidateSize();
+  });
+}
 
 function sizeLayerControl() {
   $(".leaflet-control-layers").css("max-height", $("#map").height() - 50);
@@ -111,23 +117,18 @@ function syncSidebar() {
 }
 
 /* Basemap Layers */
-var mapquestOSM = L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
+var cartoLight = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
   maxZoom: 19,
-  subdomains: ["otile1-s", "otile2-s", "otile3-s", "otile4-s"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="https://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
 });
-var mapquestOAM = L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
-  maxZoom: 18,
-  subdomains: ["otile1-s", "otile2-s", "otile3-s", "otile4-s"],
-  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
-});
-var mapquestHYB = L.layerGroup([L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
-  maxZoom: 18,
-  subdomains: ["otile1-s", "otile2-s", "otile3-s", "otile4-s"]
-}), L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  subdomains: ["otile1-s", "otile2-s", "otile3-s", "otile4-s"],
-  attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="https://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+var usgsImagery = L.layerGroup([L.tileLayer("http://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 15,
+}), L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/USGSImageOnlyLarge/MapServer/WMSServer?", {
+  minZoom: 16,
+  layers: "2",
+  format: 'image/png',
+  transparent: true,
+  attribution: "Aerial Imagery courtesy USGS"
 })]);
 
 /* Overlay Layers */
@@ -161,85 +162,21 @@ $.getJSON("data/boroughs.geojson", function (data) {
   boroughs.addData(data);
 });
 
+//Create a color dictionary based off of subway route_id
+var subwayColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
+    "5":"#009b2e", "6":"#009b2e", "7":"#ce06cb", "A":"#fd9a00", "C":"#fd9a00",
+    "E":"#fd9a00", "SI":"#fd9a00","H":"#fd9a00", "Air":"#ffff00", "B":"#ffff00",
+    "D":"#ffff00", "F":"#ffff00", "M":"#ffff00", "G":"#9ace00", "FS":"#6e6e6e",
+    "GS":"#6e6e6e", "J":"#976900", "Z":"#976900", "L":"#969696", "N":"#ffff00",
+    "Q":"#ffff00", "R":"#ffff00" };
+
 var subwayLines = L.geoJson(null, {
   style: function (feature) {
-    if (feature.properties.route_id === "1" || feature.properties.route_id === "2" || feature.properties.route_id === "3") {
       return {
-        color: "#ff3135",
+        color: subwayColors[feature.properties.route_id],
         weight: 3,
         opacity: 1
       };
-    }
-    if (feature.properties.route_id === "4" || feature.properties.route_id === "5" || feature.properties.route_id === "6") {
-      return {
-        color: "#009b2e",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "7") {
-      return {
-        color: "#ce06cb",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "A" || feature.properties.route_id === "C" || feature.properties.route_id === "E" || feature.properties.route_id === "SI" || feature.properties.route_id === "H") {
-      return {
-        color: "#fd9a00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "Air") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "B" || feature.properties.route_id === "D" || feature.properties.route_id === "F" || feature.properties.route_id === "M") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "G") {
-      return {
-        color: "#9ace00",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "FS" || feature.properties.route_id === "GS") {
-      return {
-        color: "#6e6e6e",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "J" || feature.properties.route_id === "Z") {
-      return {
-        color: "#976900",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "L") {
-      return {
-        color: "#969696",
-        weight: 3,
-        opacity: 1
-      };
-    }
-    if (feature.properties.route_id === "N" || feature.properties.route_id === "Q" || feature.properties.route_id === "R") {
-      return {
-        color: "#ffff00",
-        weight: 3,
-        opacity: 1
-      };
-    }
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
@@ -371,7 +308,7 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 map = L.map("map", {
   zoom: 10,
   center: [40.702222, -73.979378],
-  layers: [mapquestOSM, boroughs, markerClusters, highlight],
+  layers: [cartoLight, boroughs, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -474,9 +411,8 @@ if (document.body.clientWidth <= 767) {
 }
 
 var baseLayers = {
-  "Street Map": mapquestOSM,
-  "Aerial Imagery": mapquestOAM,
-  "Imagery with Streets": mapquestHYB
+  "Street Map": cartoLight,
+  "Aerial Imagery": usgsImagery
 };
 
 var groupedOverlays = {
