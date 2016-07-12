@@ -123,10 +123,11 @@ var cartoLight = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net
 });
 var usgsImagery = L.layerGroup([L.tileLayer("http://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}", {
   maxZoom: 15,
-}), L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/USGSImageOnlyLarge/MapServer/WMSServer?", {
+}), L.tileLayer.wms("http://raster.nationalmap.gov/arcgis/services/Orthoimagery/USGS_EROS_Ortho_SCALE/ImageServer/WMSServer?", {
   minZoom: 16,
-  layers: "2",
-  format: 'image/png',
+  maxZoom: 19,
+  layers: "0",
+  format: 'image/jpeg',
   transparent: true,
   attribution: "Aerial Imagery courtesy USGS"
 })]);
@@ -140,13 +141,33 @@ var highlightStyle = {
   radius: 10
 };
 
+/* Single marker cluster layer to hold all clusters */
+var markerClusters = new L.MarkerClusterGroup({
+  spiderfyOnMaxZoom: true,
+  showCoverageOnHover: false,
+  zoomToBoundsOnClick: true,
+  disableClusteringAtZoom: 16
+});
+
+/* Map Center */
+map = L.map("map", {
+  zoom: 10,
+  center: [40.702222, -73.979378],
+  layers: [cartoLight, markerClusters, highlight],
+  zoomControl: false,
+  attributionControl: false
+});
+
+map.createPane("pane_boroughs");
+map.getPane("pane_boroughs").style.zIndex = 402;
 var boroughs = L.geoJson(null, {
+  pane: "pane_boroughs",
   style: function (feature) {
     return {
       color: "black",
       fill: false,
       opacity: 1,
-      clickable: false
+      interactive: false
     };
   },
   onEachFeature: function (feature, layer) {
@@ -160,6 +181,7 @@ var boroughs = L.geoJson(null, {
 });
 $.getJSON("data/boroughs.geojson", function (data) {
   boroughs.addData(data);
+  map.addLayer(boroughs);
 });
 
 //Create a color dictionary based off of subway route_id
@@ -170,7 +192,10 @@ var subwayColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
     "GS":"#6e6e6e", "J":"#976900", "Z":"#976900", "L":"#969696", "N":"#ffff00",
     "Q":"#ffff00", "R":"#ffff00" };
 
+map.createPane("pane_subwayLines");
+map.getPane("pane_subwayLines").style.zIndex = 401;
 var subwayLines = L.geoJson(null, {
+  pane: "pane_subwayLines",
   style: function (feature) {
       return {
         color: subwayColors[feature.properties.route_id],
@@ -210,14 +235,6 @@ var subwayLines = L.geoJson(null, {
 });
 $.getJSON("data/subways.geojson", function (data) {
   subwayLines.addData(data);
-});
-
-/* Single marker cluster layer to hold all clusters */
-var markerClusters = new L.MarkerClusterGroup({
-  spiderfyOnMaxZoom: true,
-  showCoverageOnHover: false,
-  zoomToBoundsOnClick: true,
-  disableClusteringAtZoom: 16
 });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove theaters to markerClusters layer */
@@ -305,14 +322,6 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
   museums.addData(data);
 });
 
-map = L.map("map", {
-  zoom: 10,
-  center: [40.702222, -73.979378],
-  layers: [cartoLight, boroughs, markerClusters, highlight],
-  zoomControl: false,
-  attributionControl: false
-});
-
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
   if (e.layer === theaterLayer) {
@@ -385,7 +394,7 @@ var locateControl = L.control.locate({
   },
   circleStyle: {
     weight: 1,
-    clickable: false
+    interactive: false
   },
   icon: "fa fa-location-arrow",
   metric: false,
