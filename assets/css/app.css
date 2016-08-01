@@ -162,8 +162,11 @@ input[type="radio"], input[type="checkbox"] {
     -webkit-hyphens: auto;
       hyphens: auto;
   }
-  .dropdown-menu a i{
+  .dropdown-menu a{
     color: #FFFFFF;
+    text-align: justify;
+    margin: 0 auto;
+    width: 15em;
   }
 }
 /* Print Handling */
