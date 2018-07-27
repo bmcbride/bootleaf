@@ -6,6 +6,9 @@ A simple, responsive template for building web mapping applications with [Bootst
 ### Demo:
 http://bmcbride.github.io/bootleaf/
 
+### Demo Bootleaf with leaflet v.1.3.1:
+https://anshori.github.io/bootleaf_1.3.1/
+
 ### Features:
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
 * jQuery loading of external GeoJSON files
